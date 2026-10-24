@@ -1,9 +1,9 @@
 # 🏔️ PLANTILLA WEB TURÍSTICA DE ULTRALUJO · CUSCO & ANDEAN EXPEDITIONS
 ### Nivel Awwwards / Estilo Enky & We Are Brand · Next.js 15, Tailwind CSS, Lenis, GSAP 3
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2FMFCC2%2Fqorikancha-cusco-luxury-tourism)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2FMFC224%2Fqorikancha-cusco-luxury-tourism)
 
-> **Repositorio Oficial:** [github.com/MFCC2/qorikancha-cusco-luxury-tourism](https://github.com/MFCC2/qorikancha-cusco-luxury-tourism)  
+> **Repositorio Oficial:** [github.com/MFC224/qorikancha-cusco-luxury-tourism](https://github.com/MFC224/qorikancha-cusco-luxury-tourism)  
 > **Estándar de Producción**: Desarrollada para agencias de viajes receptivas, operadores boutique de alta montaña y creadores digitales. Centraliza todo el contenido en una única fuente de la verdad (`src/data/cuscoConfig.ts`), permitiendo personalizar cualquier destino en **menos de 3 minutos**.
 
 ---
