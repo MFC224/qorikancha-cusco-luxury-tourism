@@ -1,0 +1,131 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg-obsidian: #08090a;
+  --surface-andes: #121517;
+  --surface-card: #181c1e;
+  --surface-elevated: #22272b;
+  --gold-inti: #c8a261;
+  --gold-light: #e0c28a;
+  --gold-dark: #9a7736;
+  --emerald-sacred: #1b382b;
+  --text-mist: #f4f4f0;
+  --text-muted: #9ca3af;
+  --border-subtle: rgba(200, 162, 97, 0.18);
+  --border-focus: rgba(200, 162, 97, 0.45);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background-color: var(--bg-obsidian);
+  color: var(--text-mist);
+  scroll-behavior: smooth;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background-color: var(--bg-obsidian);
+  color: var(--text-mist);
+  min-height: 100vh;
+  overflow-x: hidden;
+  selection-background-color: var(--gold-inti);
+}
+
+::selection {
+  background-color: var(--gold-inti);
+  color: #08090a;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #08090a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(200, 162, 97, 0.3);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(200, 162, 97, 0.6);
+}
+
+/* Lenis Scroll Smooth Integration */
+html.lenis, html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
+
+/* Luxury Utilities */
+@layer utilities {
+  .text-gold-gradient {
+    background: linear-gradient(135deg, #f5ebd7 0%, #c8a261 50%, #9a7736 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .text-mist-gradient {
+    background: linear-gradient(180deg, #ffffff 0%, #d8d8d0 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .bg-radial-glow {
+    background: radial-gradient(circle at 50% 30%, rgba(200, 162, 97, 0.12) 0%, rgba(8, 9, 10, 0) 70%);
+  }
+
+  .glass-card {
+    background-color: rgba(18, 21, 23, 0.7);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(200, 162, 97, 0.15);
+  }
+
+  .glass-card-hover {
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .glass-card-hover:hover {
+    border-color: rgba(200, 162, 97, 0.4);
+    box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.7), 0 0 25px -5px rgba(200, 162, 97, 0.2);
+    transform: translateY(-2px);
+  }
+
+  .hud-badge {
+    font-family: var(--font-jetbrains-mono), monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    padding: 0.35rem 0.75rem;
+    border-radius: 9999px;
+    background: rgba(200, 162, 97, 0.08);
+    border: 1px solid rgba(200, 162, 97, 0.25);
+    color: var(--gold-light);
+  }
+}
