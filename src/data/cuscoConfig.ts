@@ -48,6 +48,7 @@ export interface Waypoint {
   travelMode: 'Vía Férrea Escénica' | 'Van Privada 4x4' | 'Trek / Caminata' | 'Caballo de Paso';
   description: string;
   highlight: string;
+  image?: string;
   coordinates: {
     lat: number;
     lng: number;
@@ -607,6 +608,7 @@ export const cuscoConfig: CuscoMasterConfig = {
       travelMode: 'Van Privada 4x4',
       description: 'Capital del Tahuantinsuyo y joya arquitectónica donde los muros incas sostienen palacios coloniales.',
       highlight: 'Templo del Sol (Qorikancha) y aclimatación inicial.',
+      image: '/images/hero-cusco.webp',
       coordinates: { lat: -13.5319, lng: -71.9675 },
     },
     {
@@ -619,6 +621,7 @@ export const cuscoConfig: CuscoMasterConfig = {
       travelMode: 'Van Privada 4x4',
       description: 'Cuna del arte textil de alpaca fina y los gigantescos anfiteatros concéntricos de aclimatación de semillas incas.',
       highlight: 'Tintes naturales ancestrales y laboratorio agrícola de altura.',
+      image: '/images/valle-sagrado.webp',
       coordinates: { lat: -13.4167, lng: -72.0500 },
     },
     {
@@ -631,6 +634,7 @@ export const cuscoConfig: CuscoMasterConfig = {
       travelMode: 'Vía Férrea Escénica',
       description: 'La última ciudad inca viviente. Calles empedradas con canales de agua cristalina y la colosal fortaleza del sol.',
       highlight: 'Embarque en el tren de lujo hacia el cañón del Vilcanota.',
+      image: '/images/bento-tren.webp',
       coordinates: { lat: -13.2583, lng: -72.2639 },
     },
     {
@@ -643,6 +647,7 @@ export const cuscoConfig: CuscoMasterConfig = {
       travelMode: 'Vía Férrea Escénica',
       description: 'Enclave subtropical entre imponentes farallones de roca granítica y aguas termales medicinales.',
       highlight: 'Santuario ecológico y descanso antes del ascenso a la ciudadela.',
+      image: '/images/camino-inca.webp',
       coordinates: { lat: -13.1547, lng: -72.5253 },
     },
     {
@@ -655,6 +660,7 @@ export const cuscoConfig: CuscoMasterConfig = {
       travelMode: 'Trek / Caminata',
       description: 'La obra cumbre de la ingeniería y espiritualidad incaica, suspendida entre el cielo y la selva alta.',
       highlight: 'Intihuatana, Templo de las Tres Ventanas y Huayna Picchu.',
+      image: '/images/machu-picchu-sunrise.webp',
       coordinates: { lat: -13.1631, lng: -72.5450 },
     },
     {
@@ -667,6 +673,7 @@ export const cuscoConfig: CuscoMasterConfig = {
       travelMode: 'Trek / Caminata',
       description: 'El guardián sagrado (Apu). Macizo nevado de 6,271 metros donde la nieve eterna toca el cielo andino.',
       highlight: 'Vista del glaciar colgante y ofrenda tradicional de pago a la Pachamama.',
+      image: '/images/salkantay-domes.webp',
       coordinates: { lat: -13.3333, lng: -72.5667 },
     },
     {
@@ -679,6 +686,7 @@ export const cuscoConfig: CuscoMasterConfig = {
       travelMode: 'Trek / Caminata',
       description: 'La cumbre mineral más icónica de la cordillera del Vilcanota, custodiada por el sagrado Apu Ausangate.',
       highlight: 'Mirador panorámico a 5,036 msnm y vista al Valle Rojo.',
+      image: '/images/vinicunca.webp',
       coordinates: { lat: -13.8694, lng: -71.3031 },
     },
   ],

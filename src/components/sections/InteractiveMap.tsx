@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
+import Image from 'next/image';
 import { cuscoConfig } from '@/data/cuscoConfig';
 import {
   Compass,
@@ -379,9 +380,18 @@ export default function InteractiveMap() {
                     return (
                       <g
                         key={wp.id}
-                        className="cursor-pointer transition-transform duration-300 group"
+                        className="cursor-pointer group"
                         onClick={() => setActiveWaypointId(wp.id)}
                       >
+                        {/* Zona táctil/clic ampliada invisible (56px) para clic cómodo y sin fallas */}
+                        <circle
+                          cx={cfg.x}
+                          cy={cfg.y}
+                          r="28"
+                          fill="transparent"
+                          className="cursor-pointer"
+                        />
+
                         {/* Radar Pulse si está activo */}
                         {isActive && (
                           <>
@@ -405,16 +415,16 @@ export default function InteractiveMap() {
                           </>
                         )}
 
-                        {/* Anillo exterior */}
+                        {/* Anillo exterior - sin scale de CSS que desplazaba el origen SVG */}
                         <circle
                           cx={cfg.x}
                           cy={cfg.y}
-                          r={isActive ? 9 : 6}
+                          r={isActive ? 9.5 : 7}
                           fill={isActive ? '#C8A261' : '#08090A'}
                           stroke={isActive ? '#FFFFFF' : '#C8A261'}
-                          strokeWidth={isActive ? '2.5' : '1.5'}
+                          strokeWidth={isActive ? '2.5' : '1.75'}
                           filter={isActive ? 'url(#goldGlow)' : undefined}
-                          className="transition-all duration-300 group-hover:scale-125"
+                          className="transition-colors duration-200 group-hover:stroke-white group-hover:fill-gold/80"
                         />
 
                         {/* Etiqueta flotante SVG posicionada estratégicamente para cero colisiones */}
@@ -422,7 +432,7 @@ export default function InteractiveMap() {
                           x={cfg.labelX}
                           y={cfg.labelY}
                           textAnchor={cfg.anchor}
-                          className={`font-sans text-[11px] transition-all ${
+                          className={`font-sans text-[11px] select-none transition-colors duration-200 ${
                             isActive
                               ? 'fill-[#FFFFFF] font-bold text-xs'
                               : 'fill-[#C8A261]/90 group-hover:fill-white text-[10px] font-semibold'
@@ -434,7 +444,7 @@ export default function InteractiveMap() {
                           x={cfg.labelX}
                           y={cfg.labelY + 12}
                           textAnchor={cfg.anchor}
-                          className="font-sans text-[9px] font-medium fill-[#9CA3AF] pointer-events-none tracking-wider"
+                          className="font-sans text-[9px] font-medium fill-[#9CA3AF] pointer-events-none select-none tracking-wider"
                         >
                           {wp.elevationDisplay}
                         </text>
@@ -530,6 +540,14 @@ export default function InteractiveMap() {
                           className="cursor-pointer group"
                           onClick={() => setActiveWaypointId(pt.id)}
                         >
+                          {/* Hit target invisible para clic confortable */}
+                          <circle
+                            cx={pt.x}
+                            cy={pt.y}
+                            r="24"
+                            fill="transparent"
+                            className="cursor-pointer"
+                          />
                           <circle
                             cx={pt.x}
                             cy={pt.y}
@@ -537,12 +555,13 @@ export default function InteractiveMap() {
                             fill={isActive ? '#FFFFFF' : '#C8A261'}
                             stroke="#08090A"
                             strokeWidth="2"
+                            className="transition-colors duration-200 group-hover:fill-white"
                           />
                           <text
                             x={pt.x}
                             y={pt.y - 12}
                             textAnchor="middle"
-                            className={`font-sans ${
+                            className={`font-sans select-none transition-colors duration-200 ${
                               isActive
                                 ? 'fill-[#FFFFFF] font-bold text-xs'
                                 : 'fill-[#C8A261] text-[10px] group-hover:fill-white'
@@ -554,7 +573,7 @@ export default function InteractiveMap() {
                             x={pt.x}
                             y={pt.y + 18}
                             textAnchor="middle"
-                            className="font-sans text-[9px] font-medium fill-[#9CA3AF]"
+                            className="font-sans text-[9px] font-medium fill-[#9CA3AF] pointer-events-none select-none"
                           >
                             {pt.alt}
                           </text>
@@ -573,32 +592,62 @@ export default function InteractiveMap() {
 
           {/* Panel Derecho: Ficha Dinámica del Waypoint Seleccionado */}
           <div className="lg:col-span-4 space-y-4">
-            <div className="glass-card rounded-3xl p-6 sm:p-8 border border-gold/30 shadow-obsidian-glow flex flex-col justify-between">
+            <div className="glass-card rounded-3xl p-6 sm:p-7 border border-gold/30 shadow-obsidian-glow flex flex-col justify-between overflow-hidden">
               <div>
-                <div className="flex items-center justify-between mb-4">
-                  <span className="hud-badge flex items-center gap-1.5">
-                    {getTravelIcon(activeWaypoint.travelMode)}
-                    {activeWaypoint.travelMode}
-                  </span>
-                  <span className="text-xs font-sans text-gold font-bold tracking-wider">
-                    {activeWaypoint.elevationDisplay}
-                  </span>
-                </div>
+                {/* Imagen Referencial Icónica del Destino Seleccionado */}
+                {activeWaypoint.image && (
+                  <div className="relative h-44 sm:h-48 w-full rounded-2xl overflow-hidden mb-5 border border-gold/25 shadow-md group">
+                    <Image
+                      src={activeWaypoint.image}
+                      alt={activeWaypoint.name}
+                      fill
+                      className="object-cover transition-transform duration-700 group-hover:scale-105"
+                      sizes="(max-width: 1024px) 100vw, 360px"
+                    />
+                    {/* Gradiente cinemático para integración estética */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-obsidian-card via-obsidian-card/25 to-transparent" />
 
-                <h3 className="text-2xl sm:text-3xl font-serif font-medium text-mist">
-                  {activeWaypoint.name}
-                </h3>
-                {activeWaypoint.quechuaName && (
-                  <span className="text-xs font-sans text-gold/90 block mb-3 tracking-wide">
-                    Nombre Ancestral: &ldquo;{activeWaypoint.quechuaName}&rdquo;
-                  </span>
+                    {/* Badges superiores sobre la imagen */}
+                    <div className="absolute top-3 left-3">
+                      <span className="hud-badge flex items-center gap-1.5 bg-obsidian-card/85 backdrop-blur-md px-3 py-1 rounded-full text-xs font-sans border border-gold/30 shadow-sm text-gold">
+                        {getTravelIcon(activeWaypoint.travelMode)}
+                        {activeWaypoint.travelMode}
+                      </span>
+                    </div>
+
+                    <div className="absolute top-3 right-3">
+                      <span className="text-[11px] font-sans text-mist font-bold tracking-wider bg-obsidian-card/85 backdrop-blur-md px-2.5 py-1 rounded-full border border-gold/30 shadow-sm">
+                        {activeWaypoint.elevationDisplay}
+                      </span>
+                    </div>
+
+                    {/* Nombre Ancestral en la base de la imagen */}
+                    {activeWaypoint.quechuaName && (
+                      <div className="absolute bottom-2.5 left-3 right-3 flex items-center justify-between text-[11px] font-sans text-gold/90 font-medium drop-shadow-sm">
+                        <span className="truncate">✦ &ldquo;{activeWaypoint.quechuaName}&rdquo;</span>
+                        <span className="text-[10px] text-mist/75 font-mono">{activeWaypoint.elevationMeters}m</span>
+                      </div>
+                    )}
+                  </div>
                 )}
 
-                <p className="text-sm text-mist/80 font-sans leading-relaxed mb-6">
+                <div className="flex items-center justify-between mb-3">
+                  <h3 className="text-2xl sm:text-3xl font-serif font-medium text-mist">
+                    {activeWaypoint.name}
+                  </h3>
+                  {!activeWaypoint.image && (
+                    <span className="hud-badge flex items-center gap-1.5">
+                      {getTravelIcon(activeWaypoint.travelMode)}
+                      {activeWaypoint.travelMode}
+                    </span>
+                  )}
+                </div>
+
+                <p className="text-sm text-mist/80 font-sans leading-relaxed mb-5">
                   {activeWaypoint.description}
                 </p>
 
-                <div className="p-4 rounded-2xl bg-obsidian-light/60 border border-gold/15 mb-6">
+                <div className="p-4 rounded-2xl bg-obsidian-light/60 border border-gold/15 mb-5">
                   <span className="text-[10px] font-sans font-medium text-gold tracking-widest uppercase block mb-1">
                     HITO CLAVE DE LA EXPEDICIÓN
                   </span>
@@ -608,7 +657,7 @@ export default function InteractiveMap() {
                 </div>
               </div>
 
-              <div className="space-y-3 pt-4 border-t border-white/10 text-xs font-sans">
+              <div className="space-y-2.5 pt-3 border-t border-white/10 text-xs font-sans">
                 <div className="flex items-center justify-between text-mist/70">
                   <span className="flex items-center gap-1.5">
                     <Clock className="w-3.5 h-3.5 text-gold" /> Tiempo Estimado
@@ -627,7 +676,7 @@ export default function InteractiveMap() {
                   <span className="flex items-center gap-1.5">
                     <Compass className="w-3.5 h-3.5 text-gold" /> Coordenadas GPS
                   </span>
-                  <span className="text-mist/90">{activeWaypoint.coordinates.lat.toFixed(4)}°, {activeWaypoint.coordinates.lng.toFixed(4)}°</span>
+                  <span className="text-mist/90 font-mono text-[11px]">{activeWaypoint.coordinates.lat.toFixed(4)}°, {activeWaypoint.coordinates.lng.toFixed(4)}°</span>
                 </div>
               </div>
             </div>
@@ -640,14 +689,17 @@ export default function InteractiveMap() {
                   type="button"
                   onClick={() => setActiveWaypointId(wp.id)}
                   data-cursor={wp.name.split(' ')[0].toUpperCase()}
-                  className={`p-3 rounded-2xl text-left text-xs font-sans transition-all border ${
+                  className={`p-3 rounded-2xl text-left text-xs font-sans transition-all border cursor-pointer ${
                     wp.id === activeWaypointId
-                      ? 'bg-gold/20 border-gold text-mist font-semibold shadow-gold-glow'
-                      : 'bg-obsidian-card/70 border-white/5 text-mist/60 hover:border-gold/30 hover:text-mist'
+                      ? 'bg-gold/20 border-gold text-mist font-semibold shadow-gold-glow ring-1 ring-gold/40'
+                      : 'bg-obsidian-card/70 border-white/5 text-mist/60 hover:border-gold/30 hover:text-mist hover:bg-gold/5'
                   }`}
                 >
-                  <span className="block truncate font-medium">{wp.name}</span>
-                  <span className="text-[10px] text-gold/80 block mt-0.5 tracking-wider">{wp.elevationDisplay}</span>
+                  <div className="flex items-center justify-between mb-1">
+                    <span className={`w-2 h-2 rounded-full ${wp.id === activeWaypointId ? 'bg-gold animate-pulse' : 'bg-mist/30'}`} />
+                    <span className="text-[10px] text-gold/80 font-mono tracking-wider">{wp.elevationDisplay}</span>
+                  </div>
+                  <span className="block truncate font-medium text-mist">{wp.name}</span>
                 </button>
               ))}
             </div>
