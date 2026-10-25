@@ -22,39 +22,56 @@ const dmSans = DM_Sans({
   weight: ['300', '400', '500', '600', '700'],
 });
 
+const siteUrl = 'https://qorikancha-cusco-luxury-tourism.vercel.app';
+
 export const metadata: Metadata = {
-  title: `${cuscoConfig.brand.name} | ${cuscoConfig.destination.name} Luxury Expeditions`,
+  metadataBase: new URL(siteUrl),
+  title: {
+    default: `${cuscoConfig.brand.name} | ${cuscoConfig.destination.name} Luxury Expeditions`,
+    template: `%s | ${cuscoConfig.brand.name}`,
+  },
   description: `${cuscoConfig.destination.tagline}. ${cuscoConfig.destination.subtagline}`,
   keywords: [
     'Cusco Luxury Tours',
     'Machu Picchu Private Expeditions',
-    'Salkantay Sky Domes',
-    'Camino Inca VIP',
+    'Salkantay Sky Domes Glamping',
+    'Camino Inca Clásico VIP',
     'Valle Sagrado de los Incas',
-    'Turismo de Lujo Peru',
+    'Turismo de Ultralujo Peru',
+    'Belmond Hiram Bingham Luxury',
   ],
   authors: [{ name: cuscoConfig.brand.name }],
   creator: cuscoConfig.brand.name,
+  alternates: {
+    canonical: siteUrl,
+    languages: {
+      'es-PE': siteUrl,
+      'en-US': siteUrl,
+      'x-default': siteUrl,
+    },
+  },
   openGraph: {
     type: 'website',
     locale: 'es_PE',
-    url: 'https://cusco-luxury-expeditions.com',
-    title: `${cuscoConfig.brand.name} — ${cuscoConfig.destination.tagline}`,
+    url: siteUrl,
+    title: `${cuscoConfig.brand.name} | ${cuscoConfig.destination.tagline}`,
     description: cuscoConfig.destination.subtagline,
     siteName: cuscoConfig.brand.name,
     images: [
       {
-        url: 'https://images.unsplash.com/photo-1526392060635-9d6019884377?q=80&w=1200&auto=format&fit=crop',
+        url: `${siteUrl}/images/hero-cusco.webp`,
         width: 1200,
         height: 630,
-        alt: `${cuscoConfig.brand.name} - Machu Picchu Amanecer Sagrado`,
+        type: 'image/webp',
+        alt: `${cuscoConfig.brand.name} - Plaza de Armas del Cusco & Expediciones Privadas`,
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: `${cuscoConfig.brand.name} — ${cuscoConfig.destination.name}`,
+    title: `${cuscoConfig.brand.name} | ${cuscoConfig.destination.tagline}`,
     description: cuscoConfig.destination.subtagline,
+    images: [`${siteUrl}/images/hero-cusco.webp`],
   },
 };
 
@@ -65,26 +82,65 @@ export default function RootLayout({
 }>) {
   const jsonLd = {
     '@context': 'https://schema.org',
-    '@type': 'TravelAgency',
-    name: cuscoConfig.brand.name,
-    description: cuscoConfig.destination.subtagline,
-    url: 'https://cusco-luxury-expeditions.com',
-    telephone: cuscoConfig.concierge.displayPhone,
-    email: cuscoConfig.concierge.email,
-    address: {
-      '@type': 'PostalAddress',
-      streetAddress: 'Portal de Panes 123, Plaza de Armas',
-      addressLocality: 'Cusco',
-      addressRegion: 'Cusco',
-      addressCountry: 'PE',
-    },
-    geo: {
-      '@type': 'GeoCoordinates',
-      latitude: cuscoConfig.destination.coordinates.lat,
-      longitude: cuscoConfig.destination.coordinates.lng,
-    },
-    priceRange: '$$$$',
-    openingHours: 'Mo-Su 00:00-23:59',
+    '@graph': [
+      {
+        '@type': 'TravelAgency',
+        '@id': `${siteUrl}/#agency`,
+        name: cuscoConfig.brand.name,
+        legalName: cuscoConfig.legal.legalName,
+        description: cuscoConfig.destination.subtagline,
+        url: siteUrl,
+        telephone: cuscoConfig.concierge.displayPhone,
+        email: cuscoConfig.concierge.email,
+        address: {
+          '@type': 'PostalAddress',
+          streetAddress: cuscoConfig.legal.address,
+          addressLocality: 'Cusco',
+          addressRegion: 'Cusco',
+          postalCode: '08002',
+          addressCountry: 'PE',
+        },
+        geo: {
+          '@type': 'GeoCoordinates',
+          latitude: cuscoConfig.destination.coordinates.lat,
+          longitude: cuscoConfig.destination.coordinates.lng,
+        },
+        priceRange: '$$$$',
+        openingHours: 'Mo-Su 07:00-22:00',
+        sameAs: [
+          'https://github.com/MFC224/qorikancha-cusco-luxury-tourism',
+        ],
+      },
+      {
+        '@type': 'ItemList',
+        name: 'Expediciones Privadas de Autor en Cusco',
+        itemListElement: cuscoConfig.expeditions.map((exp, idx) => ({
+          '@type': 'TouristTrip',
+          position: idx + 1,
+          name: exp.title,
+          description: exp.summary,
+          touristType: ['LuxuryTraveler', 'AdventureTraveler'],
+          offers: {
+            '@type': 'Offer',
+            price: exp.pricePerPerson.replace(/[^0-9]/g, ''),
+            priceCurrency: 'USD',
+            availability: 'https://schema.org/InStock',
+            validFrom: '2026-01-01',
+          },
+        })),
+      },
+      {
+        '@type': 'FAQPage',
+        mainEntity: cuscoConfig.faqs.map((f) => ({
+          '@type': 'Question',
+          name: f.question,
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: f.answer,
+          },
+        })),
+      },
+    ],
   };
 
   return (

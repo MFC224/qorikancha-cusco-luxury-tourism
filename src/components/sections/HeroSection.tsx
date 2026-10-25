@@ -101,7 +101,7 @@ export default function HeroSection() {
           alt="Paisaje Monumental de los Andes de Cusco"
           fill
           priority
-          sizes="100vw"
+          sizes="(max-width: 1280px) 100vw, 1920px"
           className="object-cover object-center"
         />
         {/* Máscara de Viñeta y Gradiente de Cine */}

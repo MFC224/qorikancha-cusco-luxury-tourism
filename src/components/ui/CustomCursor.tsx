@@ -13,14 +13,15 @@ export default function CustomCursor() {
   const ringRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    // 1. Detectar si es dispositivo táctil (smartphones, tablets)
-    const checkTouch = () => {
+    // 1. Detectar si es dispositivo táctil o si el usuario prefiere movimiento reducido
+    const checkTouchOrReducedMotion = () => {
       const isCoarse = window.matchMedia('(pointer: coarse)').matches;
       const hasTouch = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
-      return isCoarse || hasTouch;
+      const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      return isCoarse || hasTouch || prefersReduced;
     };
 
-    if (checkTouch()) {
+    if (checkTouchOrReducedMotion()) {
       setIsTouchDevice(true);
       return;
     }

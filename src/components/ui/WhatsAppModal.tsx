@@ -62,16 +62,26 @@ export default function WhatsAppModal({
   if (!isOpen) return null;
 
   const monthOptions = [
-    'Próximos 30 días (Salida Express)',
-    'Mayo - Octubre (Temporada Seca)',
-    'Noviembre - Abril (Época Andina Mística)',
-    'Fin de Año / Fiestas Especiales',
+    'Mayo - Octubre (Temporada Seca y Soleada)',
+    'Noviembre - Abril (Temporada de Valles Verdes)',
+    'Próximas semanas (Salida Inmediata)',
+    'Fin de Año / Festividades Especiales',
   ];
 
+  // Formateo elegante de viajeros
+  const guestLabel =
+    guests === 1
+      ? '1 persona (viaje individual)'
+      : guests === 2
+      ? '2 personas (pareja)'
+      : `${guests} personas (familia / grupo privado)`;
+
   // Generación en vivo del mensaje preformateado
-  const generatedMessage = `¡Hola Qorikancha Expeditions! Deseo cotizar la expedición privada *"${selectedTourTitle}"* para ${guests} persona${
-    guests > 1 ? 's' : ''
-  } en ${selectedMonth}. ¿Tienen disponibilidad y asesoría de aclimatación?`;
+  const generatedMessage = `Hola Qorikancha Concierge. Deseo consultar disponibilidad y cotizar la expedición privada "${selectedTourTitle}".
+Detalles:
+• Viajeros: ${guestLabel}
+• Temporada tentativa: ${selectedMonth}
+Me gustaría recibir el itinerario detallado, opciones de hotel y recomendaciones de aclimatación. Muchas gracias.`;
 
   const finalWhatsAppUrl = `https://wa.me/${concierge.whatsappNumber}?text=${encodeURIComponent(
     generatedMessage

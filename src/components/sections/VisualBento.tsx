@@ -284,7 +284,7 @@ function GastronomyCollageCard({ item }: { item: BentoExperience }) {
 
           <span className="hud-badge bg-obsidian/90 backdrop-blur-md text-[10px] sm:text-xs flex items-center gap-1.5 border-gold/40 text-gold">
             <span className="w-2 h-2 rounded-full bg-gold animate-ping" />
-            COLLAGE ANIMADO · 4 TIEMPOS
+            MARIDAJE DE TERROIR · 4 TIEMPOS
           </span>
         </div>
 
@@ -462,7 +462,7 @@ export default function VisualBento() {
           </div>
 
           <div className="hud-badge text-gold self-start sm:self-end">
-            3D TILT MATRIX · 4 EJES
+            EXPERIENCIAS CURADAS DE AUTOR
           </div>
         </div>
 

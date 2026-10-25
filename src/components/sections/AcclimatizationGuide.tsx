@@ -237,17 +237,17 @@ export default function AcclimatizationGuide() {
 
           <div className="glass-card p-6 rounded-2xl border border-gold/15">
             <Flame className="w-6 h-6 text-gold mb-3" />
-            <h5 className="font-serif text-base text-mist font-semibold mb-2">Alquimia Herbolaria Andina</h5>
+            <h5 className="font-serif text-base text-mist font-semibold mb-2">Herbolaria Tradicional Andina</h5>
             <p className="text-xs text-mist/70 leading-relaxed font-sans">
-              El mate de coca matutino estimula la circulación coronaria; el de muña nocturno armoniza la digestión en cotas altas.
+              La infusión tradicional de hojas de coca mitiga la fatiga y aporta confort físico matutino; la muña silvestre favorece el bienestar digestivo en altitud según la tradición andina y directrices de medicina de montaña.
             </p>
           </div>
 
           <div className="glass-card p-6 rounded-2xl border border-gold/15">
             <ShieldCheck className="w-6 h-6 text-gold mb-3" />
-            <h5 className="font-serif text-base text-mist font-semibold mb-2">Respaldo Médico 24/7</h5>
+            <h5 className="font-serif text-base text-mist font-semibold mb-2">Respaldo WFR & Oxigenoterapia</h5>
             <p className="text-xs text-mist/70 leading-relaxed font-sans">
-              Cada expedicionario cuenta con oximetría diaria, concentradores de oxígeno en suites y médico disponible ante cualquier síntoma.
+              Monitoreo diario de oximetría de pulso por guías certificados Wilderness Medical First Responder (WFR), tanques de oxígeno medicinal de flujo continuo a bordo y protocolos preventivos de altitud.
             </p>
           </div>
         </div>

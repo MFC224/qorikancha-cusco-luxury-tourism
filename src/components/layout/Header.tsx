@@ -26,13 +26,17 @@ export default function Header() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const [lang, setLang] = useState<'es' | 'en'>('es');
+
   const navLinks = [
-    { label: 'Expediciones', href: '#expediciones', cursor: 'DESCUBRIR' },
-    { label: 'Ruta Sagrada', href: '#mapa', cursor: 'VER MAPA' },
-    { label: 'Aclimatación', href: '#aclimatacion', cursor: 'MÉDICA' },
-    { label: 'Terroir & Spa', href: '#bento', cursor: 'VIVENCIAL' },
-    { label: 'Reseñas', href: '#testimonios', cursor: '4.96 ESTRELLAS' },
-    { label: 'FAQ', href: '#faq', cursor: 'CERTEZA' },
+    { label: lang === 'es' ? 'Expediciones' : 'Expeditions', href: '#expediciones', cursor: 'EXPLORAR' },
+    { label: lang === 'es' ? 'Ruta' : 'Route', href: '#mapa', cursor: 'VER MAPA' },
+    { label: lang === 'es' ? 'Aclimatación' : 'Altitude', href: '#aclimatacion', cursor: 'MÉDICA' },
+    { label: lang === 'es' ? 'Terroir' : 'Terroir', href: '#bento', cursor: 'VIVENCIAL' },
+    { label: lang === 'es' ? 'Bitácora' : 'Stories', href: '#testimonios', cursor: 'HUESPEDES' },
+    { label: lang === 'es' ? 'Nosotros' : 'About Us', href: '#nosotros', cursor: 'EQUIPO' },
+    { label: lang === 'es' ? 'FAQ' : 'FAQ', href: '#faq', cursor: 'CERTEZA' },
+    { label: lang === 'es' ? 'Planificar' : 'Inquire', href: '#contacto', cursor: 'BESPOKE' },
   ];
 
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
@@ -83,8 +87,30 @@ export default function Header() {
             ))}
           </nav>
 
-          {/* Right Action: Telemetry + VIP WhatsApp Roll Button */}
-          <div className="hidden sm:flex items-center space-x-4">
+          {/* Right Action: Language Switcher + Telemetry + VIP WhatsApp Roll Button */}
+          <div className="hidden sm:flex items-center space-x-3">
+            {/* Selector Bilingüe ES / EN */}
+            <div className="flex items-center rounded-full border border-gold/30 bg-obsidian-card/60 p-0.5 text-[10px] font-sans font-bold tracking-wider">
+              <button
+                type="button"
+                onClick={() => setLang('es')}
+                className={`px-2 py-0.5 rounded-full transition-colors ${
+                  lang === 'es' ? 'bg-gold text-obsidian' : 'text-mist/60 hover:text-gold'
+                }`}
+              >
+                ES
+              </button>
+              <button
+                type="button"
+                onClick={() => setLang('en')}
+                className={`px-2 py-0.5 rounded-full transition-colors ${
+                  lang === 'en' ? 'bg-gold text-obsidian' : 'text-mist/60 hover:text-gold'
+                }`}
+              >
+                EN
+              </button>
+            </div>
+
             <div className="hidden lg:flex items-center text-[11px] font-sans font-medium tracking-wider text-mist/60 border border-white/10 px-3 py-1.5 rounded-full bg-obsidian-card/40">
               <Compass className="w-3.5 h-3.5 text-gold mr-1.5" />
               <span>{destination.coordinates.formatted}</span>

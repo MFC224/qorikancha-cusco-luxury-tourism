@@ -7,15 +7,11 @@ import InteractiveMap from '@/components/sections/InteractiveMap';
 import AcclimatizationGuide from '@/components/sections/AcclimatizationGuide';
 import VisualBento from '@/components/sections/VisualBento';
 import TestimonialsSection from '@/components/sections/TestimonialsSection';
+import AboutTeamSection from '@/components/sections/AboutTeamSection';
 import FAQSection from '@/components/sections/FAQSection';
+import BespokeInquirySection from '@/components/sections/BespokeInquirySection';
 import WhatsAppModal from '@/components/ui/WhatsAppModal';
 import FloatingBar from '@/components/ui/FloatingBar';
-import {
-  Sparkles,
-  MessageSquare,
-  Compass,
-  Navigation,
-} from 'lucide-react';
 
 export default function Page() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -28,10 +24,10 @@ export default function Page() {
 
   return (
     <main className="min-h-screen bg-obsidian text-mist selection:bg-gold selection:text-obsidian">
-      {/* 1. HERO CINEMÁTICO 100vh CON MÁSCARA TIPOGRÁFICA & HUD DE TELEMETRÍA */}
+      {/* 1. HERO CINEMÁTICO CON MÁSCARA TIPOGRÁFICA & TELEMETRÍA ANDINA */}
       <HeroSection />
 
-      {/* 2. APILAMIENTO 3D CINEMÁTICO DE TARJETAS 100vh (CinematicCardStack) */}
+      {/* 2. APILAMIENTO 3D CINEMÁTICO DE TARJETAS (5 GRANDES EXPEDICIONES) */}
       <CinematicCardStack />
 
       {/* 3. CARTOGRAFÍA SAGRADA INTERACTIVA & PERFIL ALTIMÉTRICO */}
@@ -40,123 +36,30 @@ export default function Page() {
       {/* 4. GUÍA MÉDICA DE ACLIMATACIÓN & SIMULADOR DE OXÍGENO */}
       <AcclimatizationGuide />
 
-      {/* 5. RETÍCULA BENTO ASIMÉTRICA CON MICRO-INCLINACIÓN 3D TILT */}
+      {/* 5. RETÍCULA BENTO ASIMÉTRICA: TERROIR, COSMOS, TREN & SPA */}
       <VisualBento />
 
-      {/* 6. TESTIMONIOS VERIFICADOS & SOCIAL PROOF DE ALTA GAMA (TripAdvisor 4.96★) */}
+      {/* 6. RELATOS DE VIAJE & CUADERNO DE BITÁCORA */}
       <TestimonialsSection />
 
-      {/* 7. RESOLUCIÓN DE DUDAS CRÍTICAS & TRANSPARENCIA TOTAL (FAQ ACCORDION) */}
+      {/* 7. QUIÉNES SOMOS & MAESTRÍA ANDINA (EQUIPO ARQUEOLÓGICO Y COMUNIDADES) */}
+      <AboutTeamSection />
+
+      {/* 8. RESOLUCIÓN DE DUDAS CRÍTICAS, PERMISOS & POLÍTICAS (FAQ) */}
       <FAQSection />
 
-      {/* 8. LABORATORIO DE MICROINTERACCIONES & CURSOR CONTEXTUAL */}
-      <section id="interacciones" className="px-6 py-20 border-t border-gold/15 bg-obsidian-light/40">
-        <div className="max-w-7xl mx-auto">
-          <div className="mb-10">
-            <span className="text-xs font-sans font-medium text-gold tracking-super-wide uppercase">
-              {'// MICROINTERACCIONES & CURSOR CONTEXTUAL'}
-            </span>
-            <h2 className="text-2xl sm:text-4xl font-serif text-mist mt-2">
-              Telemetría Táctil & Hover Contextual
-            </h2>
-            <p className="text-mist/60 text-sm mt-2 max-w-2xl font-sans">
-              Prueba el comportamiento del cursor magnético sobre los siguientes módulos interactivos. Cada bloque activa etiquetas dinámicas aceleradas por hardware con <code className="text-gold font-sans font-semibold text-xs">gsap.quickTo</code>.
-            </p>
-          </div>
+      {/* 9. FORMULARIO FORMAL DE CONSULTA & DISEÑO DE EXPEDICIÓN BESPOKE */}
+      <BespokeInquirySection />
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            <div
-              data-cursor="SALKANTAY"
-              onClick={() => handleOpenModal('salkantay-sky-domes')}
-              className="glass-card rounded-2xl p-6 border border-gold/20 flex flex-col justify-between h-52 cursor-pointer glass-card-hover group"
-            >
-              <div className="flex items-center justify-between">
-                <span className="hud-badge">HUD 01</span>
-                <Sparkles className="w-4 h-4 text-gold group-hover:rotate-45 transition-transform" />
-              </div>
-              <div>
-                <h3 className="font-serif text-lg text-mist group-hover:text-gold transition-colors">
-                  Apu Salkantay
-                </h3>
-                <p className="text-xs text-mist/60 font-sans mt-1">
-                  data-cursor=&ldquo;SALKANTAY&rdquo;
-                </p>
-              </div>
-              <span className="text-xs text-gold/80 font-sans font-medium">Toca para cotizar ↗</span>
-            </div>
-
-            <div
-              data-cursor="4,630M"
-              onClick={() => handleOpenModal('salkantay-sky-domes')}
-              className="glass-card rounded-2xl p-6 border border-gold/20 flex flex-col justify-between h-52 cursor-pointer glass-card-hover group"
-            >
-              <div className="flex items-center justify-between">
-                <span className="hud-badge">HUD 02</span>
-                <Compass className="w-4 h-4 text-gold group-hover:rotate-45 transition-transform" />
-              </div>
-              <div>
-                <h3 className="font-serif text-lg text-mist group-hover:text-gold transition-colors">
-                  Altitud Extrema
-                </h3>
-                <p className="text-xs text-mist/60 font-sans mt-1">
-                  data-cursor=&ldquo;4,630M&rdquo;
-                </p>
-              </div>
-              <span className="text-xs text-gold/80 font-sans font-medium">Toca para cotizar ↗</span>
-            </div>
-
-            <div
-              data-cursor="CONCIERGE"
-              onClick={() => handleOpenModal()}
-              className="glass-card rounded-2xl p-6 border border-gold/20 flex flex-col justify-between h-52 cursor-pointer glass-card-hover group"
-            >
-              <div className="flex items-center justify-between">
-                <span className="hud-badge">HUD 03</span>
-                <MessageSquare className="w-4 h-4 text-gold group-hover:scale-110 transition-transform" />
-              </div>
-              <div>
-                <h3 className="font-serif text-lg text-mist group-hover:text-gold transition-colors">
-                  Canal VIP Concierge
-                </h3>
-                <p className="text-xs text-mist/60 font-sans mt-1">
-                  data-cursor=&ldquo;CONCIERGE&rdquo;
-                </p>
-              </div>
-              <span className="text-xs text-gold/80 font-sans font-medium">Toca para abrir modal ↗</span>
-            </div>
-
-            <div
-              data-cursor="VER MAPA"
-              onClick={() => handleOpenModal('machu-picchu-sunrise')}
-              className="glass-card rounded-2xl p-6 border border-gold/20 flex flex-col justify-between h-52 cursor-pointer glass-card-hover group"
-            >
-              <div className="flex items-center justify-between">
-                <span className="hud-badge">HUD 04</span>
-                <Navigation className="w-4 h-4 text-gold group-hover:translate-x-1 transition-transform" />
-              </div>
-              <div>
-                <h3 className="font-serif text-lg text-mist group-hover:text-gold transition-colors">
-                  Geografía Sagrada
-                </h3>
-                <p className="text-xs text-mist/60 font-sans mt-1">
-                  data-cursor=&ldquo;VER MAPA&rdquo;
-                </p>
-              </div>
-              <span className="text-xs text-gold/80 font-sans font-medium">Toca para cotizar ↗</span>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* 7. BARRA FLOTANTE FIJA POST-HERO (Aparece tras 70% de scroll) */}
-      <FloatingBar onOpenModal={() => handleOpenModal()} />
-
-      {/* 8. MODAL INTERACTIVO EXPRESS DE CONVERSIÓN WHATSAPP VIP */}
+      {/* 10. MODAL DE ASESORÍA CONCIERGE WHATSAPP & EMAIL */}
       <WhatsAppModal
         isOpen={isModalOpen}
         onClose={() => setIsModalOpen(false)}
         defaultTourId={modalTourId}
       />
+
+      {/* 11. BARRA FLOTANTE CON RESUMEN DE NAVEGACIÓN & ACCESO DIRECTO */}
+      <FloatingBar onOpenModal={handleOpenModal} />
     </main>
   );
 }

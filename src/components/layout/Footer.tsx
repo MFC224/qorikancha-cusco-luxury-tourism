@@ -120,7 +120,7 @@ export default function Footer() {
                   }}
                   className="hover:text-gold transition-colors block"
                 >
-                  Valle Sagrado & Ausangate
+                  Valle Sagrado: Moray & Maras
                 </a>
               </li>
               <li>
@@ -153,7 +153,7 @@ export default function Footer() {
                   }}
                   className="hover:text-gold transition-colors block"
                 >
-                  Cartografía Sagrada & Altimetría
+                  Cartografía & Altimetría
                 </a>
               </li>
               <li>
@@ -189,7 +189,19 @@ export default function Footer() {
                   }}
                   className="hover:text-gold transition-colors block"
                 >
-                  Reseñas Verificadas (4.96★)
+                  Bitácoras de Huéspedes
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#nosotros"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    scrollTo('#nosotros');
+                  }}
+                  className="hover:text-gold transition-colors block text-gold font-medium"
+                >
+                  Quiénes Somos & Maestría Andina
                 </a>
               </li>
               <li>
@@ -206,12 +218,14 @@ export default function Footer() {
               </li>
               <li>
                 <a
-                  href={concierge.generateWhatsAppUrl()}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href="#contacto"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    scrollTo('#contacto');
+                  }}
                   className="hover:text-gold transition-colors block text-gold font-medium"
                 >
-                  Canal VIP de WhatsApp Directo
+                  Planificar Expedición a Medida
                 </a>
               </li>
             </ul>

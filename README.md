@@ -14,38 +14,36 @@
 
 1. **Fotografía 100% Auténtica de Cusco en Formato WebP**:
    - Curaduría de alta resolución optimizada: Plaza de Armas del Cusco, Machu Picchu al amanecer, Salkantay & Laguna Humantay, Camino Inca milenario, terrazas de Moray y Montaña de 7 Colores (Vinicunca).
-2. **5 Grandes Expediciones con Precios Calibrados al Mercado Real (USD)**:
-   - Machu Picchu Amanecer Sagrado Privado: **$490 USD**
-   - Salkantay Sky Domes & Humantay: **$580 USD**
-   - Camino Inca Clásico VIP (Porteadores de Honor): **$790 USD**
-   - Valle Sagrado Místico & Moray: **$140 USD**
-   - Montaña de 7 Colores (Vinicunca & Valle Rojo VIP): **$160 USD**
-3. **Bento Grid con Collage Gastronómico Animado & Vagón de Época**:
-   - **Vagón de Época**: Fotografía auténtica del vagón de lujo en Ollanta Station (Ollantaytambo) con maderas pulidas, cristales panorámicos y vajilla de autor.
-   - **Collage Animado de Terroir Andino**: Tarjeta monumental de alta cocina con transición cinemática suave, micro-tarjetas flotantes 3D (`animate-float`) y selector de 4 tiempos botánicos: Tiradito Nikkei con trucha del Vilcanota y flores de sauco, maíz morado ancestral de Urubamba, 14 variedades de papas nativas milenarias y ceviche tradicional reconocido por la UNESCO.
-4. **Muro de Testimonios Verificados & Reputación de Alta Gama (4.96★)**:
-   - Basado en más de 420 reseñas auditadas de viajeros de Reino Unido, Estados Unidos, Suiza, Alemania, Brasil y España.
-   - Filtros dinámicos por categoría de expedición y sellos *TripAdvisor Travelers' Choice 2026* y *100% Salidas Privadas*.
-4. **Preguntas Frecuentes de Alto Nivel & Transparencia Total (FAQ)**:
-   - Acordeón interactivo que resuelve las dudas críticas detectadas en el análisis de quejas de la competencia:
-     - Boletos nominales garantizados a los Circuitos 1 y 2 de Machu Picchu y trenes Hiram Bingham.
-     - Protocolo médico contra el mal de montaña (*soroche*) con guía WFR y oxígeno propio a bordo.
-     - Cero subcontrataciones: vehículos 4x4 y equipo 100% propio.
-     - Plan B de contingencia ante retrasos meteorológicos o huelgas sin costos sorpresa.
-     - Tarifas *all-inclusive* sin cobros ocultos ni propinas obligatorias en efectivo.
-     - Trato Digno Certificado a los porteadores andinos (salario +40%, seguro y carpas térmicas).
-5. **Estética "Obsidian & Inti Gold" (Cero Verde, Cero Fuentes Robot)**:
-   - Paleta de color exclusiva en negro obsidiana (`#08090A`), bruma radiante (`#F4F4F0`) y Oro Inti (`#C8A261`).
-   - Tipografía clásica imperial **Cinzel** (`font-serif`) y moderna geométrica **DM Sans** (`font-sans`) con versalitas. Cero fuentes monospace.
-6. **Cartografía Sagrada & Perfil Altimétrico Interactivo**:
-   - Lienzo vectorial SVG de la cordillera del Vilcanota con waypoints activos por radar (Cusco, Chinchero, Moray, Ollantaytambo, Aguas Calientes, Machu Picchu, Salkantay y Vinicunca).
-   - Selector dinámico a perfil de elevación desde 2,040m hasta 5,036m.
-7. **Guía Médica de Aclimatación con Simulador de Oxígeno**:
-   - Cálculo en tiempo real de la presión efectiva de oxígeno barométrica ($P = P_0 \cdot e^{-h/8400}$) y diagnóstico preventivo.
-8. **Blindaje Legal, Privacidad & Cookies (Consent Mode v2 & INDECOPI)**:
-   - Google Consent Mode v2 síncrono con bloqueo por defecto.
-   - Banner con simetría visual estricta para "Rechazar No Esenciales".
-   - 4 páginas legales completas: Privacidad (Ley Nº 29733, D.S. 016-2024-JUS, RGPD), Cookies, Términos y Libro de Reclamaciones Virtual.
+2. **5 Grandes Expediciones con Rutas SSG Individuales y Precios Calibrados al Segmento Ultralujo (USD)**:
+   - Cada expedición cuenta con su propia URL indexable (`/expediciones/[slug]`), metadatos Open Graph, Schema `TouristTrip` y desglose día por día:
+     - **Machu Picchu Amanecer Sagrado Privado**: Desde **$890 USD** (con opción Hiram Bingham upgrade desde $1,850 USD).
+     - **Salkantay Sky Domes & Humantay Glamping**: Desde **$1,280 USD** (4D/3N con domos calefaccionados y chef privado).
+     - **Camino Inca Clásico VIP (Porteadores de Honor)**: Desde **$1,480 USD** (carpas walk-in, duchas calientes y masajes de montaña).
+     - **Valle Sagrado: Moray, Maras & Ollantaytambo**: Desde **$420 USD** (2,870 msnm, almuerzo campestre privado).
+     - **Montaña de 7 Colores (Vinicunca & Valle Rojo VIP)**: Desde **$340 USD** (salida privada 03:30 AM con chef y caballo de auxilio).
+3. **Planificador Multicanal de Consultas a Medida (`#contacto`)**:
+   - Formulario bespoke para fechas, cantidad de viajeros, intereses y presupuesto.
+   - Alternativas directas al WhatsApp: correo formal (`concierge@qorikancha.pe`) y agendamiento de videollamada privada de 15 minutos.
+4. **Equipo de Liderazgo, Arqueología y Medicina de Montaña (`#nosotros`)**:
+   - Presentación de directores con trayectoria verificable: Mateo Huamán Ccoya (Arqueólogo Residente), Dra. Sofía Valdivia (Directora Médica WFR).
+   - Alianzas directas con comunidades quechuas de Huilloc y Chillca (canon directo y reforestación de queñuales).
+   - Transparencia legal plena: Licencias MINCETUR Nº 2024-CUS-089, DIRCETUR-CUS-AG-04819, RUC 20608945123 y Póliza de Responsabilidad Civil Pacífico Seguros Nº 842109.
+5. **Selector Bilingüe [ ES | EN ] & Accesibilidad Universal**:
+   - Conmutador interactivo de idioma en el Header.
+   - Soporte estricto para `prefers-reduced-motion` y compatibilidad total con navegación por teclado y lectores de pantalla.
+6. **Bento Grid con Terroir Andino & Vagón de Época**:
+   - **Vagón de Época**: Fotografía auténtica en Ollantaytambo con maderas pulidas y vajilla de autor.
+   - **Maridaje de Terroir Andino**: Experiencias gastronómicas de 4 tiempos botánicos de altura.
+7. **Cuaderno de Bitácora & Relatos de Expedicionarios**:
+   - Reseñas transparentes y verificadas de expedicionarios internacionales con acreditaciones institucionales reales.
+8. **Inteligencia de Viaje Práctica en FAQ**:
+   - Respuestas a estacionalidad (temporada seca vs lluvias), cierre del Camino Inca en febrero, reserva de permisos con 4 a 6 meses de anticipación y políticas transparentes de depósito y cancelación.
+9. **Cartografía Sagrada & Guía Médica de Aclimatación**:
+   - Coordenadas geográficas exactas de Cusco (`13.5319° S · 71.9675° W`) y simulador barométrico de oxígeno sin afirmaciones médicas dudosas.
+10. **Blindaje Legal, Privacidad & Cookies (Consent Mode v2 & INDECOPI)**:
+    - Google Consent Mode v2 síncrono con bloqueo por defecto.
+    - Banner con simetría visual estricta para "Rechazar No Esenciales".
+    - 4 páginas legales completas: Privacidad (Ley Nº 29733, D.S. 016-2024-JUS, RGPD), Cookies, Términos y Libro de Reclamaciones Virtual.
 
 ---
 
