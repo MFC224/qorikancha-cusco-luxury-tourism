@@ -109,13 +109,13 @@ function BentoTiltCard({ item }: BentoTiltCardProps) {
           alt={item.title}
           fill
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-          className="object-cover object-center transition-transform duration-700 group-hover:scale-105"
+          className="object-cover object-center transition-transform duration-700 group-hover:scale-105 saturate-[1.08] contrast-[1.04]"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-obsidian via-obsidian/45 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/65 via-black/20 to-transparent" />
 
         {/* Categoría & Monograma */}
         <div className="absolute top-4 left-4 z-10 flex items-center space-x-2">
-          <span className="hud-badge bg-obsidian/85 backdrop-blur-md flex items-center gap-1.5">
+          <span className="hud-badge bg-black/65 backdrop-blur-md flex items-center gap-1.5 text-[#E0C28A] border-[#C8A261]/40">
             {getBentoIcon(item.id)}
             {item.category}
           </span>
@@ -124,7 +124,7 @@ function BentoTiltCard({ item }: BentoTiltCardProps) {
         {/* Badge Especial */}
         {item.badgeText && (
           <div className="absolute bottom-4 left-4 z-10">
-            <span className="text-xs font-sans font-medium text-gold bg-obsidian/90 backdrop-blur-md px-3 py-1 rounded-full border border-gold/30 tracking-wider uppercase">
+            <span className="text-xs font-sans font-medium text-[#E0C28A] bg-black/75 backdrop-blur-md px-3 py-1 rounded-full border border-[#C8A261]/40 tracking-wider uppercase">
               {item.badgeText}
             </span>
           </div>
@@ -270,20 +270,20 @@ function GastronomyCollageCard({ item }: { item: BentoExperience }) {
         ))}
 
         {/* Gradiente de contraste cinematográfico */}
-        <div className="absolute inset-0 z-10 bg-gradient-to-t from-obsidian via-obsidian/40 to-obsidian/30" />
-        <div className="absolute inset-0 z-10 bg-gradient-to-r from-obsidian/80 via-transparent to-obsidian/40" />
+        <div className="absolute inset-0 z-10 bg-gradient-to-t from-[#08090A]/85 via-[#08090A]/30 to-transparent" />
+        <div className="absolute inset-0 z-10 bg-gradient-to-r from-[#08090A]/75 via-transparent to-[#08090A]/35" />
 
         {/* Cabecera Superior: Badges */}
         <div className="absolute top-4 left-4 right-4 z-20 flex items-center justify-between">
           <div className="flex items-center space-x-2">
-            <span className="hud-badge bg-obsidian/90 backdrop-blur-md flex items-center gap-1.5 border-gold/40">
-              <Utensils className="w-3.5 h-3.5 text-gold" />
+            <span className="hud-badge bg-black/75 backdrop-blur-md flex items-center gap-1.5 border-[#C8A261]/40 text-[#E0C28A]">
+              <Utensils className="w-3.5 h-3.5 text-[#E0C28A]" />
               {item.category}
             </span>
           </div>
 
-          <span className="hud-badge bg-obsidian/90 backdrop-blur-md text-[10px] sm:text-xs flex items-center gap-1.5 border-gold/40 text-gold">
-            <span className="w-2 h-2 rounded-full bg-gold animate-ping" />
+          <span className="hud-badge bg-black/75 backdrop-blur-md text-[10px] sm:text-xs flex items-center gap-1.5 border-[#C8A261]/40 text-[#E0C28A]">
+            <span className="w-2 h-2 rounded-full bg-[#E0C28A] animate-ping" />
             MARIDAJE DE TERROIR · 4 TIEMPOS
           </span>
         </div>
@@ -310,24 +310,24 @@ function GastronomyCollageCard({ item }: { item: BentoExperience }) {
                 }}
                 className={`relative group/thumb flex items-center gap-3 p-1.5 pr-4 rounded-2xl backdrop-blur-md transition-all duration-300 text-left ${
                   isActive
-                    ? 'bg-obsidian/90 border-2 border-gold shadow-gold-glow scale-105'
-                    : 'bg-obsidian/70 border border-gold/25 hover:border-gold/60 hover:bg-obsidian/85 hover:scale-102'
+                    ? 'bg-black/85 border-2 border-[#C8A261] shadow-gold-glow scale-105'
+                    : 'bg-black/65 border border-[#C8A261]/25 hover:border-[#C8A261]/60 hover:bg-black/80 hover:scale-102'
                 } ${animationClass}`}
               >
-                <div className="relative w-12 h-12 rounded-xl overflow-hidden border border-gold/30 shrink-0">
+                <div className="relative w-12 h-12 rounded-xl overflow-hidden border border-[#C8A261]/35 shrink-0">
                   <Image
                     src={dish.image}
                     alt={dish.name}
                     fill
                     sizes="48px"
-                    className="object-cover"
+                    className="object-cover saturate-[1.08]"
                   />
                 </div>
                 <div className="hidden md:block">
-                  <p className="text-[11px] font-serif font-medium text-mist group-hover/thumb:text-gold transition-colors line-clamp-1">
+                  <p className="text-[11px] font-serif font-medium text-white group-hover/thumb:text-[#E0C28A] transition-colors line-clamp-1">
                     {dish.name}
                   </p>
-                  <p className="text-[10px] font-sans text-gold/80 flex items-center gap-1">
+                  <p className="text-[10px] font-sans text-[#E0C28A] flex items-center gap-1">
                     <Compass className="w-2.5 h-2.5" />
                     {dish.elevation}
                   </p>
@@ -338,24 +338,24 @@ function GastronomyCollageCard({ item }: { item: BentoExperience }) {
         </div>
 
         {/* Tarjeta de Información del Plato en Foco (Superpuesta en el Escenario) */}
-        <div className="absolute bottom-4 left-4 right-4 sm:right-auto sm:max-w-md z-20 p-4 rounded-2xl bg-obsidian/85 backdrop-blur-md border border-gold/30 shadow-2xl">
+        <div className="absolute bottom-4 left-4 right-4 sm:right-auto sm:max-w-md z-20 p-4 rounded-2xl bg-black/75 backdrop-blur-md border border-[#C8A261]/35 shadow-2xl">
           <div className="flex items-center gap-2 mb-1">
-            <span className="text-[10px] font-sans font-semibold tracking-wider text-gold uppercase px-2 py-0.5 rounded-full bg-gold/10 border border-gold/30">
+            <span className="text-[10px] font-sans font-semibold tracking-wider text-[#E0C28A] uppercase px-2 py-0.5 rounded-full bg-[#C8A261]/15 border border-[#C8A261]/35">
               {activeDish.badge}
             </span>
-            <span className="text-[11px] font-sans text-mist/60">
+            <span className="text-[11px] font-sans text-white/70">
               {activeDish.elevation}
             </span>
           </div>
-          <h4 className="text-base sm:text-lg font-serif font-medium text-mist">
+          <h4 className="text-base sm:text-lg font-serif font-medium text-white">
             {activeDish.name}
           </h4>
-          <p className="text-xs text-mist/80 font-sans mt-0.5 line-clamp-2">
+          <p className="text-xs text-white/85 font-sans mt-0.5 line-clamp-2">
             {activeDish.subtitle}
           </p>
 
           {/* Indicadores de Progreso / Navegación */}
-          <div className="flex items-center gap-1.5 mt-3 pt-2 border-t border-gold/15">
+          <div className="flex items-center gap-1.5 mt-3 pt-2 border-t border-white/15">
             {collageItems.map((_, idx) => (
               <button
                 key={idx}
@@ -366,12 +366,12 @@ function GastronomyCollageCard({ item }: { item: BentoExperience }) {
                 aria-label={`Ver plato ${idx + 1}`}
                 className={`h-1 rounded-full transition-all duration-300 ${
                   idx === activeIndex
-                    ? 'w-6 bg-gold shadow-gold-glow'
-                    : 'w-2 bg-mist/30 hover:bg-gold/50'
+                    ? 'w-6 bg-[#E0C28A] shadow-gold-glow'
+                    : 'w-2 bg-white/30 hover:bg-[#E0C28A]/50'
                 }`}
               />
             ))}
-            <span className="text-[10px] font-sans text-gold/80 ml-auto">
+            <span className="text-[10px] font-sans text-[#E0C28A] ml-auto">
               0{activeIndex + 1} / 0{collageItems.length}
             </span>
           </div>

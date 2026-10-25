@@ -97,11 +97,11 @@ export default function AboutTeamSection() {
                     alt={member.name}
                     fill
                     sizes="(max-width: 768px) 100vw, 33vw"
-                    className="object-cover object-center group-hover:scale-105 transition-transform duration-700"
+                    className="object-cover object-center group-hover:scale-105 transition-transform duration-700 saturate-[1.05]"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-obsidian via-obsidian/30 to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/65 via-transparent to-transparent" />
                   <div className="absolute bottom-3 left-3 right-3">
-                    <span className="text-[10px] font-sans font-semibold text-gold bg-obsidian/90 backdrop-blur-md px-2.5 py-1 rounded-full border border-gold/30 uppercase tracking-wider block w-fit">
+                    <span className="text-[10px] font-sans font-semibold text-[#E0C28A] bg-black/75 backdrop-blur-md px-2.5 py-1 rounded-full border border-[#C8A261]/35 uppercase tracking-wider block w-fit shadow-sm">
                       {member.credentials}
                     </span>
                   </div>

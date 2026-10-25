@@ -102,18 +102,18 @@ export default function HeroSection() {
           fill
           priority
           sizes="(max-width: 1280px) 100vw, 1920px"
-          className="object-cover object-center"
+          className="object-cover object-center saturate-[1.08] contrast-[1.04]"
         />
-        {/* Máscara de Viñeta y Gradiente de Cine */}
-        <div className="absolute inset-0 bg-gradient-to-t from-obsidian via-obsidian/45 to-obsidian/70" />
-        <div className="absolute inset-0 bg-gradient-to-r from-obsidian/80 via-transparent to-obsidian/50" />
+        {/* Máscara de Viñeta y Gradiente Cinemático: Protege el texto manteniendo colores vivos */}
+        <div className="absolute inset-0 bg-gradient-to-t from-[#08090A]/90 via-[#08090A]/40 to-[#08090A]/60" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#08090A]/80 via-transparent to-[#08090A]/40" />
         <div className="absolute inset-0 bg-radial-glow opacity-80" />
       </div>
 
       {/* Espaciador Superior */}
       <div className="relative z-10 max-w-7xl mx-auto w-full pt-4">
-        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-obsidian/80 border border-gold/30 text-gold text-xs font-sans font-medium tracking-widest uppercase backdrop-blur-md">
-          <Sparkles className="w-3.5 h-3.5 text-gold animate-pulse" />
+        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-black/60 border border-[#C8A261]/40 text-[#E0C28A] text-xs font-sans font-medium tracking-widest uppercase backdrop-blur-md shadow-sm">
+          <Sparkles className="w-3.5 h-3.5 text-[#E0C28A] animate-pulse" />
           {destination.region} · {destination.country}
         </div>
       </div>
@@ -123,7 +123,7 @@ export default function HeroSection() {
         <div className="overflow-hidden pb-1">
           <h1
             ref={textLine1Ref}
-            className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-serif font-medium tracking-tight text-mist leading-[1.05]"
+            className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-serif font-medium tracking-tight text-white leading-[1.05] drop-shadow-[0_2px_4px_rgba(0,0,0,0.6)]"
           >
             Donde el Tiempo
           </h1>
@@ -132,7 +132,7 @@ export default function HeroSection() {
         <div className="overflow-hidden pb-2">
           <h1
             ref={textLine2Ref}
-            className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-serif font-medium tracking-tight text-gold-gradient leading-[1.05]"
+            className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-serif font-medium tracking-tight text-gold-gradient leading-[1.05] drop-shadow-[0_2px_4px_rgba(0,0,0,0.6)]"
           >
             se Rinde ante la Piedra.
           </h1>
@@ -140,7 +140,7 @@ export default function HeroSection() {
 
         <p
           ref={subtitleRef}
-          className="mt-6 text-lg sm:text-2xl text-mist/85 font-sans font-light max-w-2xl leading-relaxed"
+          className="mt-6 text-lg sm:text-2xl text-white/90 font-sans font-light max-w-2xl leading-relaxed drop-shadow-sm"
         >
           {destination.subtagline}
         </p>

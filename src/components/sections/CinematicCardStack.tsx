@@ -155,13 +155,13 @@ export default function CinematicCardStack() {
                 cardRefs.current[index] = el;
               }}
               data-cursor={cursorText}
-              className="sticky top-20 sm:top-24 h-[84vh] sm:h-[88vh] w-full rounded-2xl sm:rounded-3xl overflow-hidden shadow-obsidian-glow border border-gold/25 bg-obsidian-card group transition-shadow duration-500"
+              className="sticky top-20 sm:top-24 h-[84vh] sm:h-[88vh] w-full rounded-2xl sm:rounded-3xl overflow-hidden shadow-obsidian-glow border border-gold/30 bg-[#08090A] group transition-shadow duration-500"
               style={{
                 transformOrigin: 'center top',
                 willChange: 'transform, border-radius, opacity',
               }}
             >
-              {/* Fotografía Panorámica de Fondo */}
+              {/* Fotografía Panorámica de Fondo con máxima viveza cromática */}
               <div className="absolute inset-0 z-0">
                 <Image
                   src={exp.image}
@@ -169,36 +169,36 @@ export default function CinematicCardStack() {
                   fill
                   priority={index === 0}
                   sizes="(max-width: 1280px) 100vw, 1280px"
-                  className="object-cover object-center transition-transform duration-1000 group-hover:scale-105"
+                  className="object-cover object-center transition-transform duration-1000 group-hover:scale-105 saturate-[1.08] contrast-[1.05]"
                 />
-                {/* Capa de Gradiente para Máximo Contraste y Legibilidad */}
-                <div className="absolute inset-0 bg-gradient-to-t from-obsidian via-obsidian/60 to-obsidian/40" />
-                <div className="absolute inset-0 bg-gradient-to-r from-obsidian/85 via-obsidian/45 to-transparent" />
+                {/* Capa de Gradiente Cinemático: Protege el texto manteniendo la imagen 100% viva, nítida y colorida */}
+                <div className="absolute inset-0 bg-gradient-to-t from-[#08090A]/95 via-[#08090A]/45 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-r from-[#08090A]/90 via-[#08090A]/40 to-transparent" />
               </div>
 
               {/* Capa de Oscurecimiento Gradual para Profundidad 3D */}
-              <div className="card-dim-overlay pointer-events-none absolute inset-0 z-10 bg-obsidian opacity-0 transition-opacity" />
+              <div className="card-dim-overlay pointer-events-none absolute inset-0 z-10 bg-[#08090A] opacity-0 transition-opacity" />
 
               {/* Contenido Editorial de la Tarjeta */}
               <div className="card-content-inner relative z-20 h-full p-6 sm:p-12 lg:p-16 flex flex-col justify-between">
                 {/* Parte Superior: Índice de Expedición, Badge & Altitud */}
                 <div className="flex flex-wrap items-center justify-between gap-4">
                   <div className="flex items-center space-x-3">
-                    <span className="font-sans text-xs sm:text-sm text-gold font-bold tracking-widest bg-obsidian/80 backdrop-blur-md px-3 py-1.5 rounded-full border border-gold/30">
+                    <span className="font-sans text-xs sm:text-sm text-[#E0C28A] font-bold tracking-widest bg-black/65 backdrop-blur-md px-3 py-1.5 rounded-full border border-[#C8A261]/40 shadow-sm">
                       0{index + 1} / 0{expeditions.length}
                     </span>
-                    <span className="hud-badge bg-obsidian/80 backdrop-blur-md hidden sm:inline-flex">
+                    <span className="hud-badge bg-black/65 backdrop-blur-md hidden sm:inline-flex text-[#E0C28A] border-[#C8A261]/35">
                       {exp.badge}
                     </span>
                   </div>
 
                   <div className="flex items-center space-x-3">
-                    <span className="inline-flex items-center text-xs font-sans font-medium text-mist bg-obsidian/80 backdrop-blur-md px-3.5 py-1.5 rounded-full border border-white/15">
-                      <Mountain className="w-3.5 h-3.5 text-gold mr-1.5" />
+                    <span className="inline-flex items-center text-xs font-sans font-medium text-white/90 bg-black/65 backdrop-blur-md px-3.5 py-1.5 rounded-full border border-white/20 shadow-sm">
+                      <Mountain className="w-3.5 h-3.5 text-[#E0C28A] mr-1.5" />
                       {exp.maxAltitude}
                     </span>
-                    <span className="inline-flex items-center text-xs font-sans font-medium text-mist bg-obsidian/80 backdrop-blur-md px-3.5 py-1.5 rounded-full border border-white/15">
-                      <Clock className="w-3.5 h-3.5 text-gold mr-1.5" />
+                    <span className="inline-flex items-center text-xs font-sans font-medium text-white/90 bg-black/65 backdrop-blur-md px-3.5 py-1.5 rounded-full border border-white/20 shadow-sm">
+                      <Clock className="w-3.5 h-3.5 text-[#E0C28A] mr-1.5" />
                       {exp.duration}
                     </span>
                   </div>
@@ -206,13 +206,13 @@ export default function CinematicCardStack() {
 
                 {/* Parte Central: Titular Monumental & Resumen */}
                 <div className="max-w-3xl my-auto py-4 sm:py-6">
-                  <span className="text-xs font-sans font-medium text-gold/90 tracking-widest uppercase block mb-2">
+                  <span className="text-xs font-sans font-semibold text-[#E0C28A] tracking-widest uppercase block mb-2 drop-shadow-sm">
                     {exp.subtitle}
                   </span>
-                  <h3 className="text-2xl sm:text-4xl lg:text-5xl font-serif font-medium text-mist leading-[1.15] tracking-tight">
+                  <h3 className="text-2xl sm:text-4xl lg:text-5xl font-serif font-medium text-white leading-[1.15] tracking-tight drop-shadow-[0_2px_4px_rgba(0,0,0,0.6)]">
                     {exp.title}
                   </h3>
-                  <p className="mt-3 sm:mt-5 text-mist/85 text-xs sm:text-base font-sans font-light leading-relaxed max-w-2xl line-clamp-3 sm:line-clamp-none">
+                  <p className="mt-3 sm:mt-5 text-[#F4F4F0]/90 text-xs sm:text-base font-sans font-normal leading-relaxed max-w-2xl line-clamp-3 sm:line-clamp-none drop-shadow-sm">
                     {exp.summary}
                   </p>
 
@@ -221,9 +221,9 @@ export default function CinematicCardStack() {
                     {exp.highlights.slice(0, 3).map((h, i) => (
                       <div
                         key={i}
-                        className="inline-flex items-center text-xs font-sans text-mist/90 bg-obsidian/80 backdrop-blur-md px-3 py-1.5 rounded-xl border border-gold/20"
+                        className="inline-flex items-center text-xs font-sans text-white/95 bg-black/65 backdrop-blur-md px-3 py-1.5 rounded-xl border border-[#C8A261]/35 shadow-sm"
                       >
-                        <CheckCircle2 className="w-3.5 h-3.5 text-gold mr-1.5 shrink-0" />
+                        <CheckCircle2 className="w-3.5 h-3.5 text-[#E0C28A] mr-1.5 shrink-0" />
                         <span>{h}</span>
                       </div>
                     ))}
@@ -231,15 +231,15 @@ export default function CinematicCardStack() {
                 </div>
 
                 {/* Parte Inferior: Tarifa Transparente, Botón Detalle & Cotización */}
-                <div className="pt-5 border-t border-gold/20 flex flex-wrap items-center justify-between gap-4">
+                <div className="pt-5 border-t border-white/15 flex flex-wrap items-center justify-between gap-4">
                   <div>
-                    <span className="block text-[10px] font-sans font-medium text-mist/50 tracking-wider uppercase">
+                    <span className="block text-[10px] font-sans font-semibold text-white/70 tracking-wider uppercase">
                       TARIFA PRIVADA BASE
                     </span>
-                    <span className="text-xl sm:text-3xl font-serif text-gold font-semibold">
+                    <span className="text-xl sm:text-3xl font-serif text-[#E0C28A] font-semibold drop-shadow-sm">
                       {exp.pricePerPerson}
                     </span>
-                    <p className="text-[11px] font-sans text-mist/60 mt-0.5 line-clamp-1 max-w-sm">
+                    <p className="text-[11px] font-sans text-white/80 mt-0.5 line-clamp-1 max-w-sm">
                       {exp.priceDetails || 'Base ocupación doble · Servicio 100% privado.'}
                     </p>
                   </div>
@@ -248,7 +248,7 @@ export default function CinematicCardStack() {
                     <button
                       type="button"
                       onClick={() => setSelectedExpedition(exp)}
-                      className="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-full border border-gold/40 bg-obsidian/80 hover:bg-gold/15 text-gold text-xs font-sans font-semibold tracking-wider uppercase transition-all duration-300"
+                      className="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-full border border-[#C8A261]/50 bg-black/70 hover:bg-[#C8A261]/25 text-[#E0C28A] text-xs font-sans font-semibold tracking-wider uppercase transition-all duration-300 shadow-sm"
                     >
                       <FileText className="w-3.5 h-3.5" />
                       <span>Ver Itinerario & Qué Incluye</span>

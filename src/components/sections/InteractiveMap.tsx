@@ -193,7 +193,7 @@ export default function InteractiveMap() {
                   </defs>
 
                   {/* Cuadrícula Cartográfica de Coordenadas Lat/Lng */}
-                  <g stroke="#ffffff" strokeOpacity="0.04" strokeWidth="0.8">
+                  <g stroke="#8C6527" strokeOpacity="0.08" className="dark:stroke-white/5" strokeWidth="0.8">
                     <line x1="80" y1="40" x2="80" y2="480" strokeDasharray="3 3" />
                     <line x1="280" y1="40" x2="280" y2="480" strokeDasharray="3 3" />
                     <line x1="480" y1="40" x2="480" y2="480" strokeDasharray="3 3" />
@@ -206,7 +206,7 @@ export default function InteractiveMap() {
                   </g>
 
                   {/* Relieve Topográfico y Cordilleras Andinas (Curvas de Nivel) */}
-                  <g opacity="0.10" stroke="#C8A261" fill="none" strokeWidth="1">
+                  <g opacity="0.14" stroke="#8C6527" className="dark:stroke-[#C8A261] dark:opacity-10" fill="none" strokeWidth="1">
                     {/* Cordillera de Vilcabamba (Noroeste & Oeste) */}
                     <path d="M 60 70 Q 140 30 220 80 T 300 130" />
                     <path d="M 50 140 Q 130 90 200 150 T 260 210" />
@@ -225,37 +225,37 @@ export default function InteractiveMap() {
 
                   {/* Apus y Picos Glaciares Tutelares */}
                   {/* Apu Salkantay (6,271m) */}
-                  <g transform="translate(90, 215)" opacity="0.8">
-                    <polygon points="12,-10 24,10 0,10" fill="none" stroke="#FFFFFF" strokeWidth="1.2" />
-                    <polygon points="12,-10 16,-2 8,-2" fill="#FFFFFF" opacity="0.9" />
-                    <text x="12" y="21" textAnchor="middle" className="font-sans text-[8px] font-semibold fill-white/80">
+                  <g transform="translate(90, 215)" opacity="0.9">
+                    <polygon points="12,-10 24,10 0,10" className="stroke-[#8C6527] dark:stroke-white fill-[#8C6527]/10 dark:fill-white/10" strokeWidth="1.2" />
+                    <polygon points="12,-10 16,-2 8,-2" className="fill-[#8C6527] dark:fill-white" opacity="0.9" />
+                    <text x="12" y="21" textAnchor="middle" className="font-sans text-[8.5px] font-bold fill-[#1E2224] dark:fill-white/90 drop-shadow-[0_1px_1px_rgba(255,255,255,0.95)] dark:drop-shadow-none">
                       Apu Salkantay
                     </text>
-                    <text x="12" y="30" textAnchor="middle" className="font-sans text-[7px] font-mono fill-gold">
+                    <text x="12" y="30" textAnchor="middle" className="font-sans text-[7.5px] font-mono font-bold fill-[#8C6527] dark:fill-gold">
                       6,271m
                     </text>
                   </g>
 
                   {/* Apu Veronica / Wakaywillque (5,893m) */}
-                  <g transform="translate(235, 75)" opacity="0.8">
-                    <polygon points="12,-10 24,10 0,10" fill="none" stroke="#FFFFFF" strokeWidth="1.2" />
-                    <polygon points="12,-10 16,-2 8,-2" fill="#FFFFFF" opacity="0.9" />
-                    <text x="12" y="21" textAnchor="middle" className="font-sans text-[8px] font-semibold fill-white/80">
+                  <g transform="translate(235, 75)" opacity="0.9">
+                    <polygon points="12,-10 24,10 0,10" className="stroke-[#8C6527] dark:stroke-white fill-[#8C6527]/10 dark:fill-white/10" strokeWidth="1.2" />
+                    <polygon points="12,-10 16,-2 8,-2" className="fill-[#8C6527] dark:fill-white" opacity="0.9" />
+                    <text x="12" y="21" textAnchor="middle" className="font-sans text-[8.5px] font-bold fill-[#1E2224] dark:fill-white/90 drop-shadow-[0_1px_1px_rgba(255,255,255,0.95)] dark:drop-shadow-none">
                       Apu Veronica
                     </text>
-                    <text x="12" y="30" textAnchor="middle" className="font-sans text-[7px] font-mono fill-gold">
+                    <text x="12" y="30" textAnchor="middle" className="font-sans text-[7.5px] font-mono font-bold fill-[#8C6527] dark:fill-gold">
                       5,893m
                     </text>
                   </g>
 
                   {/* Apu Ausangate (6,384m) */}
-                  <g transform="translate(775, 450)" opacity="0.8">
-                    <polygon points="12,-10 24,10 0,10" fill="none" stroke="#FFFFFF" strokeWidth="1.2" />
-                    <polygon points="12,-10 16,-2 8,-2" fill="#FFFFFF" opacity="0.9" />
-                    <text x="12" y="21" textAnchor="middle" className="font-sans text-[8px] font-semibold fill-white/80">
+                  <g transform="translate(775, 450)" opacity="0.9">
+                    <polygon points="12,-10 24,10 0,10" className="stroke-[#8C6527] dark:stroke-white fill-[#8C6527]/10 dark:fill-white/10" strokeWidth="1.2" />
+                    <polygon points="12,-10 16,-2 8,-2" className="fill-[#8C6527] dark:fill-white" opacity="0.9" />
+                    <text x="12" y="21" textAnchor="middle" className="font-sans text-[8.5px] font-bold fill-[#1E2224] dark:fill-white/90 drop-shadow-[0_1px_1px_rgba(255,255,255,0.95)] dark:drop-shadow-none">
                       Apu Ausangate
                     </text>
-                    <text x="12" y="30" textAnchor="middle" className="font-sans text-[7px] font-mono fill-gold">
+                    <text x="12" y="30" textAnchor="middle" className="font-sans text-[7.5px] font-mono font-bold fill-[#8C6527] dark:fill-gold">
                       6,384m
                     </text>
                   </g>
@@ -303,17 +303,18 @@ export default function InteractiveMap() {
                   <path
                     d="M 275 155 Q 220 135 175 118"
                     fill="none"
-                    stroke="#E0C28A"
+                    stroke="#8C6527"
+                    className="dark:stroke-[#E0C28A]"
                     strokeWidth="3.5"
                     strokeDasharray="4 4"
-                    className="animate-pulse"
                   />
 
                   {/* 3. Sendero Hiram Bingham / Ascenso a Machu Picchu */}
                   <path
                     d="M 175 118 Q 150 102 130 86"
                     fill="none"
-                    stroke="#FFFFFF"
+                    stroke="#121517"
+                    className="dark:stroke-white"
                     strokeWidth="2"
                     strokeDasharray="3 3"
                   />
@@ -323,16 +324,17 @@ export default function InteractiveMap() {
                   <path
                     d="M 130 230 Q 150 170 175 118"
                     fill="none"
-                    stroke="#C8A261"
+                    stroke="#8C6527"
+                    className="dark:stroke-[#C8A261]"
                     strokeWidth="1.8"
                     strokeDasharray="4 4"
-                    opacity="0.65"
+                    opacity="0.75"
                   />
 
                   {/* Rosa de los Vientos (Orientación Cartográfica Real: Norte Arriba) */}
-                  <g transform="translate(800, 70)" opacity="0.85">
-                    <circle cx="0" cy="0" r="22" fill="#08090A" stroke="#C8A261" strokeWidth="1" strokeDasharray="2 2" opacity="0.4" />
-                    <circle cx="0" cy="0" r="16" fill="none" stroke="#C8A261" strokeWidth="0.8" opacity="0.7" />
+                  <g transform="translate(800, 70)" opacity="0.9">
+                    <circle cx="0" cy="0" r="22" className="fill-[#F5F2EB] dark:fill-[#08090A] stroke-[#8C6527] dark:stroke-[#C8A261]" strokeWidth="1" strokeDasharray="2 2" opacity="0.6" />
+                    <circle cx="0" cy="0" r="16" fill="none" className="stroke-[#8C6527] dark:stroke-[#C8A261]" strokeWidth="0.8" opacity="0.8" />
                     {/* Flecha Norte */}
                     <polygon points="0,-16 3.5,-3 0,0" fill="#E0C28A" />
                     <polygon points="0,-16 -3.5,-3 0,0" fill="#9A7736" />
@@ -345,22 +347,22 @@ export default function InteractiveMap() {
                     {/* Flecha Oeste */}
                     <polygon points="-16,0 -3,3.5 0,0" fill="#9A7736" />
                     <polygon points="-16,0 -3,-3.5 0,0" fill="#C8A261" />
-                    <text x="0" y="-20" textAnchor="middle" className="font-serif text-[10px] font-bold fill-[#E0C28A]">N</text>
-                    <text x="0" y="27" textAnchor="middle" className="font-serif text-[8px] fill-[#C8A261]/70">S</text>
-                    <text x="25" y="3" textAnchor="middle" className="font-serif text-[8px] fill-[#C8A261]/70">E</text>
-                    <text x="-25" y="3" textAnchor="middle" className="font-serif text-[8px] fill-[#C8A261]/70">W</text>
+                    <text x="0" y="-20" textAnchor="middle" className="font-serif text-[10px] font-bold fill-[#8C6527] dark:fill-[#E0C28A]">N</text>
+                    <text x="0" y="27" textAnchor="middle" className="font-serif text-[8px] font-bold fill-[#8C6527]/80 dark:fill-[#C8A261]/70">S</text>
+                    <text x="25" y="3" textAnchor="middle" className="font-serif text-[8px] font-bold fill-[#8C6527]/80 dark:fill-[#C8A261]/70">E</text>
+                    <text x="-25" y="3" textAnchor="middle" className="font-serif text-[8px] font-bold fill-[#8C6527]/80 dark:fill-[#C8A261]/70">W</text>
                   </g>
 
                   {/* Escala Gráfica Real (Aprox. 1:500,000) */}
-                  <g transform="translate(45, 485)" opacity="0.8">
-                    <line x1="0" y1="0" x2="100" y2="0" stroke="#C8A261" strokeWidth="2" />
-                    <line x1="0" y1="-4" x2="0" y2="4" stroke="#C8A261" strokeWidth="2" />
-                    <line x1="50" y1="-3" x2="50" y2="3" stroke="#C8A261" strokeWidth="1.5" />
-                    <line x1="100" y1="-4" x2="100" y2="4" stroke="#C8A261" strokeWidth="2" />
-                    <text x="0" y="-7" textAnchor="middle" className="font-sans text-[8px] fill-[#C8A261]">0</text>
-                    <text x="50" y="-7" textAnchor="middle" className="font-sans text-[8px] fill-[#C8A261]">25 km</text>
-                    <text x="100" y="-7" textAnchor="middle" className="font-sans text-[8px] fill-[#C8A261]">50 km</text>
-                    <text x="50" y="14" textAnchor="middle" className="font-sans text-[7.5px] tracking-wider uppercase fill-mist/40">
+                  <g transform="translate(45, 485)" opacity="0.9">
+                    <line x1="0" y1="0" x2="100" y2="0" className="stroke-[#8C6527] dark:stroke-[#C8A261]" strokeWidth="2" />
+                    <line x1="0" y1="-4" x2="0" y2="4" className="stroke-[#8C6527] dark:stroke-[#C8A261]" strokeWidth="2" />
+                    <line x1="50" y1="-3" x2="50" y2="3" className="stroke-[#8C6527] dark:stroke-[#C8A261]" strokeWidth="1.5" />
+                    <line x1="100" y1="-4" x2="100" y2="4" className="stroke-[#8C6527] dark:stroke-[#C8A261]" strokeWidth="2" />
+                    <text x="0" y="-7" textAnchor="middle" className="font-sans text-[8.5px] font-bold fill-[#1E2224] dark:fill-[#C8A261]">0</text>
+                    <text x="50" y="-7" textAnchor="middle" className="font-sans text-[8.5px] font-bold fill-[#1E2224] dark:fill-[#C8A261]">25 km</text>
+                    <text x="100" y="-7" textAnchor="middle" className="font-sans text-[8.5px] font-bold fill-[#1E2224] dark:fill-[#C8A261]">50 km</text>
+                    <text x="50" y="14" textAnchor="middle" className="font-sans text-[8px] tracking-wider uppercase font-semibold fill-[#57534E] dark:fill-mist/40">
                       Escala Real Aprox.
                     </text>
                   </g>
@@ -415,16 +417,17 @@ export default function InteractiveMap() {
                           </>
                         )}
 
-                        {/* Anillo exterior - sin scale de CSS que desplazaba el origen SVG */}
+                        {/* Anillo exterior - adaptativo en modo claro y oscuro */}
                         <circle
                           cx={cfg.x}
                           cy={cfg.y}
                           r={isActive ? 9.5 : 7}
-                          fill={isActive ? '#C8A261' : '#08090A'}
-                          stroke={isActive ? '#FFFFFF' : '#C8A261'}
-                          strokeWidth={isActive ? '2.5' : '1.75'}
+                          className={`transition-colors duration-200 ${
+                            isActive
+                              ? 'fill-[#C8A261] stroke-[#121517] dark:stroke-white stroke-[2.5px]'
+                              : 'fill-[#FAF8F5] dark:fill-[#08090A] stroke-[#8C6527] dark:stroke-[#C8A261] stroke-[2px] group-hover:fill-[#C8A261]'
+                          }`}
                           filter={isActive ? 'url(#goldGlow)' : undefined}
-                          className="transition-colors duration-200 group-hover:stroke-white group-hover:fill-gold/80"
                         />
 
                         {/* Etiqueta flotante SVG posicionada estratégicamente para cero colisiones */}
@@ -432,10 +435,10 @@ export default function InteractiveMap() {
                           x={cfg.labelX}
                           y={cfg.labelY}
                           textAnchor={cfg.anchor}
-                          className={`font-sans text-[11px] select-none transition-colors duration-200 drop-shadow-[0_1px_3px_rgba(0,0,0,0.9)] ${
+                          className={`font-sans select-none transition-colors duration-200 drop-shadow-[0_1px_1px_rgba(255,255,255,0.95)] dark:drop-shadow-[0_1px_3px_rgba(0,0,0,0.9)] ${
                             isActive
-                              ? 'fill-[#FFFFFF] font-bold text-xs'
-                              : 'fill-[#C8A261]/90 group-hover:fill-white text-[10px] font-semibold'
+                              ? 'fill-[#121517] dark:fill-white font-extrabold text-xs'
+                              : 'fill-[#1E2224] dark:fill-[#E0C28A] group-hover:fill-[#8C6527] dark:group-hover:fill-white text-[10.5px] font-bold'
                           }`}
                         >
                           {wp.name}
@@ -444,7 +447,7 @@ export default function InteractiveMap() {
                           x={cfg.labelX}
                           y={cfg.labelY + 12}
                           textAnchor={cfg.anchor}
-                          className="font-sans text-[9px] font-medium fill-[#9CA3AF] pointer-events-none select-none tracking-wider drop-shadow-[0_1px_2px_rgba(0,0,0,0.9)]"
+                          className="font-sans text-[9.5px] font-semibold fill-[#57534E] dark:fill-[#9CA3AF] pointer-events-none select-none tracking-wider drop-shadow-[0_1px_1px_rgba(255,255,255,0.95)] dark:drop-shadow-[0_1px_2px_rgba(0,0,0,0.9)]"
                         >
                           {wp.elevationDisplay}
                         </text>
@@ -454,22 +457,22 @@ export default function InteractiveMap() {
                 </svg>
 
                 {/* Leyenda en el fondo del mapa */}
-                <div className="absolute bottom-2 left-4 right-4 flex flex-wrap items-center justify-between text-[11px] font-sans font-medium text-mist/60 pt-2 border-t border-white/5 uppercase tracking-wider">
+                <div className="absolute bottom-2 left-4 right-4 flex flex-wrap items-center justify-between text-[11px] font-sans font-semibold text-[#1E2224] dark:text-mist/70 pt-2 border-t border-[#8C6527]/20 dark:border-white/5 uppercase tracking-wider">
                   <div className="flex flex-wrap items-center gap-4">
                     <span className="flex items-center">
-                      <span className="w-3 h-0.5 bg-gold mr-1.5" /> Van Privada 4x4
+                      <span className="w-3 h-0.5 bg-[#8C6527] dark:bg-gold mr-1.5" /> Van Privada 4x4
                     </span>
                     <span className="flex items-center">
-                      <span className="w-3 h-0.5 bg-gold-light border-b border-t border-black mr-1.5" /> Vía Férrea Escénica
+                      <span className="w-3 h-0.5 bg-[#8C6527] dark:bg-gold-light border-b border-t border-black mr-1.5" /> Vía Férrea Escénica
                     </span>
                     <span className="flex items-center">
-                      <span className="w-3 h-0.5 bg-sky-400 mr-1.5" /> Río Vilcanota
+                      <span className="w-3 h-0.5 bg-sky-500 mr-1.5" /> Río Vilcanota
                     </span>
                     <span className="flex items-center">
-                      <span className="w-3 h-0.5 border-t border-dashed border-gold mr-1.5" /> Salkantay Trek
+                      <span className="w-3 h-0.5 border-t border-dashed border-[#8C6527] dark:border-gold mr-1.5" /> Salkantay Trek
                     </span>
                   </div>
-                  <span className="text-[10px] text-gold/80">Toca cualquier punto para consultar detalles ↗</span>
+                  <span className="text-[10px] text-[#8C6527] dark:text-gold/80 font-bold">Toca cualquier punto para consultar detalles ↗</span>
                 </div>
               </div>
             ) : (
@@ -502,11 +505,11 @@ export default function InteractiveMap() {
                       <line x1="50" y1="270" x2="760" y2="270" />
                     </g>
 
-                    <text x="10" y="34" className="font-sans font-medium text-[10px] fill-[#C8A261]">5,036m</text>
-                    <text x="10" y="94" className="font-sans font-medium text-[10px] fill-[#C8A261]/80">4,630m</text>
-                    <text x="10" y="154" className="font-sans font-medium text-[10px] fill-[#9CA3AF]">3,800m</text>
-                    <text x="10" y="214" className="font-sans font-medium text-[10px] fill-[#9CA3AF]">3,000m</text>
-                    <text x="10" y="274" className="font-sans font-medium text-[10px] fill-[#9CA3AF]">2,000m</text>
+                    <text x="10" y="34" className="font-sans font-bold text-[10px] fill-[#8C6527] dark:fill-[#C8A261]">5,036m</text>
+                    <text x="10" y="94" className="font-sans font-bold text-[10px] fill-[#8C6527]/90 dark:fill-[#C8A261]/80">4,630m</text>
+                    <text x="10" y="154" className="font-sans font-semibold text-[10px] fill-[#57534E] dark:fill-[#9CA3AF]">3,800m</text>
+                    <text x="10" y="214" className="font-sans font-semibold text-[10px] fill-[#57534E] dark:fill-[#9CA3AF]">3,000m</text>
+                    <text x="10" y="274" className="font-sans font-semibold text-[10px] fill-[#57534E] dark:fill-[#9CA3AF]">2,000m</text>
 
                     {/* Área sombreada del relieve con los 7 puntos */}
                     <polygon
@@ -552,19 +555,20 @@ export default function InteractiveMap() {
                             cx={pt.x}
                             cy={pt.y}
                             r={isActive ? 8 : 5}
-                            fill={isActive ? '#FFFFFF' : '#C8A261'}
-                            stroke="#08090A"
-                            strokeWidth="2"
-                            className="transition-colors duration-200 group-hover:fill-white"
+                            className={`transition-colors duration-200 ${
+                              isActive
+                                ? 'fill-[#C8A261] stroke-[#121517] dark:stroke-white stroke-2'
+                                : 'fill-[#FAF8F5] dark:fill-[#08090A] stroke-[#8C6527] dark:stroke-[#C8A261] stroke-2 group-hover:fill-[#C8A261]'
+                            }`}
                           />
                           <text
                             x={pt.x}
                             y={pt.y - 12}
                             textAnchor="middle"
-                            className={`font-sans select-none transition-colors duration-200 ${
+                            className={`font-sans select-none transition-colors duration-200 drop-shadow-[0_1px_1px_rgba(255,255,255,0.95)] dark:drop-shadow-[0_1px_3px_rgba(0,0,0,0.9)] ${
                               isActive
-                                ? 'fill-[#FFFFFF] font-bold text-xs'
-                                : 'fill-[#C8A261] text-[10px] group-hover:fill-white'
+                                ? 'fill-[#121517] dark:fill-white font-extrabold text-xs'
+                                : 'fill-[#1E2224] dark:fill-[#E0C28A] text-[10.5px] font-bold group-hover:fill-[#8C6527] dark:group-hover:fill-white'
                             }`}
                           >
                             {pt.name}
@@ -573,7 +577,7 @@ export default function InteractiveMap() {
                             x={pt.x}
                             y={pt.y + 18}
                             textAnchor="middle"
-                            className="font-sans text-[9px] font-medium fill-[#9CA3AF] pointer-events-none select-none"
+                            className="font-sans text-[9px] font-semibold fill-[#57534E] dark:fill-[#9CA3AF] pointer-events-none select-none drop-shadow-[0_1px_1px_rgba(255,255,255,0.95)] dark:drop-shadow-[0_1px_2px_rgba(0,0,0,0.9)]"
                           >
                             {pt.alt}
                           </text>
@@ -596,36 +600,36 @@ export default function InteractiveMap() {
               <div>
                 {/* Imagen Referencial Icónica del Destino Seleccionado */}
                 {activeWaypoint.image && (
-                  <div className="relative h-44 sm:h-48 w-full rounded-2xl overflow-hidden mb-5 border border-gold/25 shadow-md group">
+                  <div className="relative h-44 sm:h-48 w-full rounded-2xl overflow-hidden mb-5 border border-gold/30 shadow-md group">
                     <Image
                       src={activeWaypoint.image}
                       alt={activeWaypoint.name}
                       fill
-                      className="object-cover transition-transform duration-700 group-hover:scale-105"
+                      className="object-cover transition-transform duration-700 group-hover:scale-105 saturate-[1.08] contrast-[1.05]"
                       sizes="(max-width: 1024px) 100vw, 360px"
                     />
-                    {/* Gradiente cinemático para integración estética */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-obsidian-card via-obsidian-card/25 to-transparent" />
+                    {/* Gradiente cinemático oscuro que mantiene los colores 100% vivos en blanco y negro */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/25 to-transparent" />
 
                     {/* Badges superiores sobre la imagen */}
                     <div className="absolute top-3 left-3">
-                      <span className="hud-badge flex items-center gap-1.5 bg-obsidian-card/85 backdrop-blur-md px-3 py-1 rounded-full text-xs font-sans border border-gold/30 shadow-sm text-gold">
+                      <span className="hud-badge flex items-center gap-1.5 bg-black/75 backdrop-blur-md px-3 py-1 rounded-full text-xs font-sans border border-[#C8A261]/40 shadow-sm text-[#E0C28A]">
                         {getTravelIcon(activeWaypoint.travelMode)}
                         {activeWaypoint.travelMode}
                       </span>
                     </div>
 
                     <div className="absolute top-3 right-3">
-                      <span className="text-[11px] font-sans text-mist font-bold tracking-wider bg-obsidian-card/85 backdrop-blur-md px-2.5 py-1 rounded-full border border-gold/30 shadow-sm">
+                      <span className="text-[11px] font-sans text-white font-bold tracking-wider bg-black/75 backdrop-blur-md px-2.5 py-1 rounded-full border border-white/20 shadow-sm">
                         {activeWaypoint.elevationDisplay}
                       </span>
                     </div>
 
                     {/* Nombre Ancestral en la base de la imagen */}
                     {activeWaypoint.quechuaName && (
-                      <div className="absolute bottom-2.5 left-3 right-3 flex items-center justify-between text-[11px] font-sans text-gold/90 font-medium drop-shadow-sm">
+                      <div className="absolute bottom-2.5 left-3 right-3 flex items-center justify-between text-[11px] font-sans text-[#E0C28A] font-semibold drop-shadow-md">
                         <span className="truncate">✦ &ldquo;{activeWaypoint.quechuaName}&rdquo;</span>
-                        <span className="text-[10px] text-mist/75 font-mono">{activeWaypoint.elevationMeters}m</span>
+                        <span className="text-[10px] text-white/90 font-mono">{activeWaypoint.elevationMeters}m</span>
                       </div>
                     )}
                   </div>

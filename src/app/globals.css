@@ -251,15 +251,6 @@ html:not(.dark) .border-white\/20 {
   border-color: rgba(140, 101, 39, 0.22) !important;
 }
 
-html:not(.dark) .text-white {
-  color: #121517 !important;
-}
-
-html:not(.dark) .text-white\/80,
-html:not(.dark) .text-white\/90 {
-  color: rgba(18, 21, 23, 0.85) !important;
-}
-
 html:not(.dark) .bg-white\/5 {
   background-color: rgba(140, 101, 39, 0.05) !important;
 }
