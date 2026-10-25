@@ -31,6 +31,8 @@ export default function Header() {
     { label: 'Ruta Sagrada', href: '#mapa', cursor: 'VER MAPA' },
     { label: 'Aclimatación', href: '#aclimatacion', cursor: 'MÉDICA' },
     { label: 'Terroir & Spa', href: '#bento', cursor: 'VIVENCIAL' },
+    { label: 'Reseñas', href: '#testimonios', cursor: '4.96 ESTRELLAS' },
+    { label: 'FAQ', href: '#faq', cursor: 'CERTEZA' },
   ];
 
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {

@@ -6,6 +6,8 @@ import CinematicCardStack from '@/components/sections/CinematicCardStack';
 import InteractiveMap from '@/components/sections/InteractiveMap';
 import AcclimatizationGuide from '@/components/sections/AcclimatizationGuide';
 import VisualBento from '@/components/sections/VisualBento';
+import TestimonialsSection from '@/components/sections/TestimonialsSection';
+import FAQSection from '@/components/sections/FAQSection';
 import WhatsAppModal from '@/components/ui/WhatsAppModal';
 import FloatingBar from '@/components/ui/FloatingBar';
 import {
@@ -41,7 +43,13 @@ export default function Page() {
       {/* 5. RETÍCULA BENTO ASIMÉTRICA CON MICRO-INCLINACIÓN 3D TILT */}
       <VisualBento />
 
-      {/* 6. LABORATORIO DE MICROINTERACCIONES & CURSOR CONTEXTUAL */}
+      {/* 6. TESTIMONIOS VERIFICADOS & SOCIAL PROOF DE ALTA GAMA (TripAdvisor 4.96★) */}
+      <TestimonialsSection />
+
+      {/* 7. RESOLUCIÓN DE DUDAS CRÍTICAS & TRANSPARENCIA TOTAL (FAQ ACCORDION) */}
+      <FAQSection />
+
+      {/* 8. LABORATORIO DE MICROINTERACCIONES & CURSOR CONTEXTUAL */}
       <section id="interacciones" className="px-6 py-20 border-t border-gold/15 bg-obsidian-light/40">
         <div className="max-w-7xl mx-auto">
           <div className="mb-10">

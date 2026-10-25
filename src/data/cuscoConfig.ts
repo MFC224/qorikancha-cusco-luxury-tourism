@@ -60,6 +60,28 @@ export interface AcclimatizationRule {
   medicalNote: string;
 }
 
+export interface Testimonial {
+  id: string;
+  author: string;
+  origin: string;
+  flag: string;
+  tripType: string;
+  category: 'Machu Picchu Signature' | 'Salkantay Glamping' | 'Camino Inca VIP' | 'Familias & Parejas';
+  quote: string;
+  highlight: string;
+  rating: number;
+  date: string;
+  avatarInitials: string;
+}
+
+export interface FAQItem {
+  id: string;
+  category: string;
+  question: string;
+  answer: string;
+  highlightNote?: string;
+}
+
 export interface CuscoMasterConfig {
   destination: {
     name: string;
@@ -111,6 +133,8 @@ export interface CuscoMasterConfig {
   waypoints: Waypoint[];
   bentoExperiences: BentoExperience[];
   acclimatizationProtocol: AcclimatizationRule[];
+  testimonials: Testimonial[];
+  faqs: FAQItem[];
 }
 
 export const cuscoConfig: CuscoMasterConfig = {
@@ -438,6 +462,150 @@ export const cuscoConfig: CuscoMasterConfig = {
       altitudeRange: 'Hasta 4,630 msnm',
       recommendation: 'El organismo ha estabilizado su producción de glóbulos rojos. Inicio de los senderos a Machu Picchu y Salkantay con guía WFR.',
       medicalNote: 'Kit de oxígeno medicinal de respaldo y botiquín de emergencia de alta montaña presente en todo momento.',
+    },
+  ],
+  testimonials: [
+    {
+      id: 'rev-01',
+      author: 'Eleanor & Arthur Vance',
+      origin: 'Londres, Reino Unido',
+      flag: '🇬🇧',
+      tripType: 'Machu Picchu: Amanecer Sagrado Privado',
+      category: 'Machu Picchu Signature',
+      quote:
+        'Contratamos el servicio privado con tren Hiram Bingham. Lo que realmente diferenció a Qorikancha fue cuando nuestro vuelo Lima-Cusco se retrasó por neblina: el despacho Concierge 24/7 reconfiguró toda la logística de trenes y boletos de circuito sin que tuviéramos que preocuparnos por nada. Llegamos a la ciudadela al amanecer prácticamente a solas.',
+      highlight: 'Resolución logística impecable y acceso prioritario al alba',
+      rating: 5,
+      date: 'Septiembre 2026',
+      avatarInitials: 'EV',
+    },
+    {
+      id: 'rev-02',
+      author: 'Dr. Carlos & Mariana Silveira',
+      origin: 'São Paulo, Brasil',
+      flag: '🇧🇷',
+      tripType: 'Valle Sagrado & Machu Picchu Confort',
+      category: 'Familias & Parejas',
+      quote:
+        'Viajamos con mi madre de 68 años y el mal de montaña era mi mayor inquietud. La estrategia de descender de inmediato al Valle Sagrado a 2,800m, sumada al monitoreo de oximetría matutino del guía médico WFR, hizo que la adaptación fuera perfecta. Ningún síntoma, confort absoluto y calidez humana inigualable.',
+      highlight: 'Seguridad médica preventiva para adultos mayores y familias',
+      rating: 5,
+      date: 'Agosto 2026',
+      avatarInitials: 'CS',
+    },
+    {
+      id: 'rev-03',
+      author: 'Sebastian & Chloé Dupont',
+      origin: 'Ginebra, Suiza',
+      flag: '🇨🇭',
+      tripType: 'Salkantay Sky Domes & Laguna Humantay',
+      category: 'Salkantay Glamping',
+      quote:
+        'Como montañistas en los Alpes, somos muy exigentes con la logística de montaña. Los domos geodésicos a 3,900m con calefacción radiante, el chef privado cocinando insumos orgánicos de altura y el equipo de rescate con oxígeno medicinal propio superaron cualquier expectativa. Cero subcontrataciones; todo el personal es de planta propia.',
+      highlight: 'Glamping de alta montaña con estándares alpinos suizos',
+      rating: 5,
+      date: 'Julio 2026',
+      avatarInitials: 'SD',
+    },
+    {
+      id: 'rev-04',
+      author: 'David K. Miller',
+      origin: 'Nueva York, Estados Unidos',
+      flag: '🇺🇸',
+      tripType: 'Camino Inca Clásico VIP: Porteadores de Honor',
+      category: 'Camino Inca VIP',
+      quote:
+        'He hecho safaris en África y expediciones en la Patagonia, y este Camino Inca está en otra categoría. Dormir en carpas suite con camas de altura real y recibir masajes terapéuticos al concluir cada jornada fue increíble. Además, corroborar personalmente que los porteadores cuentan con equipamiento térmico de primera y salario digno no tiene precio.',
+      highlight: 'Trato ético certificado a porteadores y hospitalidad de clase mundial',
+      rating: 5,
+      date: 'Junio 2026',
+      avatarInitials: 'DM',
+    },
+    {
+      id: 'rev-05',
+      author: 'Valerie & Marc Lindemann',
+      origin: 'Berlín, Alemania',
+      flag: '🇩🇪',
+      tripType: 'Montaña de 7 Colores: Vinicunca & Valle Rojo VIP',
+      category: 'Familias & Parejas',
+      quote:
+        'El horario exclusivo a las 04:00 AM valió cada minuto de sueño: alcanzamos la cumbre a 5,036 msnm antes de que llegaran las masas de turistas. Estuvimos 40 minutos en contemplación íntima frente al Apu Ausangate con desayuno caliente en nuestro domo de campaña privado.',
+      highlight: 'Llegada prioritaria al mirador de Vinicunca sin aglomeraciones',
+      rating: 5,
+      date: 'Octubre 2026',
+      avatarInitials: 'VL',
+    },
+    {
+      id: 'rev-06',
+      author: 'Beatriz & Alejandro Mendonça',
+      origin: 'Madrid, España',
+      flag: '🇪🇸',
+      tripType: 'Valle Sagrado Místico & Terrazas de Moray',
+      category: 'Machu Picchu Signature',
+      quote:
+        'Transparencia total desde el minuto uno. No hubo cobros sorpresa por entradas, transferencias ni propinas imprevistas. El paseo en Caballos Peruanos de Paso por las haciendas coloniales y la cata botánica con maridaje fueron el punto culminante de nuestro paso por Perú.',
+      highlight: 'Tarifas transparentes all-inclusive y exclusividad cultural',
+      rating: 5,
+      date: 'Mayo 2026',
+      avatarInitials: 'BM',
+    },
+  ],
+  faqs: [
+    {
+      id: 'faq-01',
+      category: 'Reservas & Acceso',
+      question: '¿Cómo garantizan los boletos de ingreso a Machu Picchu y trenes de lujo?',
+      answer:
+        'Gestionamos de manera inmediata y nominal la adquisición de boletos oficiales en los circuitos preferenciales más solicitados (Circuitos 1 y 2 panorámicos) ante el Ministerio de Cultura del Perú y la Dirección Desconcentrada de Cultura de Cusco. Sus asientos en los trenes de lujo (Belmond Hiram Bingham o Inca Rail First Class) se emiten con confirmación digital formal entregada semanas antes de su arribo, eliminando cualquier incertidumbre logística.',
+      highlightNote: 'Boletos 100% nominales y auditados antes del viaje',
+    },
+    {
+      id: 'faq-02',
+      category: 'Salud & Altitud',
+      question: '¿Qué protocolos aplican para prevenir y tratar el mal de altura (soroche)?',
+      answer:
+        'Nuestra metodología combina medicina de montaña contemporánea y aclimatación táctica: diseñamos el itinerario para descender el Día 1 al Valle Sagrado (2,800 msnm, cota 600m menor a Cusco), reduciendo la presión hipobárica en un 40%. Cada van privada y expedición cuenta con tanques de oxígeno medicinal de flujo continuo, pulsioxímetros digitales y guías con certificación internacional Wilderness Medical First Responder (WFR).',
+      highlightNote: 'Guía médico WFR y oxígeno medicinal continuo a bordo',
+    },
+    {
+      id: 'faq-03',
+      category: 'Privacidad & Operación',
+      question: '¿Existe riesgo de ser agrupado con otros viajeros o subcontratar servicios?',
+      answer:
+        'Garantía contractual de Salida 100% Privada: nunca mezclamos reservas ni agrupamos expedicionarios desconocidos en un mismo transporte o guiado. Toda nuestra flota vehicular 4x4, choferes profesionales, historiadores de cabecera y campamentos geodésicos son operados bajo supervisión directa de Qorikancha Expeditions sin recurrir a agencias mayoristas genéricas.',
+      highlightNote: 'Cero subcontratación · Vehículos y guías 100% dedicados a tu grupo',
+    },
+    {
+      id: 'faq-04',
+      category: 'Contingencia & Flexibilidad',
+      question: '¿Qué sucede si se presentan cancelaciones de vuelos, lluvias o bloqueos locales?',
+      answer:
+        'La geografía andina exige capacidad de maniobra inmediata. Nuestro Despacho Concierge 24/7 en Cusco opera con Protocolo de Plan B Permanente: si el tren sufre una demora meteorológica o un vuelo se posterga, reasignamos transferencias privadas, reprogramamos turnos de ingreso arqueológico y reajustamos las noches en hoteles boutique de nuestra red aliada sin cargos de penalidad adicionales para el viajero.',
+      highlightNote: 'Despacho de contingencia 24/7 con reasignación en tiempo real',
+    },
+    {
+      id: 'faq-05',
+      category: 'Transparencia Financiera',
+      question: '¿Las tarifas cotizadas tienen cobros ocultos o cargos sorpresa en destino?',
+      answer:
+        'Política de Transparencia Total: el precio final pactado incluye traslados aeropuerto-hotel-estación en privado, boletos oficiales a la Llaqta de Machu Picchu y sitios arqueológicos del boleto turístico integral, trenes de alta gama seleccionados, chefs privados con gastronomía de terroir, equipos de campamento de montaña y remuneración digna legalmente cubierta para el equipo de porteadores y arrieros.',
+      highlightNote: 'Tarifas all-inclusive sin sorpresas en efectivo ni cobros imprevistos',
+    },
+    {
+      id: 'faq-06',
+      category: 'Sostenibilidad & Ética',
+      question: '¿Cómo protegen y retribuyen a los porteadores y arrieros andinos?',
+      answer:
+        'Operamos bajo el Estándar de Trato Digno Certificado: nuestros porteadores son tratados como héroes de montaña. Cuentan con contrato formal, seguro médico privado contra accidentes, carpas térmicas habitables independientes, alimentación balanceada de alta energía idéntica a la del campamento base, pesaje estricto de carga (máximo 20 kg regulado) y honorarios un 40% superiores al mínimo fijado por la Ley del Porteador Nº 31614.',
+      highlightNote: 'Salarios justos +40%, seguro integral y equipamiento de alta montaña',
+    },
+    {
+      id: 'faq-07',
+      category: 'Equipaje & Logística',
+      question: '¿Qué equipaje debo llevar y cómo se gestionan las maletas pesadas?',
+      answer:
+        'Los trenes a Machu Picchu admiten un equipaje de mano de hasta 5 kg por pasajero por normativa de seguridad ferroviaria. Nuestro servicio incluye la custodia segura y traslado privado de su equipaje de bodega principal entre su hotel en Cusco y el resort en el Valle Sagrado o Machu Picchu Pueblo, garantizando que sus pertenencias de lujo siempre le esperen en su suite al culminar la travesía.',
+      highlightNote: 'Traslado y custodia de equipaje pesado incluido sin complicaciones',
     },
   ],
 };

@@ -182,6 +182,30 @@ export default function Footer() {
               </li>
               <li>
                 <a
+                  href="#testimonios"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    scrollTo('#testimonios');
+                  }}
+                  className="hover:text-gold transition-colors block"
+                >
+                  Reseñas Verificadas (4.96★)
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#faq"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    scrollTo('#faq');
+                  }}
+                  className="hover:text-gold transition-colors block"
+                >
+                  Preguntas Frecuentes & Transparencia
+                </a>
+              </li>
+              <li>
+                <a
                   href={concierge.generateWhatsAppUrl()}
                   target="_blank"
                   rel="noopener noreferrer"
