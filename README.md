@@ -20,7 +20,10 @@
    - Camino Inca Clásico VIP (Porteadores de Honor): **$790 USD**
    - Valle Sagrado Místico & Moray: **$140 USD**
    - Montaña de 7 Colores (Vinicunca & Valle Rojo VIP): **$160 USD**
-3. **Muro de Testimonios Verificados & Reputación de Alta Gama (4.96★)**:
+3. **Bento Grid con Collage Gastronómico Animado & Vagón de Época**:
+   - **Vagón de Época**: Fotografía auténtica del vagón de lujo en Ollanta Station (Ollantaytambo) con maderas pulidas, cristales panorámicos y vajilla de autor.
+   - **Collage Animado de Terroir Andino**: Tarjeta monumental de alta cocina con transición cinemática suave, micro-tarjetas flotantes 3D (`animate-float`) y selector de 4 tiempos botánicos: Tiradito Nikkei con trucha del Vilcanota y flores de sauco, maíz morado ancestral de Urubamba, 14 variedades de papas nativas milenarias y ceviche tradicional reconocido por la UNESCO.
+4. **Muro de Testimonios Verificados & Reputación de Alta Gama (4.96★)**:
    - Basado en más de 420 reseñas auditadas de viajeros de Reino Unido, Estados Unidos, Suiza, Alemania, Brasil y España.
    - Filtros dinámicos por categoría de expedición y sellos *TripAdvisor Travelers' Choice 2026* y *100% Salidas Privadas*.
 4. **Preguntas Frecuentes de Alto Nivel & Transparencia Total (FAQ)**:
