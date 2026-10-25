@@ -739,7 +739,7 @@ export const cuscoConfig: CuscoMasterConfig = {
       tagline: 'Las constelaciones oscuras: La Llama Negra (Yacana) y la Cruz del Sur.',
       description: 'Sesión nocturna con telescopio de alta precisión y sabio andino (Paqo) en la tranquilidad del Valle Sagrado.',
       image: '/images/bento-astronomia.webp',
-      fallbackImage: 'https://images.unsplash.com/photo-1506703719100-a0f3a48c0f86?q=80&w=1200&auto=format&fit=crop',
+      fallbackImage: '/images/bento-astronomia.webp',
       colSpanDesktop: 1,
       badgeText: 'CIELO LIMPIO 3,000M',
     },
