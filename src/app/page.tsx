@@ -1,17 +1,42 @@
 'use client';
 
 import React, { useState } from 'react';
+import dynamic from 'next/dynamic';
 import HeroSection from '@/components/sections/HeroSection';
 import CinematicCardStack from '@/components/sections/CinematicCardStack';
-import InteractiveMap from '@/components/sections/InteractiveMap';
-import AcclimatizationGuide from '@/components/sections/AcclimatizationGuide';
-import VisualBento from '@/components/sections/VisualBento';
-import TestimonialsSection from '@/components/sections/TestimonialsSection';
-import AboutTeamSection from '@/components/sections/AboutTeamSection';
-import FAQSection from '@/components/sections/FAQSection';
-import BespokeInquirySection from '@/components/sections/BespokeInquirySection';
-import WhatsAppModal from '@/components/ui/WhatsAppModal';
-import FloatingBar from '@/components/ui/FloatingBar';
+
+// Carga diferida de secciones below-the-fold para máxima velocidad de renderizado inicial
+const InteractiveMap = dynamic(() => import('@/components/sections/InteractiveMap'), {
+  loading: () => <div className="min-h-[480px] bg-obsidian animate-pulse" />,
+});
+
+const AcclimatizationGuide = dynamic(() => import('@/components/sections/AcclimatizationGuide'), {
+  loading: () => <div className="min-h-[400px] bg-obsidian animate-pulse" />,
+});
+
+const VisualBento = dynamic(() => import('@/components/sections/VisualBento'), {
+  loading: () => <div className="min-h-[400px] bg-obsidian animate-pulse" />,
+});
+
+const TestimonialsSection = dynamic(() => import('@/components/sections/TestimonialsSection'), {
+  loading: () => <div className="min-h-[300px] bg-obsidian animate-pulse" />,
+});
+
+const AboutTeamSection = dynamic(() => import('@/components/sections/AboutTeamSection'), {
+  loading: () => <div className="min-h-[400px] bg-obsidian animate-pulse" />,
+});
+
+const FAQSection = dynamic(() => import('@/components/sections/FAQSection'), {
+  loading: () => <div className="min-h-[400px] bg-obsidian animate-pulse" />,
+});
+
+const BespokeInquirySection = dynamic(() => import('@/components/sections/BespokeInquirySection'), {
+  loading: () => <div className="min-h-[400px] bg-obsidian animate-pulse" />,
+});
+
+// Modales y barras flotantes bajo demanda (cero sobrecarga en el bundle inicial)
+const WhatsAppModal = dynamic(() => import('@/components/ui/WhatsAppModal'), { ssr: false });
+const FloatingBar = dynamic(() => import('@/components/ui/FloatingBar'), { ssr: false });
 
 export default function Page() {
   const [isModalOpen, setIsModalOpen] = useState(false);

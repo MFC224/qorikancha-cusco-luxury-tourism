@@ -43,7 +43,7 @@ export default function CustomCursor() {
       if (!isVisible) setIsVisible(true);
 
       xDotTo(e.clientX);
-      yDotTo(e.clientX ? e.clientY : 0);
+      yDotTo(e.clientY);
 
       xRingTo(e.clientX);
       yRingTo(e.clientY);
