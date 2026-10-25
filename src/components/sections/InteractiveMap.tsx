@@ -63,7 +63,7 @@ export default function InteractiveMap() {
       x: 275,
       y: 155,
       labelX: 275,
-      labelY: 135,
+      labelY: 178,
       anchor: 'middle',
       sector: 'VALLE SAGRADO · FORTALEZA VIVIENTE',
     },
@@ -432,7 +432,7 @@ export default function InteractiveMap() {
                           x={cfg.labelX}
                           y={cfg.labelY}
                           textAnchor={cfg.anchor}
-                          className={`font-sans text-[11px] select-none transition-colors duration-200 ${
+                          className={`font-sans text-[11px] select-none transition-colors duration-200 drop-shadow-[0_1px_3px_rgba(0,0,0,0.9)] ${
                             isActive
                               ? 'fill-[#FFFFFF] font-bold text-xs'
                               : 'fill-[#C8A261]/90 group-hover:fill-white text-[10px] font-semibold'
@@ -444,7 +444,7 @@ export default function InteractiveMap() {
                           x={cfg.labelX}
                           y={cfg.labelY + 12}
                           textAnchor={cfg.anchor}
-                          className="font-sans text-[9px] font-medium fill-[#9CA3AF] pointer-events-none select-none tracking-wider"
+                          className="font-sans text-[9px] font-medium fill-[#9CA3AF] pointer-events-none select-none tracking-wider drop-shadow-[0_1px_2px_rgba(0,0,0,0.9)]"
                         >
                           {wp.elevationDisplay}
                         </text>
