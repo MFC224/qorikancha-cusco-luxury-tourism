@@ -51,8 +51,8 @@ export default function Header() {
       <header
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
           isScrolled
-            ? 'bg-obsidian/85 backdrop-blur-md border-b border-gold/20 py-3 shadow-obsidian-glow'
-            : 'bg-gradient-to-b from-obsidian/90 via-obsidian/40 to-transparent border-b border-white/5 py-5'
+            ? 'bg-obsidian/90 backdrop-blur-md border-b border-gold/20 py-3 shadow-obsidian-glow'
+            : 'bg-gradient-to-b from-[#08090A]/70 via-[#08090A]/20 to-transparent border-b border-transparent py-5'
         }`}
       >
         <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
@@ -63,11 +63,15 @@ export default function Header() {
             data-cursor="CUSCO"
             className="flex flex-col group select-none"
           >
-            <span className="font-serif text-lg sm:text-xl tracking-wider text-mist font-medium group-hover:text-gold transition-colors flex items-center">
+            <span
+              className={`font-serif text-lg sm:text-xl tracking-wider font-medium transition-colors flex items-center ${
+                isScrolled ? 'text-mist group-hover:text-gold' : 'text-white group-hover:text-[#E0C28A]'
+              }`}
+            >
               {brand.name}
               <span className="w-1.5 h-1.5 rounded-full bg-gold ml-1.5 animate-pulse" />
             </span>
-            <span className="text-[10px] font-sans font-medium tracking-ultra-wide text-gold/80 uppercase">
+            <span className="text-[10px] font-sans font-medium tracking-ultra-wide text-gold/90 uppercase">
               Cusco · Valle Sagrado
             </span>
           </a>
@@ -80,7 +84,9 @@ export default function Header() {
                 href={link.href}
                 onClick={(e) => handleNavClick(e, link.href)}
                 data-cursor={link.cursor}
-                className="relative text-xs font-sans font-medium tracking-widest uppercase text-mist/75 hover:text-gold transition-colors py-1 group/nav"
+                className={`relative text-xs font-sans font-medium tracking-widest uppercase transition-colors py-1 group/nav ${
+                  isScrolled ? 'text-mist/75 hover:text-gold' : 'text-white/90 hover:text-gold'
+                }`}
               >
                 <span>{link.label}</span>
                 <span className="absolute bottom-0 left-0 w-0 h-[1px] bg-gold transition-all duration-300 group-hover/nav:w-full" />
@@ -94,12 +100,20 @@ export default function Header() {
             <ThemeToggle />
 
             {/* Selector Bilingüe ES / EN */}
-            <div className="flex items-center rounded-full border border-gold/30 bg-obsidian-card/60 p-0.5 text-[10px] font-sans font-bold tracking-wider">
+            <div
+              className={`flex items-center rounded-full border border-gold/30 p-0.5 text-[10px] font-sans font-bold tracking-wider ${
+                isScrolled ? 'bg-obsidian-card/60' : 'bg-black/50 backdrop-blur-md'
+              }`}
+            >
               <button
                 type="button"
                 onClick={() => setLang('es')}
                 className={`px-2 py-0.5 rounded-full transition-colors ${
-                  lang === 'es' ? 'bg-gold text-obsidian' : 'text-mist/60 hover:text-gold'
+                  lang === 'es'
+                    ? 'bg-gold text-obsidian'
+                    : isScrolled
+                    ? 'text-mist/60 hover:text-gold'
+                    : 'text-white/70 hover:text-gold'
                 }`}
               >
                 ES
@@ -108,14 +122,24 @@ export default function Header() {
                 type="button"
                 onClick={() => setLang('en')}
                 className={`px-2 py-0.5 rounded-full transition-colors ${
-                  lang === 'en' ? 'bg-gold text-obsidian' : 'text-mist/60 hover:text-gold'
+                  lang === 'en'
+                    ? 'bg-gold text-obsidian'
+                    : isScrolled
+                    ? 'text-mist/60 hover:text-gold'
+                    : 'text-white/70 hover:text-gold'
                 }`}
               >
                 EN
               </button>
             </div>
 
-            <div className="hidden lg:flex items-center text-[11px] font-sans font-medium tracking-wider text-mist/60 border border-white/10 px-3 py-1.5 rounded-full bg-obsidian-card/40">
+            <div
+              className={`hidden lg:flex items-center text-[11px] font-sans font-medium tracking-wider border px-3 py-1.5 rounded-full ${
+                isScrolled
+                  ? 'text-mist/70 border-white/10 bg-obsidian-card/40'
+                  : 'text-white/85 border-white/20 bg-black/45 backdrop-blur-md'
+              }`}
+            >
               <Compass className="w-3.5 h-3.5 text-gold mr-1.5" />
               <span>{destination.coordinates.formatted}</span>
             </div>
