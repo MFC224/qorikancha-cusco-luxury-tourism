@@ -149,6 +149,26 @@ export default function RootLayout({
       className={`${cinzel.variable} ${dmSans.variable} dark scroll-smooth`}
     >
       <head>
+        {/* Zero-FOUC Theme Initializer (Obsidian Dark / Travertine Light) */}
+        <script
+          id="theme-initializer"
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function() {
+                try {
+                  var saved = localStorage.getItem('qorikancha_theme');
+                  if (saved === 'light') {
+                    document.documentElement.classList.remove('dark');
+                    document.documentElement.classList.add('light');
+                  } else {
+                    document.documentElement.classList.add('dark');
+                    document.documentElement.classList.remove('light');
+                  }
+                } catch (e) {}
+              })();
+            `,
+          }}
+        />
         {/* Google Consent Mode v2: Inicialización síncrona obligatoria con bloqueo por defecto */}
         <script
           id="google-consent-mode-v2-init"

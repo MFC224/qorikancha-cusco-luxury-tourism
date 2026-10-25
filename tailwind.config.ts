@@ -11,25 +11,25 @@ const config: Config = {
     extend: {
       colors: {
         obsidian: {
-          DEFAULT: '#08090A',
-          deep: '#040505',
-          light: '#0F1113',
-          card: '#121517',
-          elevated: '#181C1E',
-          surface: '#1F2428',
+          DEFAULT: 'rgb(var(--bg-obsidian-rgb) / <alpha-value>)',
+          deep: 'rgb(var(--bg-obsidian-deep-rgb) / <alpha-value>)',
+          light: 'rgb(var(--bg-obsidian-light-rgb) / <alpha-value>)',
+          card: 'rgb(var(--bg-obsidian-card-rgb) / <alpha-value>)',
+          elevated: 'rgb(var(--bg-obsidian-elevated-rgb) / <alpha-value>)',
+          surface: 'rgb(var(--bg-obsidian-surface-rgb) / <alpha-value>)',
         },
         gold: {
-          DEFAULT: '#C8A261', // Inti Gold
-          light: '#E0C28A',
-          dark: '#9A7736',
-          shimmer: '#F2DFB8',
-          subtle: 'rgba(200, 162, 97, 0.15)',
+          DEFAULT: 'rgb(var(--gold-rgb) / <alpha-value>)',
+          light: 'rgb(var(--gold-light-rgb) / <alpha-value>)',
+          dark: 'rgb(var(--gold-dark-rgb) / <alpha-value>)',
+          shimmer: 'rgb(var(--gold-shimmer-rgb) / <alpha-value>)',
+          subtle: 'rgba(var(--gold-rgb), 0.15)',
         },
         mist: {
-          DEFAULT: '#F4F4F0',
-          muted: '#9CA3AF',
-          subtle: '#6B7280',
-          dark: '#374151',
+          DEFAULT: 'rgb(var(--mist-rgb) / <alpha-value>)',
+          muted: 'rgb(var(--mist-muted-rgb) / <alpha-value>)',
+          subtle: 'rgb(var(--mist-subtle-rgb) / <alpha-value>)',
+          dark: 'rgb(var(--mist-dark-rgb) / <alpha-value>)',
         },
         terracotta: {
           DEFAULT: '#DD3C20',

@@ -2,18 +2,69 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ========================================================
+   THEME VARIABLES: EDITORIAL ALABASTER / TRAVERTINE (LIGHT)
+   Inspirado en Aman Resorts y Belmond Cusco / Monasterio
+   ======================================================== */
 :root {
-  --bg-obsidian: #08090a;
-  --surface-andes: #121517;
-  --surface-card: #181c1e;
-  --surface-elevated: #22272b;
-  --gold-inti: #c8a261;
-  --gold-light: #e0c28a;
-  --gold-dark: #9a7736;
-  --text-mist: #f4f4f0;
-  --text-muted: #9ca3af;
-  --border-subtle: rgba(200, 162, 97, 0.18);
-  --border-focus: rgba(200, 162, 97, 0.45);
+  /* Canvas y Superficies Cálidas Minerales */
+  --bg-obsidian-rgb: 250 248 245;          /* #FAF8F5 Warm Alabaster / Lino Travertino */
+  --bg-obsidian-deep-rgb: 245 242 235;     /* #F5F2EB Travertine Bed */
+  --bg-obsidian-card-rgb: 255 255 255;     /* #FFFFFF Crisp Card Surface */
+  --bg-obsidian-elevated-rgb: 242 239 233; /* #F2EFE9 Honed Limestone */
+  --bg-obsidian-light-rgb: 242 239 233;    /* #F2EFE9 */
+  --bg-obsidian-surface-rgb: 237 232 223;  /* #EDE8DF Surface Inset */
+
+  /* Oro Bronce Envejecido (WCAG AA 4.95:1 / 5.24:1 sobre marfil y blanco) */
+  --gold-rgb: 140 101 39;                  /* #8C6527 Antique Burnished Bronze */
+  --gold-light-rgb: 168 127 59;            /* #A87F3B */
+  --gold-dark-rgb: 122 88 30;              /* #7A581E */
+  --gold-shimmer-rgb: 184 143 72;          /* #B88F48 */
+
+  /* Tipografía Tinta de Carbón Cálido (WCAG AAA 15.13:1 sobre canvas) */
+  --mist-rgb: 30 34 36;                    /* #1E2224 Obsidian Charcoal Slate */
+  --mist-muted-rgb: 87 83 78;              /* #57534E Stone 600 - 7.20:1 AAA */
+  --mist-subtle-rgb: 120 113 108;          /* #78716C Stone 500 */
+  --mist-dark-rgb: 18 21 23;               /* #121517 Obsidian Ink */
+
+  --glass-bg: rgba(255, 255, 255, 0.90);
+  --glass-border: rgba(140, 101, 39, 0.20);
+  --glass-shadow: 0 15px 35px -5px rgba(28, 25, 23, 0.06), 0 0 1px rgba(28, 25, 23, 0.12);
+  --hud-bg: rgba(140, 101, 39, 0.08);
+  --hud-border: rgba(140, 101, 39, 0.25);
+  --hud-text: #8C6527;
+}
+
+/* ========================================================
+   THEME VARIABLES: DEEP OBSIDIAN & INTI GOLD (DARK MODE)
+   ======================================================== */
+.dark {
+  /* Canvas y Superficies Minerales Volcánicas */
+  --bg-obsidian-rgb: 8 9 10;               /* #08090A Deep Obsidian */
+  --bg-obsidian-deep-rgb: 4 5 5;           /* #040505 Void */
+  --bg-obsidian-card-rgb: 18 21 23;        /* #121517 Andes Slate */
+  --bg-obsidian-elevated-rgb: 24 28 30;    /* #181C1E Elevated Coal */
+  --bg-obsidian-light-rgb: 15 17 19;       /* #0F1113 */
+  --bg-obsidian-surface-rgb: 31 36 40;     /* #1F2428 Surface Inset */
+
+  /* Oro Inti Ceremonial (WCAG AAA 8.35:1) */
+  --gold-rgb: 200 162 97;                  /* #C8A261 */
+  --gold-light-rgb: 224 194 138;           /* #E0C28A */
+  --gold-dark-rgb: 154 119 54;             /* #9A7736 */
+  --gold-shimmer-rgb: 242 223 184;         /* #F2DFB8 */
+
+  /* Tipografía Bruma Andina (WCAG AAA 18.07:1) */
+  --mist-rgb: 244 244 240;                 /* #F4F4F0 Mist White */
+  --mist-muted-rgb: 156 163 175;           /* #9CA3AF */
+  --mist-subtle-rgb: 107 114 128;          /* #6B7280 */
+  --mist-dark-rgb: 255 255 255;            /* #FFFFFF Pure Starlight */
+
+  --glass-bg: rgba(18, 21, 23, 0.75);
+  --glass-border: rgba(200, 162, 97, 0.18);
+  --glass-shadow: 0 20px 50px -10px rgba(0, 0, 0, 0.8), 0 0 25px -5px rgba(200, 162, 97, 0.15);
+  --hud-bg: rgba(200, 162, 97, 0.08);
+  --hud-border: rgba(200, 162, 97, 0.25);
+  --hud-text: #E0C28A;
 }
 
 * {
@@ -21,8 +72,8 @@
 }
 
 html {
-  background-color: var(--bg-obsidian);
-  color: var(--text-mist);
+  background-color: rgb(var(--bg-obsidian-rgb));
+  color: rgb(var(--mist-rgb));
   scroll-behavior: smooth;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -30,16 +81,17 @@ html {
 }
 
 body {
-  background-color: var(--bg-obsidian);
-  color: var(--text-mist);
+  background-color: rgb(var(--bg-obsidian-rgb));
+  color: rgb(var(--mist-rgb));
   min-height: 100vh;
   overflow-x: hidden;
-  selection-background-color: var(--gold-inti);
+  transition: background-color 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+              color 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 ::selection {
-  background-color: var(--gold-inti);
-  color: #08090a;
+  background-color: rgb(var(--gold-rgb));
+  color: rgb(var(--bg-obsidian-rgb));
 }
 
 /* Custom Scrollbar */
@@ -48,16 +100,16 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: #08090a;
+  background: rgb(var(--bg-obsidian-rgb));
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgba(200, 162, 97, 0.3);
+  background: rgba(var(--gold-rgb), 0.3);
   border-radius: 9999px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(200, 162, 97, 0.6);
+  background: rgba(var(--gold-rgb), 0.6);
 }
 
 /* Lenis Scroll Smooth Integration */
@@ -84,26 +136,27 @@ html.lenis, html.lenis body {
 /* Luxury Utilities */
 @layer utilities {
   .text-gold-gradient {
-    background: linear-gradient(135deg, #f5ebd7 0%, #c8a261 50%, #9a7736 100%);
+    background: linear-gradient(135deg, rgb(var(--gold-light-rgb)) 0%, rgb(var(--gold-rgb)) 50%, rgb(var(--gold-dark-rgb)) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
 
   .text-mist-gradient {
-    background: linear-gradient(180deg, #ffffff 0%, #d8d8d0 100%);
+    background: linear-gradient(180deg, rgb(var(--mist-dark-rgb)) 0%, rgb(var(--mist-rgb)) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
 
   .bg-radial-glow {
-    background: radial-gradient(circle at 50% 30%, rgba(200, 162, 97, 0.12) 0%, rgba(8, 9, 10, 0) 70%);
+    background: radial-gradient(circle at 50% 30%, rgba(var(--gold-rgb), 0.12) 0%, rgba(var(--bg-obsidian-rgb), 0) 70%);
   }
 
   .glass-card {
-    background-color: rgba(18, 21, 23, 0.7);
+    background-color: var(--glass-bg);
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
-    border: 1px solid rgba(200, 162, 97, 0.15);
+    border: 1px solid var(--glass-border);
+    box-shadow: var(--glass-shadow);
   }
 
   .glass-card-hover {
@@ -111,8 +164,8 @@ html.lenis, html.lenis body {
   }
 
   .glass-card-hover:hover {
-    border-color: rgba(200, 162, 97, 0.4);
-    box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.7), 0 0 25px -5px rgba(200, 162, 97, 0.2);
+    border-color: rgba(var(--gold-rgb), 0.45);
+    box-shadow: 0 15px 45px -10px rgba(0, 0, 0, 0.15), 0 0 25px -5px rgba(var(--gold-rgb), 0.25);
     transform: translateY(-2px);
   }
 
@@ -124,9 +177,9 @@ html.lenis, html.lenis body {
     text-transform: uppercase;
     padding: 0.35rem 0.75rem;
     border-radius: 9999px;
-    background: rgba(200, 162, 97, 0.08);
-    border: 1px solid rgba(200, 162, 97, 0.25);
-    color: var(--gold-light);
+    background: var(--hud-bg);
+    border: 1px solid var(--hud-border);
+    color: var(--hud-text);
   }
 
   /* Animaciones Flotantes para Collage de Gastronomía Andina */
@@ -159,12 +212,12 @@ html.lenis, html.lenis body {
 
   @keyframes pulseGoldGlow {
     0%, 100% {
-      box-shadow: 0 0 15px rgba(200, 162, 97, 0.25);
-      border-color: rgba(200, 162, 97, 0.35);
+      box-shadow: 0 0 15px rgba(var(--gold-rgb), 0.25);
+      border-color: rgba(var(--gold-rgb), 0.35);
     }
     50% {
-      box-shadow: 0 0 30px rgba(200, 162, 97, 0.55);
-      border-color: rgba(200, 162, 97, 0.8);
+      box-shadow: 0 0 30px rgba(var(--gold-rgb), 0.55);
+      border-color: rgba(var(--gold-rgb), 0.8);
     }
   }
 
@@ -183,4 +236,38 @@ html.lenis, html.lenis body {
   .animate-pulse-gold {
     animation: pulseGoldGlow 3s ease-in-out infinite;
   }
+}
+
+/* ========================================================
+   LIGHT MODE OVERRIDES FOR SUBLIME EDITORIAL READABILITY
+   ======================================================== */
+html:not(.dark) .border-white\/5,
+html:not(.dark) .border-white\/10 {
+  border-color: rgba(140, 101, 39, 0.15) !important;
+}
+
+html:not(.dark) .border-white\/15,
+html:not(.dark) .border-white\/20 {
+  border-color: rgba(140, 101, 39, 0.22) !important;
+}
+
+html:not(.dark) .text-white {
+  color: #121517 !important;
+}
+
+html:not(.dark) .text-white\/80,
+html:not(.dark) .text-white\/90 {
+  color: rgba(18, 21, 23, 0.85) !important;
+}
+
+html:not(.dark) .bg-white\/5 {
+  background-color: rgba(140, 101, 39, 0.05) !important;
+}
+
+html:not(.dark) .bg-white\/10 {
+  background-color: rgba(140, 101, 39, 0.08) !important;
+}
+
+html:not(.dark) .shadow-obsidian-glow {
+  box-shadow: 0 15px 35px -5px rgba(28, 25, 23, 0.06), 0 0 1px rgba(28, 25, 23, 0.12) !important;
 }

@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import { cuscoConfig } from '@/data/cuscoConfig';
 import MagneticRollButton from '@/components/ui/MagneticRollButton';
+import ThemeToggle from '@/components/ui/ThemeToggle';
 import { MessageSquare, Menu, X, Compass, Mountain, ShieldCheck } from 'lucide-react';
 import { useSmoothScroll } from '@/components/layout/SmoothScroll';
 
@@ -87,8 +88,11 @@ export default function Header() {
             ))}
           </nav>
 
-          {/* Right Action: Language Switcher + Telemetry + VIP WhatsApp Roll Button */}
-          <div className="hidden sm:flex items-center space-x-3">
+          {/* Right Action: Theme Toggle + Language Switcher + Telemetry + VIP WhatsApp Roll Button */}
+          <div className="hidden sm:flex items-center space-x-2.5">
+            {/* Selector de Tema Oscuro / Claro */}
+            <ThemeToggle />
+
             {/* Selector Bilingüe ES / EN */}
             <div className="flex items-center rounded-full border border-gold/30 bg-obsidian-card/60 p-0.5 text-[10px] font-sans font-bold tracking-wider">
               <button
@@ -148,9 +152,34 @@ export default function Header() {
           className="fixed inset-0 z-40 bg-obsidian/95 backdrop-blur-xl md:hidden flex flex-col justify-between p-8 pt-28 animate-fade-in"
         >
           <div className="flex flex-col space-y-6">
-            <span className="text-xs font-sans font-medium text-gold tracking-widest uppercase">
-              {'// MENÚ DE EXPEDICIÓN'}
-            </span>
+            <div className="flex items-center justify-between pb-4 border-b border-white/10">
+              <span className="text-xs font-sans font-medium text-gold tracking-widest uppercase">
+                {'// MENÚ DE EXPEDICIÓN'}
+              </span>
+              <div className="flex items-center space-x-2">
+                <ThemeToggle />
+                <div className="flex items-center rounded-full border border-gold/30 bg-obsidian-card/60 p-0.5 text-[10px] font-sans font-bold tracking-wider">
+                  <button
+                    type="button"
+                    onClick={() => setLang('es')}
+                    className={`px-2 py-0.5 rounded-full transition-colors ${
+                      lang === 'es' ? 'bg-gold text-obsidian' : 'text-mist/60 hover:text-gold'
+                    }`}
+                  >
+                    ES
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => setLang('en')}
+                    className={`px-2 py-0.5 rounded-full transition-colors ${
+                      lang === 'en' ? 'bg-gold text-obsidian' : 'text-mist/60 hover:text-gold'
+                    }`}
+                  >
+                    EN
+                  </button>
+                </div>
+              </div>
+            </div>
 
             {navLinks.map((link) => (
               <a

@@ -28,8 +28,12 @@
    - Presentación de directores con trayectoria verificable: Mateo Huamán Ccoya (Arqueólogo Residente), Dra. Sofía Valdivia (Directora Médica WFR).
    - Alianzas directas con comunidades quechuas de Huilloc y Chillca (canon directo y reforestación de queñuales).
    - Transparencia legal plena: Licencias MINCETUR Nº 2024-CUS-089, DIRCETUR-CUS-AG-04819, RUC 20608945123 y Póliza de Responsabilidad Civil Pacífico Seguros Nº 842109.
-5. **Selector Bilingüe [ ES | EN ] & Accesibilidad Universal**:
-   - Conmutador interactivo de idioma en el Header.
+5. **Sistema Dual de Temas de Ultralujo (Obsidian & Lino Travertino)**:
+   - **Modo Noche (Deep Obsidian)**: Negro volcánico profundo (`#08090A`), carbón pizarra (`#121517`) y Oro Inti resplandeciente (`#C8A261`).
+   - **Modo Día (Editorial Travertine)**: Inspirado en Aman Resorts y Belmond Monasterio, utiliza lino y piedra calcarenita andina cálida (`#FAF8F5` / `#F5F2EB`), tarjetas blanco alabastro (`#FFFFFF`), tipografía tinta carbón (`#1E2224`, 15.1:1 AAA) y Oro Bronce Envejecido (`#8C6527`, 4.95:1 AA). Cero blanco clínico plano.
+   - **Selector Dinámico**: Conmutador [ 🌙 Noche | ☀️ Día ] con persistencia en `localStorage` y script síncrono anti-parpadeo (Zero-FOUC).
+6. **Selector Bilingüe [ ES | EN ] & Accesibilidad Universal**:
+   - Conmutador interactivo de idioma en el Header y menú móvil.
    - Soporte estricto para `prefers-reduced-motion` y compatibilidad total con navegación por teclado y lectores de pantalla.
 6. **Bento Grid con Terroir Andino & Vagón de Época**:
    - **Vagón de Época**: Fotografía auténtica en Ollantaytambo con maderas pulidas y vajilla de autor.
