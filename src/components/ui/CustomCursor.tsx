@@ -119,7 +119,7 @@ export default function CustomCursor() {
         style={{ willChange: 'transform, width, height' }}
       >
         {cursorText && (
-          <span className="text-[10px] font-mono font-bold tracking-widest uppercase text-obsidian animate-fade-in text-center px-2 select-none">
+          <span className="text-[10px] font-sans font-bold tracking-wider uppercase text-obsidian animate-fade-in text-center px-2 select-none">
             {cursorText}
           </span>
         )}

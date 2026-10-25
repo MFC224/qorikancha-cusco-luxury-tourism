@@ -31,7 +31,7 @@ export default function Footer() {
         {/* Cabecera Monumental del Footer */}
         <div className="flex flex-col lg:flex-row lg:items-start justify-between pb-16 border-b border-white/10 gap-10">
           <div className="max-w-2xl">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gold/10 border border-gold/25 text-gold text-xs font-mono tracking-widest uppercase mb-4">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gold/10 border border-gold/25 text-gold text-xs font-sans font-medium tracking-widest uppercase mb-4">
               <Sparkles className="w-3.5 h-3.5" />
               {brand.edition}
             </div>
@@ -55,20 +55,20 @@ export default function Footer() {
               type="button"
               onClick={() => scrollTo(0)}
               data-cursor="SUBIR"
-              className="inline-flex items-center space-x-2 px-5 py-2.5 rounded-full border border-gold/30 bg-obsidian-card/80 text-xs font-mono tracking-widest uppercase text-gold hover:bg-gold/15 transition-all group"
+              className="inline-flex items-center space-x-2 px-5 py-2.5 rounded-full border border-gold/30 bg-obsidian-card/80 text-xs font-sans font-medium tracking-widest uppercase text-gold hover:bg-gold/15 transition-all group"
             >
               <span>Volver a la cima</span>
               <ArrowUp className="w-3.5 h-3.5 transition-transform group-hover:-translate-y-0.5" />
             </button>
 
-            <span className="text-xs font-mono text-mist/50">
+            <span className="text-xs font-sans font-medium tracking-wider text-mist/50">
               {destination.coordinates.formatted} · {destination.elevation.display}
             </span>
           </div>
         </div>
 
         {/* Columnas Informativas, Enlaces & Sellos Oficiales */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 py-16 border-b border-white/10 text-xs font-mono">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 py-16 border-b border-white/10 text-xs font-sans">
           {/* Columna 1: Expediciones */}
           <div className="space-y-4">
             <span className="text-gold tracking-widest uppercase block text-[11px] font-bold">
@@ -123,6 +123,18 @@ export default function Footer() {
                   Valle Sagrado & Ausangate
                 </a>
               </li>
+              <li>
+                <a
+                  href="#expediciones"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    scrollTo('#expediciones');
+                  }}
+                  className="hover:text-gold transition-colors block text-gold"
+                >
+                  Montaña de 7 Colores: Vinicunca VIP
+                </a>
+              </li>
             </ul>
           </div>
 
@@ -173,7 +185,7 @@ export default function Footer() {
                   href={concierge.generateWhatsAppUrl()}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="hover:text-gold transition-colors block text-emerald-400"
+                  className="hover:text-gold transition-colors block text-gold font-medium"
                 >
                   Canal VIP de WhatsApp Directo
                 </a>
@@ -199,7 +211,7 @@ export default function Footer() {
                 <Mail className="w-3.5 h-3.5 text-gold shrink-0" />
                 <span>{concierge.email}</span>
               </p>
-              <p className="flex items-center gap-2 text-emerald-400">
+              <p className="flex items-center gap-2 text-gold">
                 <MessageSquare className="w-3.5 h-3.5 shrink-0" />
                 <span>Atención Continua 24 Horas</span>
               </p>
@@ -213,7 +225,7 @@ export default function Footer() {
             </span>
             <ul className="space-y-2.5 text-[11px] text-mist/65">
               <li className="flex items-start gap-2">
-                <ShieldCheck className="w-3.5 h-3.5 text-emerald-400 shrink-0 mt-0.5" />
+                <ShieldCheck className="w-3.5 h-3.5 text-gold shrink-0 mt-0.5" />
                 <span>MINCETUR · Operador Oficial Homologado</span>
               </li>
               <li className="flex items-start gap-2">
@@ -227,7 +239,7 @@ export default function Footer() {
               <li className="pt-2">
                 <Link
                   href="/libro-de-reclamaciones"
-                  className="inline-flex items-center gap-1.5 text-[11px] font-mono text-gold/80 hover:text-gold transition-colors py-1 px-2.5 rounded border border-gold/25 bg-gold/5"
+                  className="inline-flex items-center gap-1.5 text-[11px] font-sans font-medium text-gold/80 hover:text-gold transition-colors py-1 px-2.5 rounded border border-gold/25 bg-gold/5"
                 >
                   <BookOpen className="w-3 h-3 text-gold" />
                   <span>Libro de Reclamaciones Virtual (Ley Nº 29571)</span>
@@ -238,7 +250,7 @@ export default function Footer() {
         </div>
 
         {/* Cierre Inferior de Copyright */}
-        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs font-mono text-mist/45 gap-4">
+        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs font-sans font-medium text-mist/45 gap-4">
           <p>
             © {new Date().getFullYear()} {brand.legalName}. Todos los derechos reservados.
           </p>

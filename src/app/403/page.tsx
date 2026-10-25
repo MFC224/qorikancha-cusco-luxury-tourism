@@ -25,7 +25,7 @@ export default function ForbiddenPage() {
         </div>
 
         {/* Badge de Telemetría */}
-        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-red-500/10 border border-red-500/30 text-red-400 font-mono text-xs uppercase tracking-widest mb-4">
+        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-red-500/10 border border-red-500/30 text-red-400 font-sans font-medium text-xs uppercase tracking-widest mb-4">
           <span className="w-1.5 h-1.5 rounded-full bg-red-400 animate-ping" />
           HTTP 403 · ACCESO RESTRINGIDO A ZONA SAGRADA
         </div>
@@ -39,7 +39,7 @@ export default function ForbiddenPage() {
         </p>
 
         {/* Coordenadas del Punto de Bloqueo */}
-        <div className="my-8 p-4 rounded-2xl bg-obsidian-light/80 border border-gold/15 text-xs font-mono text-mist/60 flex flex-wrap items-center justify-around gap-3">
+        <div className="my-8 p-4 rounded-2xl bg-obsidian-light/80 border border-gold/15 text-xs font-sans font-medium text-mist/60 flex flex-wrap items-center justify-around gap-3 uppercase tracking-wider">
           <span className="flex items-center gap-1.5">
             <Compass className="w-3.5 h-3.5 text-gold" />
             {destination.coordinates.formatted}
@@ -56,7 +56,7 @@ export default function ForbiddenPage() {
           <Link
             href="/"
             data-cursor="RETORNAR"
-            className="w-full sm:w-auto inline-flex items-center justify-center px-6 py-3 rounded-full bg-gold hover:bg-gold-light text-obsidian font-mono text-xs uppercase tracking-widest font-bold shadow-gold-glow transition-all"
+            className="w-full sm:w-auto inline-flex items-center justify-center px-6 py-3 rounded-full bg-gold hover:bg-gold-light text-obsidian font-sans text-xs uppercase tracking-widest font-bold shadow-gold-glow transition-all"
           >
             <ArrowLeft className="w-4 h-4 mr-2" />
             Retornar al Campamento
@@ -69,7 +69,7 @@ export default function ForbiddenPage() {
             target="_blank"
             rel="noopener noreferrer"
             data-cursor="CONCIERGE"
-            className="w-full sm:w-auto inline-flex items-center justify-center px-6 py-3 rounded-full border border-gold/30 hover:border-gold hover:bg-gold/10 text-gold font-mono text-xs uppercase tracking-widest transition-all"
+            className="w-full sm:w-auto inline-flex items-center justify-center px-6 py-3 rounded-full border border-gold/30 hover:border-gold hover:bg-gold/10 text-gold font-sans font-medium text-xs uppercase tracking-widest transition-all"
           >
             <MessageSquare className="w-4 h-4 mr-2" />
             Contactar Concierge

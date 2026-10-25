@@ -89,7 +89,7 @@ export default function ComplaintsBookPage() {
         <div className="mb-8 print:hidden">
           <Link
             href="/"
-            className="inline-flex items-center gap-2 text-xs font-mono text-gold hover:text-white transition-colors"
+            className="inline-flex items-center gap-2 text-xs font-sans text-gold hover:text-white transition-colors"
           >
             <ArrowLeft className="w-4 h-4" />
             <span>Retornar a la Colección de Expediciones</span>
@@ -99,11 +99,11 @@ export default function ComplaintsBookPage() {
         {/* Encabezado Institucional INDECOPI */}
         <header className="border-b border-gold/20 pb-8 mb-10">
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-4">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gold/10 border border-gold/25 text-gold text-xs font-mono tracking-widest uppercase">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gold/10 border border-gold/25 text-gold text-xs font-sans tracking-widest uppercase">
               <BookOpen className="w-3.5 h-3.5" />
               Libro de Reclamaciones Virtual
             </div>
-            <div className="font-mono text-xs text-gold/90 px-3 py-1 rounded-lg bg-obsidian border border-white/10 self-start sm:self-auto">
+            <div className="font-sans text-xs text-gold/90 px-3 py-1 rounded-lg bg-obsidian border border-white/10 self-start sm:self-auto">
               Hoja de Reclamación N°: <strong>{claimCode}</strong>
             </div>
           </div>
@@ -111,13 +111,13 @@ export default function ComplaintsBookPage() {
           <h1 className="text-3xl sm:text-4xl font-serif font-medium text-white tracking-tight mb-3">
             Libro de Reclamaciones
           </h1>
-          <p className="text-xs text-mist/70 font-mono">
+          <p className="text-xs text-mist/70 font-sans">
             Conforme a lo dispuesto en el Código de Protección y Defensa del Consumidor (Ley N° 29571) y el D.S.
             011-2011-PCM modificado por la Ley N° 31435.
           </p>
 
           {/* Datos Fiscales del Proveedor */}
-          <div className="mt-6 p-4 rounded-xl bg-charcoal/70 border border-white/10 text-xs font-mono grid sm:grid-cols-2 gap-2 text-mist/80">
+          <div className="mt-6 p-4 rounded-xl bg-charcoal/70 border border-white/10 text-xs font-sans grid sm:grid-cols-2 gap-2 text-mist/80">
             <div>
               <span className="text-gold">Razón Social:</span> {legal.legalName}
             </div>
@@ -138,7 +138,7 @@ export default function ComplaintsBookPage() {
             ========================================================================= */}
         {submitted ? (
           <div className="p-8 rounded-2xl bg-charcoal/90 border border-gold/40 space-y-6 shadow-2xl animate-in fade-in duration-300">
-            <div className="w-14 h-14 rounded-2xl bg-emerald-500/15 border border-emerald-500/30 flex items-center justify-center text-emerald-400">
+            <div className="w-14 h-14 rounded-2xl bg-gold/15 border border-gold/30 flex items-center justify-center text-gold">
               <CheckCircle2 className="w-8 h-8" />
             </div>
 
@@ -148,12 +148,12 @@ export default function ComplaintsBookPage() {
               </h2>
               <p className="text-sm text-mist/80 leading-relaxed">
                 Su {formData.claimType.toLowerCase()} ha sido remitida con el código de seguimiento único{' '}
-                <strong className="text-gold font-mono">{claimCode}</strong>. Se ha despachado una copia electrónica
+                <strong className="text-gold font-sans">{claimCode}</strong>. Se ha despachado una copia electrónica
                 íntegra de esta constancia al correo suministrado (<em>{formData.email}</em>).
               </p>
             </div>
 
-            <div className="p-4 rounded-xl bg-obsidian border border-white/10 text-xs font-mono space-y-1.5 text-mist/80">
+            <div className="p-4 rounded-xl bg-obsidian border border-white/10 text-xs font-sans space-y-1.5 text-mist/80">
               <div className="flex items-center gap-2 text-gold font-semibold">
                 <Clock className="w-4 h-4" />
                 Plazo Legal de Respuesta (Ley N° 31435):
@@ -169,14 +169,14 @@ export default function ComplaintsBookPage() {
               <button
                 type="button"
                 onClick={handlePrint}
-                className="px-4 py-2.5 rounded-lg border border-white/20 bg-white/5 hover:bg-white/10 text-mist text-xs font-mono font-medium transition-colors flex items-center gap-2 cursor-pointer"
+                className="px-4 py-2.5 rounded-lg border border-white/20 bg-white/5 hover:bg-white/10 text-mist text-xs font-sans font-medium transition-colors flex items-center gap-2 cursor-pointer"
               >
                 <Printer className="w-4 h-4" />
                 <span>Imprimir Hoja de Reclamación</span>
               </button>
               <Link
                 href="/"
-                className="px-4 py-2.5 rounded-lg border border-gold/40 bg-gold/15 hover:bg-gold/25 text-gold text-xs font-mono font-semibold transition-colors"
+                className="px-4 py-2.5 rounded-lg border border-gold/40 bg-gold/15 hover:bg-gold/25 text-gold text-xs font-sans font-semibold transition-colors"
               >
                 Volver a la Página Principal
               </Link>
@@ -196,13 +196,13 @@ export default function ComplaintsBookPage() {
 
             {/* SECCIÓN 1: Identificación del Consumidor Reclamante */}
             <fieldset className="p-6 rounded-2xl bg-charcoal/70 border border-white/10 space-y-4">
-              <legend className="font-mono text-xs uppercase tracking-wider text-gold px-2 font-semibold">
+              <legend className="font-sans text-xs uppercase tracking-wider text-gold px-2 font-semibold">
                 1. Identificación del Consumidor Reclamante
               </legend>
 
               <div className="grid sm:grid-cols-2 gap-4">
                 <div className="sm:col-span-2">
-                  <label className="block text-xs font-mono text-mist/80 mb-1">
+                  <label className="block text-xs font-sans text-mist/80 mb-1">
                     Nombres y Apellidos Completos *
                   </label>
                   <input
@@ -216,7 +216,7 @@ export default function ComplaintsBookPage() {
                 </div>
 
                 <div>
-                  <label className="block text-xs font-mono text-mist/80 mb-1">Tipo de Documento *</label>
+                  <label className="block text-xs font-sans text-mist/80 mb-1">Tipo de Documento *</label>
                   <select
                     value={formData.documentType}
                     onChange={(e) => setFormData({ ...formData, documentType: e.target.value })}
@@ -229,7 +229,7 @@ export default function ComplaintsBookPage() {
                 </div>
 
                 <div>
-                  <label className="block text-xs font-mono text-mist/80 mb-1">Número de Documento *</label>
+                  <label className="block text-xs font-sans text-mist/80 mb-1">Número de Documento *</label>
                   <input
                     type="text"
                     required
@@ -241,7 +241,7 @@ export default function ComplaintsBookPage() {
                 </div>
 
                 <div>
-                  <label className="block text-xs font-mono text-mist/80 mb-1">
+                  <label className="block text-xs font-sans text-mist/80 mb-1">
                     Correo Electrónico * (Para envío de constancia)
                   </label>
                   <input
@@ -255,7 +255,7 @@ export default function ComplaintsBookPage() {
                 </div>
 
                 <div>
-                  <label className="block text-xs font-mono text-mist/80 mb-1">Teléfono / WhatsApp *</label>
+                  <label className="block text-xs font-sans text-mist/80 mb-1">Teléfono / WhatsApp *</label>
                   <input
                     type="tel"
                     required
@@ -267,7 +267,7 @@ export default function ComplaintsBookPage() {
                 </div>
 
                 <div className="sm:col-span-2">
-                  <label className="block text-xs font-mono text-mist/80 mb-1">Domicilio del Consumidor *</label>
+                  <label className="block text-xs font-sans text-mist/80 mb-1">Domicilio del Consumidor *</label>
                   <input
                     type="text"
                     required
@@ -282,13 +282,13 @@ export default function ComplaintsBookPage() {
 
             {/* SECCIÓN 2: Identificación del Bien Contratado */}
             <fieldset className="p-6 rounded-2xl bg-charcoal/70 border border-white/10 space-y-4">
-              <legend className="font-mono text-xs uppercase tracking-wider text-gold px-2 font-semibold">
+              <legend className="font-sans text-xs uppercase tracking-wider text-gold px-2 font-semibold">
                 2. Identificación del Bien o Servicio Contratado
               </legend>
 
               <div className="grid sm:grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-xs font-mono text-mist/80 mb-1">Tipo de Bien *</label>
+                  <label className="block text-xs font-sans text-mist/80 mb-1">Tipo de Bien *</label>
                   <div className="flex gap-4 pt-1">
                     <label className="inline-flex items-center gap-2 cursor-pointer text-xs">
                       <input
@@ -316,7 +316,7 @@ export default function ComplaintsBookPage() {
                 </div>
 
                 <div>
-                  <label className="block text-xs font-mono text-mist/80 mb-1">Monto Reclamado (USD / PEN)</label>
+                  <label className="block text-xs font-sans text-mist/80 mb-1">Monto Reclamado (USD / PEN)</label>
                   <input
                     type="text"
                     value={formData.claimedAmount}
@@ -327,7 +327,7 @@ export default function ComplaintsBookPage() {
                 </div>
 
                 <div className="sm:col-span-2">
-                  <label className="block text-xs font-mono text-mist/80 mb-1">
+                  <label className="block text-xs font-sans text-mist/80 mb-1">
                     Descripción de la Expedición / Servicio *
                   </label>
                   <input
@@ -344,13 +344,13 @@ export default function ComplaintsBookPage() {
 
             {/* SECCIÓN 3: Detalle de la Reclamación */}
             <fieldset className="p-6 rounded-2xl bg-charcoal/70 border border-white/10 space-y-4">
-              <legend className="font-mono text-xs uppercase tracking-wider text-gold px-2 font-semibold">
+              <legend className="font-sans text-xs uppercase tracking-wider text-gold px-2 font-semibold">
                 3. Detalle de la Reclamación y Pedido del Consumidor
               </legend>
 
               {/* Selector Tipológico Reclamo vs Queja conforme a INDECOPI */}
               <div className="space-y-2">
-                <label className="block text-xs font-mono text-mist/80">Tipo de Disconformidad *</label>
+                <label className="block text-xs font-sans text-mist/80">Tipo de Disconformidad *</label>
                 <div className="grid sm:grid-cols-2 gap-3">
                   <label
                     className={`p-4 rounded-xl border cursor-pointer transition-colors ${
@@ -367,7 +367,7 @@ export default function ComplaintsBookPage() {
                       onChange={(e) => setFormData({ ...formData, claimType: e.target.value })}
                       className="sr-only"
                     />
-                    <div className="font-mono text-xs font-bold text-gold mb-1">RECLAMO</div>
+                    <div className="font-sans text-xs font-bold text-gold mb-1">RECLAMO</div>
                     <p className="text-[11px] leading-relaxed">
                       Disconformidad relacionada a los bienes o servicios turísticos brindados.
                     </p>
@@ -388,7 +388,7 @@ export default function ComplaintsBookPage() {
                       onChange={(e) => setFormData({ ...formData, claimType: e.target.value })}
                       className="sr-only"
                     />
-                    <div className="font-mono text-xs font-bold text-gold mb-1">QUEJA</div>
+                    <div className="font-sans text-xs font-bold text-gold mb-1">QUEJA</div>
                     <p className="text-[11px] leading-relaxed">
                       Malestar o descontento respecto a la atención al público (no ligada al servicio en sí).
                     </p>
@@ -397,7 +397,7 @@ export default function ComplaintsBookPage() {
               </div>
 
               <div>
-                <label className="block text-xs font-mono text-mist/80 mb-1">
+                <label className="block text-xs font-sans text-mist/80 mb-1">
                   Detalle de los Hechos que Motivan la Reclamación *
                 </label>
                 <textarea
@@ -411,7 +411,7 @@ export default function ComplaintsBookPage() {
               </div>
 
               <div>
-                <label className="block text-xs font-mono text-mist/80 mb-1">Pedido Concreto del Consumidor *</label>
+                <label className="block text-xs font-sans text-mist/80 mb-1">Pedido Concreto del Consumidor *</label>
                 <textarea
                   rows={2}
                   required
@@ -440,7 +440,7 @@ export default function ComplaintsBookPage() {
                 </span>
               </label>
 
-              <div className="text-[11px] font-mono text-gold/80 flex items-center gap-2 pt-1 border-t border-white/5">
+              <div className="text-[11px] font-sans text-gold/80 flex items-center gap-2 pt-1 border-t border-white/5">
                 <FileText className="w-3.5 h-3.5 text-gold" />
                 <span>
                   Plazo legal improrrogable de atención: quince (15) días hábiles (Ley N° 29571 y Ley N° 31435).
@@ -450,14 +450,14 @@ export default function ComplaintsBookPage() {
 
             {/* Botón de Envío */}
             <div className="flex flex-col sm:flex-row items-center justify-between gap-4 pt-2">
-              <span className="text-[11px] font-mono text-mist/50">
+              <span className="text-[11px] font-sans text-mist/50">
                 La formulación del reclamo no impide acudir a otras vías de solución de controversias ante INDECOPI.
               </span>
 
               <button
                 type="submit"
                 disabled={submitting}
-                className="w-full sm:w-auto px-8 py-3 rounded-xl bg-gold hover:bg-gold-light text-obsidian text-xs font-mono font-bold tracking-wider transition-all duration-200 cursor-pointer flex items-center justify-center gap-2 shadow-lg shadow-gold/20 disabled:opacity-50"
+                className="w-full sm:w-auto px-8 py-3 rounded-xl bg-gold hover:bg-gold-light text-obsidian text-xs font-sans font-bold tracking-wider transition-all duration-200 cursor-pointer flex items-center justify-center gap-2 shadow-lg shadow-gold/20 disabled:opacity-50"
               >
                 {submitting ? (
                   <span>Procesando...</span>

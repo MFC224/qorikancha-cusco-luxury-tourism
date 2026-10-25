@@ -112,7 +112,7 @@ export default function HeroSection() {
 
       {/* Espaciador Superior */}
       <div className="relative z-10 max-w-7xl mx-auto w-full pt-4">
-        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-obsidian/80 border border-gold/30 text-gold text-xs font-mono tracking-widest uppercase backdrop-blur-md">
+        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-obsidian/80 border border-gold/30 text-gold text-xs font-sans font-medium tracking-widest uppercase backdrop-blur-md">
           <Sparkles className="w-3.5 h-3.5 text-gold animate-pulse" />
           {destination.region} · {destination.country}
         </div>
@@ -178,7 +178,7 @@ export default function HeroSection() {
           type="button"
           onClick={() => scrollTo('#expediciones')}
           data-cursor="BAJAR"
-          className="hidden md:flex items-center space-x-2 text-xs font-mono text-mist/60 hover:text-gold transition-colors group cursor-pointer"
+          className="hidden md:flex items-center space-x-2 text-xs font-sans font-medium text-mist/60 hover:text-gold transition-colors group cursor-pointer"
         >
           <span className="tracking-widest uppercase">Desliza para explorar</span>
           <span className="p-1.5 rounded-full border border-gold/30 bg-obsidian/60 group-hover:border-gold group-hover:translate-y-0.5 transition-all">

@@ -164,8 +164,8 @@ export const cuscoConfig: CuscoMasterConfig = {
     applicableLaw: 'Leyes de la República del Perú y Estándares Internacionales (GDPR, CCPA)',
   },
   concierge: {
-    whatsappNumber: '51984000000',
-    displayPhone: '+51 984 000 000',
+    whatsappNumber: '51921195037',
+    displayPhone: '+51 921 195 037',
     email: 'concierge@qorikancha-expeditions.com',
     operatingHours: 'Atención 24/7 para huéspedes y expedicionarios activos',
     responseAverage: 'Menos de 15 minutos en WhatsApp VIP',
@@ -174,7 +174,7 @@ export const cuscoConfig: CuscoMasterConfig = {
       const baseText = expeditionTitle
         ? `¡Hola Qorikancha Expeditions! Deseo cotizar la expedición privada *"${expeditionTitle}"* para ${guests} personas durante el mes de ${month}. ¿Tienen disponibilidad y asesoría de aclimatación?`
         : `¡Hola Qorikancha Expeditions! Quisiera diseñar un itinerario a medida de ultralujo para ${guests} personas en Cusco y Machu Picchu. Agradezco su atención.`;
-      return `https://wa.me/51984000000?text=${encodeURIComponent(baseText)}`;
+      return `https://wa.me/51921195037?text=${encodeURIComponent(baseText)}`;
     },
   },
   expeditions: [
@@ -196,7 +196,7 @@ export const cuscoConfig: CuscoMasterConfig = {
       ],
       summary:
         'Despierta frente a la maravilla del mundo envuelta en la niebla matutina. Una inmersión arqueológica guiada por maestros historiadores que revelan la astronomía y la cosmología inca en cada piedra pulida.',
-      pricePerPerson: 'Desde $1,850 USD',
+      pricePerPerson: 'Desde $490 USD',
       coordinates: { lat: -13.1631, lng: -72.5450 },
     },
     {
@@ -217,7 +217,7 @@ export const cuscoConfig: CuscoMasterConfig = {
       ],
       summary:
         'La simbiosis perfecta entre la naturaleza salvaje de la cordillera del Vilcabamba y el confort futurista. Conquista el imponente paso del Apu Salkantay y desciende a la ceja de selva virgen.',
-      pricePerPerson: 'Desde $2,400 USD',
+      pricePerPerson: 'Desde $580 USD',
       coordinates: { lat: -13.3333, lng: -72.5667 },
     },
     {
@@ -238,7 +238,7 @@ export const cuscoConfig: CuscoMasterConfig = {
       ],
       summary:
         'Recorre las losas de piedra original que pisaron los soberanos incas. Una hazaña física inolvidable compensada con el más alto estándar de hospitalidad de montaña del mundo.',
-      pricePerPerson: 'Desde $2,950 USD',
+      pricePerPerson: 'Desde $790 USD',
       coordinates: { lat: -13.2500, lng: -72.5000 },
     },
     {
@@ -259,8 +259,30 @@ export const cuscoConfig: CuscoMasterConfig = {
       ],
       summary:
         'El refugio fértil del río Vilcanota. Explora el centro de experimentación agrícola de Moray y relájate en santuarios boutique diseñados para restaurar cuerpo y espíritu.',
-      pricePerPerson: 'Desde $2,100 USD',
+      pricePerPerson: 'Desde $140 USD',
       coordinates: { lat: -13.3283, lng: -72.1969 },
+    },
+    {
+      id: 'vinicunca-rainbow-mountain',
+      title: 'Montaña de 7 Colores: Vinicunca & Valle Rojo VIP',
+      subtitle: 'Amanecer en la cumbre polícroma a 5,036 msnm antes de las multitudes con desayuno andino privado',
+      badge: 'MARAVILLA NATURAL',
+      duration: '1 Día Completo (04:00 - 16:30)',
+      maxAltitude: '5,036 msnm',
+      altitudeMeters: 5036,
+      difficulty: 'Moderado - Exigente',
+      image: '/images/vinicunca.webp',
+      fallbackImage: 'https://images.unsplash.com/photo-1579606032834-c92330a6c0b9?q=80&w=1920&auto=format&fit=crop',
+      highlights: [
+        'Llegada prioritaria al mirador principal para fotos sin aglomeraciones',
+        'Guía certificado WFR con pulsioxímetro y kit de oxígeno medicinal a bordo',
+        'Desayuno gourmet y almuerzo andino de altura en domo privado de campo',
+        'Extensión panorámica opcional hacia el sobrecogedor Valle Rojo',
+      ],
+      summary:
+        'Descubre la majestuosa estratigrafía mineral de los Andes cusqueños. Una experiencia de alta montaña que desafía los sentidos con franjas turquesas, doradas y púrpuras talladas por millones de años de sedimentación geológica.',
+      pricePerPerson: 'Desde $160 USD',
+      coordinates: { lat: -13.8694, lng: -71.3031 },
     },
   ],
   waypoints: [
@@ -335,6 +357,18 @@ export const cuscoConfig: CuscoMasterConfig = {
       description: 'El guardián sagrado (Apu). Macizo nevado de 6,271 metros donde la nieve eterna toca el cielo andino.',
       highlight: 'Vista del glaciar colgante y ofrenda tradicional de pago a la Pachamama.',
       coordinates: { lat: -13.3333, lng: -72.5667 },
+    },
+    {
+      id: 'vinicunca',
+      name: 'Montaña de 7 Colores',
+      quechuaName: 'Vinicunca',
+      elevationMeters: 5036,
+      elevationDisplay: '5,036 msnm',
+      estimatedTransitTime: '3h van privada + 1.5h caminata',
+      travelMode: 'Trek / Caminata',
+      description: 'La cumbre mineral más icónica de la cordillera del Vilcanota, custodiada por el sagrado Apu Ausangate.',
+      highlight: 'Mirador panorámico a 5,036 msnm y vista al Valle Rojo.',
+      coordinates: { lat: -13.8694, lng: -71.3031 },
     },
   ],
   bentoExperiences: [

@@ -96,11 +96,11 @@ export default function WhatsAppModal({
         {/* Cabecera del Modal */}
         <div className="flex items-center justify-between pb-4 border-b border-white/10">
           <div className="flex items-center space-x-2.5">
-            <span className="p-2 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400">
+            <span className="p-2 rounded-full bg-gold/15 border border-gold/30 text-gold">
               <MessageSquare className="w-4 h-4" />
             </span>
             <div>
-              <span className="text-[10px] font-mono text-gold tracking-widest uppercase block">
+              <span className="text-[10px] font-sans font-medium text-gold tracking-widest uppercase block">
                 CONCIERGE VIP 24/7
               </span>
               <h3
@@ -126,7 +126,7 @@ export default function WhatsAppModal({
         <div className="space-y-6 py-6">
           {/* 1. Selector de Expedición */}
           <div>
-            <label className="text-xs font-mono text-mist/70 tracking-wider uppercase flex items-center gap-1.5 mb-2.5">
+            <label className="text-xs font-sans font-medium text-mist/70 tracking-wider uppercase flex items-center gap-1.5 mb-2.5">
               <Compass className="w-3.5 h-3.5 text-gold" />
               1. Selecciona tu Expedición
             </label>
@@ -150,7 +150,7 @@ export default function WhatsAppModal({
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {/* Pasajeros */}
             <div>
-              <label className="text-xs font-mono text-mist/70 tracking-wider uppercase flex items-center gap-1.5 mb-2.5">
+              <label className="text-xs font-sans font-medium text-mist/70 tracking-wider uppercase flex items-center gap-1.5 mb-2.5">
                 <Users className="w-3.5 h-3.5 text-gold" />
                 2. Número de Viajeros
               </label>
@@ -160,7 +160,7 @@ export default function WhatsAppModal({
                     key={num}
                     type="button"
                     onClick={() => setGuests(num)}
-                    className={`flex-1 py-2.5 rounded-xl text-xs font-mono transition-all border ${
+                    className={`flex-1 py-2.5 rounded-xl text-xs font-sans font-medium transition-all border ${
                       guests === num
                         ? 'bg-gold text-obsidian font-bold border-gold shadow-gold-glow'
                         : 'bg-obsidian-light text-mist/70 border-white/10 hover:border-gold/30'
@@ -174,7 +174,7 @@ export default function WhatsAppModal({
 
             {/* Temporada */}
             <div>
-              <label className="text-xs font-mono text-mist/70 tracking-wider uppercase flex items-center gap-1.5 mb-2.5">
+              <label className="text-xs font-sans font-medium text-mist/70 tracking-wider uppercase flex items-center gap-1.5 mb-2.5">
                 <Calendar className="w-3.5 h-3.5 text-gold" />
                 3. Mes Estimado
               </label>
@@ -194,7 +194,7 @@ export default function WhatsAppModal({
 
           {/* 3. Vista Previa del Mensaje Generado en Tiempo Real */}
           <div className="p-4 rounded-2xl bg-obsidian-light/80 border border-gold/20">
-            <span className="text-[10px] font-mono text-gold tracking-widest uppercase block mb-1.5 flex items-center gap-1">
+            <span className="text-[10px] font-sans font-medium text-gold tracking-widest uppercase block mb-1.5 flex items-center gap-1">
               <Sparkles className="w-3 h-3" />
               Mensaje Preformateado para WhatsApp:
             </span>
@@ -223,8 +223,8 @@ export default function WhatsAppModal({
 
         {/* Botón de Envío Directo a WhatsApp */}
         <div className="pt-4 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <div className="text-[11px] font-mono text-mist/50 flex items-center">
-            <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400 mr-1.5" />
+          <div className="text-[11px] font-sans font-medium text-mist/50 flex items-center uppercase tracking-wider">
+            <CheckCircle2 className="w-3.5 h-3.5 text-gold mr-1.5" />
             Respuesta promedio: &lt;15 min
           </div>
 
@@ -239,7 +239,7 @@ export default function WhatsAppModal({
               }
               onClose();
             }}
-            className={`w-full sm:w-auto inline-flex items-center justify-center px-8 py-3.5 rounded-full font-mono text-xs uppercase tracking-widest font-bold transition-all group ${
+            className={`w-full sm:w-auto inline-flex items-center justify-center px-8 py-3.5 rounded-full font-sans text-xs uppercase tracking-widest font-bold transition-all group ${
               hasAcceptedPrivacy
                 ? 'bg-gold hover:bg-gold-light text-obsidian shadow-gold-glow cursor-pointer'
                 : 'bg-white/10 text-mist/40 border border-white/10 cursor-not-allowed opacity-50'

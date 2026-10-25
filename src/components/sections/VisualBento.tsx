@@ -120,7 +120,7 @@ function BentoTiltCard({ item }: BentoTiltCardProps) {
         {/* Badge Especial */}
         {item.badgeText && (
           <div className="absolute bottom-4 left-4 z-10">
-            <span className="text-xs font-mono text-gold bg-obsidian/90 backdrop-blur-md px-3 py-1 rounded-full border border-gold/30">
+            <span className="text-xs font-sans font-medium text-gold bg-obsidian/90 backdrop-blur-md px-3 py-1 rounded-full border border-gold/30 tracking-wider uppercase">
               {item.badgeText}
             </span>
           </div>
@@ -141,7 +141,7 @@ function BentoTiltCard({ item }: BentoTiltCardProps) {
           </p>
         </div>
 
-        <div className="mt-6 pt-4 border-t border-gold/15 flex items-center justify-between text-xs font-mono text-mist/60 group-hover:text-gold transition-colors">
+        <div className="mt-6 pt-4 border-t border-gold/15 flex items-center justify-between text-xs font-sans font-medium text-mist/60 group-hover:text-gold transition-colors">
           <span className="uppercase tracking-widest text-[11px]">Experiencia Curada</span>
           <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
         </div>
@@ -159,7 +159,7 @@ export default function VisualBento() {
         {/* Cabecera de la Sección */}
         <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-16 gap-6">
           <div>
-            <span className="text-xs font-mono text-gold tracking-super-wide uppercase flex items-center gap-2">
+            <span className="text-xs font-sans font-medium text-gold tracking-super-wide uppercase flex items-center gap-2">
               <Sparkles className="w-3.5 h-3.5" />
               {'// EXPERIENCIAS DE TERROIR & BIENESTAR'}
             </span>

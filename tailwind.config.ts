@@ -25,10 +25,6 @@ const config: Config = {
           shimmer: '#F2DFB8',
           subtle: 'rgba(200, 162, 97, 0.15)',
         },
-        emerald: {
-          sacred: '#1B382B',
-          glow: '#2B5843',
-        },
         mist: {
           DEFAULT: '#F4F4F0',
           muted: '#9CA3AF',
@@ -43,7 +39,7 @@ const config: Config = {
       fontFamily: {
         serif: ['var(--font-cinzel)', 'Georgia', 'serif'],
         sans: ['var(--font-dm-sans)', 'system-ui', 'sans-serif'],
-        mono: ['var(--font-jetbrains-mono)', 'monospace'],
+        mono: ['var(--font-dm-sans)', 'system-ui', 'sans-serif'], // Eliminamos tipografía de consola / robot
       },
       letterSpacing: {
         'super-wide': '0.25em',

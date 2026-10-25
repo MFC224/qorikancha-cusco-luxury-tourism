@@ -60,7 +60,7 @@ export default function Header() {
               {brand.name}
               <span className="w-1.5 h-1.5 rounded-full bg-gold ml-1.5 animate-pulse" />
             </span>
-            <span className="text-[10px] font-mono tracking-ultra-wide text-gold/80 uppercase">
+            <span className="text-[10px] font-sans font-medium tracking-ultra-wide text-gold/80 uppercase">
               Cusco · Valle Sagrado
             </span>
           </a>
@@ -73,7 +73,7 @@ export default function Header() {
                 href={link.href}
                 onClick={(e) => handleNavClick(e, link.href)}
                 data-cursor={link.cursor}
-                className="relative text-xs font-mono tracking-widest uppercase text-mist/75 hover:text-gold transition-colors py-1 group/nav"
+                className="relative text-xs font-sans font-medium tracking-widest uppercase text-mist/75 hover:text-gold transition-colors py-1 group/nav"
               >
                 <span>{link.label}</span>
                 <span className="absolute bottom-0 left-0 w-0 h-[1px] bg-gold transition-all duration-300 group-hover/nav:w-full" />
@@ -83,7 +83,7 @@ export default function Header() {
 
           {/* Right Action: Telemetry + VIP WhatsApp Roll Button */}
           <div className="hidden sm:flex items-center space-x-4">
-            <div className="hidden lg:flex items-center text-[11px] font-mono text-mist/60 border border-white/10 px-3 py-1.5 rounded-full bg-obsidian-card/40">
+            <div className="hidden lg:flex items-center text-[11px] font-sans font-medium tracking-wider text-mist/60 border border-white/10 px-3 py-1.5 rounded-full bg-obsidian-card/40">
               <Compass className="w-3.5 h-3.5 text-gold mr-1.5" />
               <span>{destination.coordinates.formatted}</span>
             </div>
@@ -120,7 +120,7 @@ export default function Header() {
           className="fixed inset-0 z-40 bg-obsidian/95 backdrop-blur-xl md:hidden flex flex-col justify-between p-8 pt-28 animate-fade-in"
         >
           <div className="flex flex-col space-y-6">
-            <span className="text-xs font-mono text-gold tracking-widest uppercase">
+            <span className="text-xs font-sans font-medium text-gold tracking-widest uppercase">
               {'// MENÚ DE EXPEDICIÓN'}
             </span>
 
@@ -132,19 +132,19 @@ export default function Header() {
                 className="text-2xl font-serif text-mist hover:text-gold transition-colors py-1 flex items-center justify-between border-b border-white/5"
               >
                 <span>{link.label}</span>
-                <span className="text-xs font-mono text-gold/70">{link.cursor}</span>
+                <span className="text-xs font-sans font-medium text-gold/70 uppercase tracking-wider">{link.cursor}</span>
               </a>
             ))}
           </div>
 
           <div className="space-y-6 pt-6 border-t border-gold/20">
-            <div className="flex justify-between items-center text-xs font-mono text-mist/60">
+            <div className="flex justify-between items-center text-xs font-sans font-medium text-mist/60 uppercase tracking-wider">
               <span className="flex items-center">
                 <Mountain className="w-3.5 h-3.5 text-gold mr-1" />
                 {destination.elevation.display}
               </span>
               <span className="flex items-center">
-                <ShieldCheck className="w-3.5 h-3.5 text-emerald-400 mr-1" />
+                <ShieldCheck className="w-3.5 h-3.5 text-gold mr-1" />
                 MINCETUR Oficial
               </span>
             </div>
@@ -153,7 +153,7 @@ export default function Header() {
               href={concierge.generateWhatsAppUrl()}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full py-3.5 rounded-full bg-gold text-obsidian text-center font-mono text-xs uppercase tracking-widest font-semibold flex items-center justify-center shadow-gold-glow"
+              className="w-full py-3.5 rounded-full bg-gold text-obsidian text-center font-sans text-xs uppercase tracking-widest font-semibold flex items-center justify-center shadow-gold-glow"
             >
               <MessageSquare className="w-4 h-4 mr-2" />
               Contactar Concierge WhatsApp

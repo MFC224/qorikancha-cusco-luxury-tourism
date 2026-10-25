@@ -23,7 +23,7 @@ export default function TermsConditionsPage() {
         <div className="mb-8">
           <Link
             href="/"
-            className="inline-flex items-center gap-2 text-xs font-mono text-gold hover:text-white transition-colors"
+            className="inline-flex items-center gap-2 text-xs font-sans text-gold hover:text-white transition-colors"
           >
             <ArrowLeft className="w-4 h-4" />
             <span>Retornar a la Colección de Expediciones</span>
@@ -32,7 +32,7 @@ export default function TermsConditionsPage() {
 
         {/* Encabezado Editorial */}
         <header className="border-b border-gold/20 pb-10 mb-12">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gold/10 border border-gold/25 text-gold text-xs font-mono tracking-widest uppercase mb-4">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gold/10 border border-gold/25 text-gold text-xs font-sans tracking-widest uppercase mb-4">
             <Scale className="w-3.5 h-3.5" />
             Marco Contractual de Alta Montaña
           </div>
@@ -41,7 +41,7 @@ export default function TermsConditionsPage() {
             Términos y Condiciones Generales de Expedición Privada
           </h1>
 
-          <div className="flex flex-wrap items-center gap-x-6 gap-y-2 text-xs font-mono text-mist/60">
+          <div className="flex flex-wrap items-center gap-x-6 gap-y-2 text-xs font-sans text-mist/60">
             <span>Ley General de Turismo Nº 29408 · D.S. 005-2020-MINCETUR</span>
             <span>·</span>
             <span>Edición {brand.edition}</span>
@@ -50,7 +50,7 @@ export default function TermsConditionsPage() {
 
         {/* Resumen de Seguridad y Compromiso */}
         <div className="p-6 rounded-2xl bg-charcoal/80 border border-gold/30 mb-12 space-y-3">
-          <h2 className="text-sm font-mono uppercase tracking-wider text-gold flex items-center gap-2">
+          <h2 className="text-sm font-sans uppercase tracking-wider text-gold flex items-center gap-2">
             <Compass className="w-4 h-4" />
             Naturaleza de la Expedición & Seguridad Absoluta
           </h2>
@@ -67,7 +67,7 @@ export default function TermsConditionsPage() {
           {/* 01. Contratación y Reservas */}
           <section className="space-y-3">
             <h2 className="text-xl font-serif text-white flex items-center gap-2">
-              <span className="text-gold font-mono text-sm">01.</span>
+              <span className="text-gold font-sans text-sm">01.</span>
               Políticas de Reserva, Depósitos y Emisión de Permisos
             </h2>
             <p>
@@ -97,14 +97,14 @@ export default function TermsConditionsPage() {
           {/* 02. Protocolo de Aclimatación y Bioseguridad */}
           <section className="space-y-3">
             <h2 className="text-xl font-serif text-white flex items-center gap-2">
-              <span className="text-gold font-mono text-sm">02.</span>
+              <span className="text-gold font-sans text-sm">02.</span>
               Protocolo de Aclimatación, Salud y Asunción de Riesgos
             </h2>
             <p>
               El bienestar de nuestros huéspedes constituye la premisa inviolable de cada travesía:
             </p>
-            <div className="p-4 rounded-xl bg-obsidian border border-emerald-500/30 space-y-2 text-xs">
-              <div className="flex items-center gap-2 text-emerald-400 font-mono font-semibold">
+            <div className="p-4 rounded-xl bg-obsidian border border-gold/30 space-y-2 text-xs">
+              <div className="flex items-center gap-2 text-gold font-sans font-semibold">
                 <HeartPulse className="w-4 h-4" />
                 Autoridad Médica del Guía WFR en Ruta
               </div>
@@ -126,7 +126,7 @@ export default function TermsConditionsPage() {
           {/* 03. Fuerza Mayor Andina */}
           <section className="space-y-3">
             <h2 className="text-xl font-serif text-white flex items-center gap-2">
-              <span className="text-gold font-mono text-sm">03.</span>
+              <span className="text-gold font-sans text-sm">03.</span>
               Cláusula de Fuerza Mayor & Contingencias Geográficas
             </h2>
             <p>
@@ -134,7 +134,7 @@ export default function TermsConditionsPage() {
               agencia:
             </p>
             <div className="p-4 rounded-xl bg-obsidian border border-amber-500/30 space-y-2 text-xs">
-              <div className="flex items-center gap-2 text-amber-400 font-mono font-semibold">
+              <div className="flex items-center gap-2 text-amber-400 font-sans font-semibold">
                 <AlertTriangle className="w-4 h-4" />
                 Definición de Supuestos Eximentes
               </div>
@@ -156,7 +156,7 @@ export default function TermsConditionsPage() {
           {/* 04. Seguro de Viaje Obligatorio */}
           <section className="space-y-3">
             <h2 className="text-xl font-serif text-white flex items-center gap-2">
-              <span className="text-gold font-mono text-sm">04.</span>
+              <span className="text-gold font-sans text-sm">04.</span>
               Obligatoriedad de Seguro Internacional de Asistencia Médica
             </h2>
             <p>
@@ -164,7 +164,7 @@ export default function TermsConditionsPage() {
               los 3,500 msnm que el expedicionario cuente con una póliza de seguro médico internacional vigente que cubra
               explícitamente:
             </p>
-            <ul className="grid sm:grid-cols-3 gap-2.5 text-xs font-mono pt-1">
+            <ul className="grid sm:grid-cols-3 gap-2.5 text-xs font-sans pt-1">
               <li className="p-3 rounded-lg bg-obsidian border border-white/10 text-center">
                 <CheckCircle2 className="w-4 h-4 text-gold mx-auto mb-1.5" />
                 Evacuación Médica Andina
@@ -183,7 +183,7 @@ export default function TermsConditionsPage() {
           {/* 05. Cancelaciones y Desistimiento */}
           <section className="space-y-3">
             <h2 className="text-xl font-serif text-white flex items-center gap-2">
-              <span className="text-gold font-mono text-sm">05.</span>
+              <span className="text-gold font-sans text-sm">05.</span>
               Políticas de Cancelación por Desistimiento del Cliente
             </h2>
             <p>
@@ -192,14 +192,14 @@ export default function TermsConditionsPage() {
             </p>
             <div className="overflow-x-auto rounded-xl border border-white/10 bg-obsidian">
               <table className="w-full text-left text-xs font-sans">
-                <thead className="bg-white/5 border-b border-white/10 text-gold font-mono text-[11px] uppercase tracking-wider">
+                <thead className="bg-white/5 border-b border-white/10 text-gold font-sans text-[11px] uppercase tracking-wider">
                   <tr>
                     <th className="p-3.5">Antelación a la Salida</th>
                     <th className="p-3.5">Penalidad Administrativa</th>
                     <th className="p-3.5">Condición de Reembolso</th>
                   </tr>
                 </thead>
-                <tbody className="divide-y divide-white/5 font-mono text-[11px]">
+                <tbody className="divide-y divide-white/5 font-sans text-[11px]">
                   <tr>
                     <td className="p-3.5 text-white">Más de 45 días antes</td>
                     <td className="p-3.5 text-amber-400">20% del valor total</td>
@@ -223,7 +223,7 @@ export default function TermsConditionsPage() {
           {/* 06. Jurisdicción y Resolución de Controversias */}
           <section className="space-y-3">
             <h2 className="text-xl font-serif text-white flex items-center gap-2">
-              <span className="text-gold font-mono text-sm">06.</span>
+              <span className="text-gold font-sans text-sm">06.</span>
               Ley Aplicable y Sumisión Jurisdiccional
             </h2>
             <p>
@@ -242,10 +242,10 @@ export default function TermsConditionsPage() {
               <span>Conforme al Código de Protección y Defensa del Consumidor (Ley Nº 29571)</span>
             </div>
             <div className="flex items-center gap-4">
-              <Link href="/privacidad" className="text-gold hover:underline font-mono">
+              <Link href="/privacidad" className="text-gold hover:underline font-sans">
                 Política de Privacidad →
               </Link>
-              <Link href="/libro-de-reclamaciones" className="text-mist/70 hover:text-white font-mono">
+              <Link href="/libro-de-reclamaciones" className="text-mist/70 hover:text-white font-sans">
                 Libro de Reclamaciones →
               </Link>
             </div>

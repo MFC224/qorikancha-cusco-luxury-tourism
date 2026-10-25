@@ -31,7 +31,7 @@ export default function AcclimatizationGuide() {
     if (altitude <= 2500) {
       return {
         level: 'Zona de Confort Óptima',
-        color: 'text-emerald-400',
+        color: 'text-gold',
         note: 'Ambiente de selva alta / ceja de montaña. Respiración natural sin fatiga. Ideal para pernoctar los primeros días.',
       };
     }
@@ -73,20 +73,20 @@ export default function AcclimatizationGuide() {
         {/* Encabezado Editorial */}
         <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-16 gap-6">
           <div>
-            <span className="text-xs font-mono text-gold tracking-super-wide uppercase flex items-center gap-2">
+            <span className="text-xs font-sans font-medium text-gold tracking-super-wide uppercase flex items-center gap-2">
               <Sparkles className="w-3.5 h-3.5" />
               {'// SEGURIDAD BIOLÓGICA & BIENESTAR'}
             </span>
             <h2 className="text-3xl sm:text-5xl lg:text-6xl font-serif text-mist mt-3">
               Prepara tu Cuerpo para la Altura
             </h2>
-            <p className="text-mist/70 text-sm sm:text-base mt-2 max-w-2xl leading-relaxed">
+            <p className="text-mist/70 text-sm sm:text-base mt-2 max-w-2xl leading-relaxed font-sans">
               Ascender a los Andes debe ser un renacer, no un padecimiento. Aplicamos medicina de montaña contemporánea y sabiduría herbolaria ancestral para garantizar tu aclimatación natural sin fricción.
             </p>
           </div>
 
           <div className="hud-badge text-gold self-start sm:self-end flex items-center gap-1.5">
-            <ShieldCheck className="w-3.5 h-3.5 text-emerald-400" />
+            <ShieldCheck className="w-3.5 h-3.5 text-gold" />
             WFR CERTIFIED EXPEDITIONS
           </div>
         </div>
@@ -95,8 +95,8 @@ export default function AcclimatizationGuide() {
         <div className="glass-card rounded-3xl p-6 sm:p-10 border border-gold/30 shadow-obsidian-glow mb-16">
           <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-8">
             <div className="lg:max-w-md">
-              <span className="text-xs font-mono text-gold tracking-widest uppercase flex items-center gap-2 mb-2">
-                <Activity className="w-4 h-4 text-emerald-400" />
+              <span className="text-xs font-sans font-medium text-gold tracking-widest uppercase flex items-center gap-2 mb-2">
+                <Activity className="w-4 h-4 text-gold" />
                 SIMULADOR BIOLÓGICO DE ALTITUD
               </span>
               <h3 className="text-2xl sm:text-3xl font-serif font-medium text-mist">
@@ -114,7 +114,7 @@ export default function AcclimatizationGuide() {
                     type="button"
                     onClick={() => setSelectedAltitude(preset.alt)}
                     data-cursor={`${preset.alt}M`}
-                    className={`px-3 py-1.5 rounded-full text-xs font-mono transition-all border ${
+                    className={`px-3.5 py-1.5 rounded-full text-xs font-sans font-medium tracking-wider transition-all border ${
                       selectedAltitude === preset.alt
                         ? 'bg-gold text-obsidian font-semibold border-gold shadow-gold-glow'
                         : 'bg-obsidian-card/80 text-mist/70 border-white/10 hover:border-gold/40'
@@ -129,11 +129,11 @@ export default function AcclimatizationGuide() {
             {/* Slider de Altura y Panel de Telemetría Biológica */}
             <div className="flex-1 max-w-xl w-full p-6 rounded-2xl bg-obsidian-light/70 border border-gold/20">
               <div className="flex items-center justify-between mb-2">
-                <span className="text-xs font-mono text-mist/60 flex items-center gap-1.5">
+                <span className="text-xs font-sans font-medium text-mist/60 flex items-center gap-1.5 uppercase tracking-wider">
                   <Mountain className="w-3.5 h-3.5 text-gold" /> COTA DE ELEVACIÓN
                 </span>
                 <span className="text-2xl sm:text-3xl font-serif text-gold font-bold">
-                  {selectedAltitude.toLocaleString()} <span className="text-sm font-mono font-normal text-mist/60">msnm</span>
+                  {selectedAltitude.toLocaleString()} <span className="text-sm font-sans font-normal text-mist/60">msnm</span>
                 </span>
               </div>
 
@@ -148,7 +148,7 @@ export default function AcclimatizationGuide() {
                 className="w-full h-2 bg-obsidian rounded-lg appearance-none cursor-pointer accent-gold my-4 border border-white/10"
               />
 
-              <div className="flex justify-between text-[10px] font-mono text-mist/40 mb-6">
+              <div className="flex justify-between text-[10px] font-sans font-medium text-mist/40 mb-6 uppercase tracking-wider">
                 <span>1,800m (Valle Bajo)</span>
                 <span>3,400m (Cusco)</span>
                 <span>5,000m (Puna Alta)</span>
@@ -157,13 +157,13 @@ export default function AcclimatizationGuide() {
               {/* Tarjetas de Diagnóstico y O₂ */}
               <div className="grid grid-cols-2 gap-4 pt-4 border-t border-white/10">
                 <div>
-                  <span className="text-[10px] font-mono text-mist/50 block">OXÍGENO EFECTIVO ESTIMADO</span>
+                  <span className="text-[10px] font-sans font-medium text-mist/50 block uppercase tracking-wider">OXÍGENO EFECTIVO ESTIMADO</span>
                   <span className="text-xl sm:text-2xl font-serif font-bold text-mist">
-                    {effectiveO2}% <span className="text-xs font-mono font-normal text-mist/50">vs nivel del mar</span>
+                    {effectiveO2}% <span className="text-xs font-sans font-normal text-mist/50">vs nivel del mar</span>
                   </span>
                 </div>
                 <div>
-                  <span className="text-[10px] font-mono text-mist/50 block">ESTADO BIOLÓGICO</span>
+                  <span className="text-[10px] font-sans font-medium text-mist/50 block uppercase tracking-wider">ESTADO BIOLÓGICO</span>
                   <span className={`text-sm sm:text-base font-serif font-semibold ${advisory.color}`}>
                     {advisory.level}
                   </span>
@@ -179,8 +179,8 @@ export default function AcclimatizationGuide() {
 
         {/* Las 3 Fases del Protocolo de Aclimatación */}
         <div className="mb-16">
-          <div className="text-xs font-mono text-gold tracking-widest uppercase mb-6 flex items-center gap-2">
-            <HeartPulse className="w-4 h-4 text-emerald-400" />
+          <div className="text-xs font-sans font-medium text-gold tracking-widest uppercase mb-6 flex items-center gap-2">
+            <HeartPulse className="w-4 h-4 text-gold" />
             CRONOGRAMA DE ADAPTACIÓN BIOLÓGICA PASO A PASO
           </div>
 
@@ -193,7 +193,7 @@ export default function AcclimatizationGuide() {
               >
                 <div>
                   <div className="flex items-center justify-between mb-4">
-                    <span className="font-mono text-xs font-bold text-gold bg-gold/10 px-3 py-1 rounded-full border border-gold/30">
+                    <span className="font-sans text-xs font-bold text-gold bg-gold/10 px-3 py-1 rounded-full border border-gold/30 tracking-wider">
                       FASE 0{idx + 1} · {rule.day}
                     </span>
                     <Stethoscope className="w-4 h-4 text-gold/80" />
@@ -213,10 +213,10 @@ export default function AcclimatizationGuide() {
                 </div>
 
                 <div className="pt-4 border-t border-white/10">
-                  <span className="text-[10px] font-mono text-gold/90 uppercase tracking-wider block mb-1">
+                  <span className="text-[10px] font-sans font-medium text-gold/90 uppercase tracking-wider block mb-1">
                     Criterio Médico de Expedición
                   </span>
-                  <p className="text-xs font-mono text-emerald-400/90 leading-relaxed">
+                  <p className="text-xs font-sans text-mist/90 leading-relaxed">
                     {rule.medicalNote}
                   </p>
                 </div>

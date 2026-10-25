@@ -45,14 +45,14 @@ export default function Page() {
       <section id="interacciones" className="px-6 py-20 border-t border-gold/15 bg-obsidian-light/40">
         <div className="max-w-7xl mx-auto">
           <div className="mb-10">
-            <span className="text-xs font-mono text-gold tracking-super-wide uppercase">
+            <span className="text-xs font-sans font-medium text-gold tracking-super-wide uppercase">
               {'// MICROINTERACCIONES & CURSOR CONTEXTUAL'}
             </span>
             <h2 className="text-2xl sm:text-4xl font-serif text-mist mt-2">
               Telemetría Táctil & Hover Contextual
             </h2>
-            <p className="text-mist/60 text-sm mt-2 max-w-2xl">
-              Prueba el comportamiento del cursor magnético sobre los siguientes módulos interactivos. Cada bloque activa etiquetas dinámicas aceleradas por hardware con <code className="text-gold font-mono text-xs">gsap.quickTo</code>.
+            <p className="text-mist/60 text-sm mt-2 max-w-2xl font-sans">
+              Prueba el comportamiento del cursor magnético sobre los siguientes módulos interactivos. Cada bloque activa etiquetas dinámicas aceleradas por hardware con <code className="text-gold font-sans font-semibold text-xs">gsap.quickTo</code>.
             </p>
           </div>
 
@@ -70,11 +70,11 @@ export default function Page() {
                 <h3 className="font-serif text-lg text-mist group-hover:text-gold transition-colors">
                   Apu Salkantay
                 </h3>
-                <p className="text-xs text-mist/60 font-mono mt-1">
+                <p className="text-xs text-mist/60 font-sans mt-1">
                   data-cursor=&ldquo;SALKANTAY&rdquo;
                 </p>
               </div>
-              <span className="text-xs text-gold/80 font-mono">Toca para cotizar ↗</span>
+              <span className="text-xs text-gold/80 font-sans font-medium">Toca para cotizar ↗</span>
             </div>
 
             <div
@@ -90,11 +90,11 @@ export default function Page() {
                 <h3 className="font-serif text-lg text-mist group-hover:text-gold transition-colors">
                   Altitud Extrema
                 </h3>
-                <p className="text-xs text-mist/60 font-mono mt-1">
+                <p className="text-xs text-mist/60 font-sans mt-1">
                   data-cursor=&ldquo;4,630M&rdquo;
                 </p>
               </div>
-              <span className="text-xs text-gold/80 font-mono">Toca para cotizar ↗</span>
+              <span className="text-xs text-gold/80 font-sans font-medium">Toca para cotizar ↗</span>
             </div>
 
             <div
@@ -110,11 +110,11 @@ export default function Page() {
                 <h3 className="font-serif text-lg text-mist group-hover:text-gold transition-colors">
                   Canal VIP Concierge
                 </h3>
-                <p className="text-xs text-mist/60 font-mono mt-1">
+                <p className="text-xs text-mist/60 font-sans mt-1">
                   data-cursor=&ldquo;CONCIERGE&rdquo;
                 </p>
               </div>
-              <span className="text-xs text-gold/80 font-mono">Toca para abrir modal ↗</span>
+              <span className="text-xs text-gold/80 font-sans font-medium">Toca para abrir modal ↗</span>
             </div>
 
             <div
@@ -130,11 +130,11 @@ export default function Page() {
                 <h3 className="font-serif text-lg text-mist group-hover:text-gold transition-colors">
                   Geografía Sagrada
                 </h3>
-                <p className="text-xs text-mist/60 font-mono mt-1">
+                <p className="text-xs text-mist/60 font-sans mt-1">
                   data-cursor=&ldquo;VER MAPA&rdquo;
                 </p>
               </div>
-              <span className="text-xs text-gold/80 font-mono">Toca para cotizar ↗</span>
+              <span className="text-xs text-gold/80 font-sans font-medium">Toca para cotizar ↗</span>
             </div>
           </div>
         </div>

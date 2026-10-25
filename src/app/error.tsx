@@ -22,7 +22,7 @@ export default function GlobalError({
           <AlertTriangle className="w-8 h-8" />
         </div>
 
-        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-400 font-mono text-xs uppercase tracking-widest mb-4">
+        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-400 font-sans font-medium text-xs uppercase tracking-widest mb-4">
           INTERRUPCIÓN EN LA EXPEDICIÓN
         </div>
 
@@ -38,7 +38,7 @@ export default function GlobalError({
           <button
             type="button"
             onClick={() => reset()}
-            className="w-full sm:w-auto inline-flex items-center justify-center px-6 py-3 rounded-full bg-gold hover:bg-gold-light text-obsidian font-mono text-xs uppercase tracking-widest font-bold shadow-gold-glow transition-all"
+            className="w-full sm:w-auto inline-flex items-center justify-center px-6 py-3 rounded-full bg-gold hover:bg-gold-light text-obsidian font-sans text-xs uppercase tracking-widest font-bold shadow-gold-glow transition-all"
           >
             <RotateCcw className="w-4 h-4 mr-2" />
             Reiniciar Sección
@@ -46,7 +46,7 @@ export default function GlobalError({
 
           <Link
             href="/"
-            className="w-full sm:w-auto inline-flex items-center justify-center px-6 py-3 rounded-full border border-gold/30 hover:border-gold hover:bg-gold/10 text-gold font-mono text-xs uppercase tracking-widest transition-all"
+            className="w-full sm:w-auto inline-flex items-center justify-center px-6 py-3 rounded-full border border-gold/30 hover:border-gold hover:bg-gold/10 text-gold font-sans font-medium text-xs uppercase tracking-widest transition-all"
           >
             <Home className="w-4 h-4 mr-2" />
             Campamento Base

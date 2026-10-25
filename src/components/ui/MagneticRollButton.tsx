@@ -73,7 +73,7 @@ export default function MagneticRollButton({
       'bg-obsidian-card/80 text-mist border border-white/10 hover:border-gold/30 hover:text-gold font-normal',
   };
 
-  const baseClasses = `group relative inline-flex items-center justify-center px-6 py-3 rounded-full text-xs font-mono tracking-widest uppercase overflow-hidden select-none transition-colors duration-300 ${variantStyles[variant]} ${className}`;
+  const baseClasses = `group relative inline-flex items-center justify-center px-6 py-3 rounded-full text-xs font-sans font-semibold tracking-wider uppercase overflow-hidden select-none transition-colors duration-300 ${variantStyles[variant]} ${className}`;
 
   const content = (
     <>

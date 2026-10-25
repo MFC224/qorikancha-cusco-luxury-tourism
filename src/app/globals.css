@@ -10,7 +10,6 @@
   --gold-inti: #c8a261;
   --gold-light: #e0c28a;
   --gold-dark: #9a7736;
-  --emerald-sacred: #1b382b;
   --text-mist: #f4f4f0;
   --text-muted: #9ca3af;
   --border-subtle: rgba(200, 162, 97, 0.18);
@@ -118,9 +117,10 @@ html.lenis, html.lenis body {
   }
 
   .hud-badge {
-    font-family: var(--font-jetbrains-mono), monospace;
-    font-size: 0.7rem;
-    letter-spacing: 0.2em;
+    font-family: var(--font-dm-sans), sans-serif;
+    font-weight: 600;
+    font-size: 0.72rem;
+    letter-spacing: 0.15em;
     text-transform: uppercase;
     padding: 0.35rem 0.75rem;
     border-radius: 9999px;

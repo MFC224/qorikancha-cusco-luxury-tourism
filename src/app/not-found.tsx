@@ -21,7 +21,7 @@ export default function NotFound() {
           <Wind className="w-8 h-8 text-gold animate-pulse" />
         </div>
 
-        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gold/10 border border-gold/30 text-gold font-mono text-xs uppercase tracking-widest mb-4">
+        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gold/10 border border-gold/30 text-gold font-sans font-medium text-xs uppercase tracking-widest mb-4">
           HTTP 404 · RUTA EXTRAVIADA EN LA NIEBLA
         </div>
 
@@ -33,7 +33,7 @@ export default function NotFound() {
           La senda o expedición que buscas ha sido cubierta por la vegetación del bosque nuboso o ha cambiado de coordenadas en el Valle Sagrado.
         </p>
 
-        <div className="my-8 p-4 rounded-2xl bg-obsidian-light/80 border border-gold/15 text-xs font-mono text-mist/60 flex flex-wrap items-center justify-around gap-3">
+        <div className="my-8 p-4 rounded-2xl bg-obsidian-light/80 border border-gold/15 text-xs font-sans font-medium text-mist/60 flex flex-wrap items-center justify-around gap-3 uppercase tracking-wider">
           <span className="flex items-center gap-1.5">
             <Compass className="w-3.5 h-3.5 text-gold" />
             {destination.coordinates.formatted}
@@ -48,7 +48,7 @@ export default function NotFound() {
         <Link
           href="/"
           data-cursor="RETORNAR"
-          className="inline-flex items-center justify-center px-8 py-3.5 rounded-full bg-gold hover:bg-gold-light text-obsidian font-mono text-xs uppercase tracking-widest font-bold shadow-gold-glow transition-all"
+          className="inline-flex items-center justify-center px-8 py-3.5 rounded-full bg-gold hover:bg-gold-light text-obsidian font-sans text-xs uppercase tracking-widest font-bold shadow-gold-glow transition-all"
         >
           <ArrowLeft className="w-4 h-4 mr-2" />
           Retornar a la Ruta Principal

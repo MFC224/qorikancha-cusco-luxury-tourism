@@ -24,7 +24,7 @@ export default function PrivacyPolicyPage() {
         <div className="mb-8">
           <Link
             href="/"
-            className="inline-flex items-center gap-2 text-xs font-mono text-gold hover:text-white transition-colors"
+            className="inline-flex items-center gap-2 text-xs font-sans text-gold hover:text-white transition-colors"
           >
             <ArrowLeft className="w-4 h-4" />
             <span>Retornar a la Colección de Expediciones</span>
@@ -33,7 +33,7 @@ export default function PrivacyPolicyPage() {
 
         {/* Encabezado Editorial */}
         <header className="border-b border-gold/20 pb-10 mb-12">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gold/10 border border-gold/25 text-gold text-xs font-mono tracking-widest uppercase mb-4">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gold/10 border border-gold/25 text-gold text-xs font-sans tracking-widest uppercase mb-4">
             <ShieldCheck className="w-3.5 h-3.5" />
             Marco Jurídico de Soberanía de Datos
           </div>
@@ -42,7 +42,7 @@ export default function PrivacyPolicyPage() {
             Política de Privacidad & Tratamiento de Datos Personales
           </h1>
 
-          <div className="flex flex-wrap items-center gap-x-6 gap-y-2 text-xs font-mono text-mist/60">
+          <div className="flex flex-wrap items-center gap-x-6 gap-y-2 text-xs font-sans text-mist/60">
             <span>Última Actualización: {lastUpdated}</span>
             <span>·</span>
             <span>Versión 2.4 (Estándar Internacional RGPD / LPDP Perú)</span>
@@ -51,7 +51,7 @@ export default function PrivacyPolicyPage() {
 
         {/* Resumen Ejecutivo de Confianza */}
         <div className="p-6 rounded-2xl bg-charcoal/80 border border-gold/30 mb-12 space-y-3">
-          <h2 className="text-sm font-mono uppercase tracking-wider text-gold flex items-center gap-2">
+          <h2 className="text-sm font-sans uppercase tracking-wider text-gold flex items-center gap-2">
             <Lock className="w-4 h-4" />
             Compromiso de Ultralujo & Confidencialidad
           </h2>
@@ -68,13 +68,13 @@ export default function PrivacyPolicyPage() {
           {/* Sección 1: Identificación del Responsable */}
           <section className="space-y-3">
             <h2 className="text-xl font-serif text-white flex items-center gap-2">
-              <span className="text-gold font-mono text-sm">01.</span>
+              <span className="text-gold font-sans text-sm">01.</span>
               Identificación del Responsable del Tratamiento
             </h2>
             <p>
               El titular y responsable de los bancos de datos donde se recopila su información es:
             </p>
-            <div className="p-4 rounded-xl bg-obsidian border border-white/10 font-mono text-xs space-y-1.5 text-mist/90">
+            <div className="p-4 rounded-xl bg-obsidian border border-white/10 font-sans text-xs space-y-1.5 text-mist/90">
               <p><strong>Razón Social:</strong> {legal.legalName}</p>
               <p><strong>RUC:</strong> {legal.ruc}</p>
               <p><strong>Domicilio Fiscal:</strong> {legal.address}</p>
@@ -87,7 +87,7 @@ export default function PrivacyPolicyPage() {
           {/* Sección 2: Marco Normativo Aplicable */}
           <section className="space-y-3">
             <h2 className="text-xl font-serif text-white flex items-center gap-2">
-              <span className="text-gold font-mono text-sm">02.</span>
+              <span className="text-gold font-sans text-sm">02.</span>
               Marco Normativo & Alcance Extraterritorial
             </h2>
             <p>
@@ -96,8 +96,8 @@ export default function PrivacyPolicyPage() {
             </p>
             <ul className="grid sm:grid-cols-2 gap-3 pt-2">
               <li className="p-3.5 rounded-xl bg-obsidian/70 border border-white/10 space-y-1">
-                <span className="font-mono text-xs text-gold flex items-center gap-1.5 font-semibold">
-                  <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400" />
+                <span className="font-sans text-xs text-gold flex items-center gap-1.5 font-semibold">
+                  <CheckCircle2 className="w-3.5 h-3.5 text-gold" />
                   Perú: Ley Nº 29733 & D.S. 016-2024-JUS
                 </span>
                 <p className="text-xs text-mist/70">
@@ -106,8 +106,8 @@ export default function PrivacyPolicyPage() {
                 </p>
               </li>
               <li className="p-3.5 rounded-xl bg-obsidian/70 border border-white/10 space-y-1">
-                <span className="font-mono text-xs text-gold flex items-center gap-1.5 font-semibold">
-                  <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400" />
+                <span className="font-sans text-xs text-gold flex items-center gap-1.5 font-semibold">
+                  <CheckCircle2 className="w-3.5 h-3.5 text-gold" />
                   Unión Europea: RGPD (UE 2016/679)
                 </span>
                 <p className="text-xs text-mist/70">
@@ -116,8 +116,8 @@ export default function PrivacyPolicyPage() {
                 </p>
               </li>
               <li className="p-3.5 rounded-xl bg-obsidian/70 border border-white/10 space-y-1">
-                <span className="font-mono text-xs text-gold flex items-center gap-1.5 font-semibold">
-                  <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400" />
+                <span className="font-sans text-xs text-gold flex items-center gap-1.5 font-semibold">
+                  <CheckCircle2 className="w-3.5 h-3.5 text-gold" />
                   California: CCPA / CPRA
                 </span>
                 <p className="text-xs text-mist/70">
@@ -126,8 +126,8 @@ export default function PrivacyPolicyPage() {
                 </p>
               </li>
               <li className="p-3.5 rounded-xl bg-obsidian/70 border border-white/10 space-y-1">
-                <span className="font-mono text-xs text-gold flex items-center gap-1.5 font-semibold">
-                  <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400" />
+                <span className="font-sans text-xs text-gold flex items-center gap-1.5 font-semibold">
+                  <CheckCircle2 className="w-3.5 h-3.5 text-gold" />
                   Directiva ePrivacy (2009/136/CE)
                 </span>
                 <p className="text-xs text-mist/70">
@@ -140,7 +140,7 @@ export default function PrivacyPolicyPage() {
           {/* Sección 3: Datos Recopilados y Fines */}
           <section className="space-y-4">
             <h2 className="text-xl font-serif text-white flex items-center gap-2">
-              <span className="text-gold font-mono text-sm">03.</span>
+              <span className="text-gold font-sans text-sm">03.</span>
               Datos Personales Recopilados y Finalidades
             </h2>
             <p>
@@ -150,7 +150,7 @@ export default function PrivacyPolicyPage() {
 
             <div className="space-y-3">
               <div className="p-4 rounded-xl bg-obsidian border border-white/10">
-                <h3 className="font-mono text-xs uppercase tracking-wider text-white mb-2 flex items-center gap-2">
+                <h3 className="font-sans text-xs uppercase tracking-wider text-white mb-2 flex items-center gap-2">
                   <FileText className="w-4 h-4 text-gold" />
                   A. Datos de Identificación y Reserva Oficial
                 </h3>
@@ -158,16 +158,16 @@ export default function PrivacyPolicyPage() {
                   Nombres completos, nacionalidad, número de pasaporte o documento de identidad, fecha de nacimiento,
                   idioma de preferencia y datos de contacto (correo y WhatsApp).
                 </p>
-                <p className="text-[11px] font-mono text-gold/80">
+                <p className="text-[11px] font-sans text-gold/80">
                   <strong>Finalidad legal:</strong> Emisión obligatoria de boletos nominales ante el Ministerio de
                   Cultura de Perú (Llaqta de Machu Picchu), pases del Camino Inca (SERNANP) y boletos ferroviarios
                   nominales (PeruRail / Inca Rail).
                 </p>
               </div>
 
-              <div className="p-4 rounded-xl bg-obsidian border border-emerald-500/30">
-                <h3 className="font-mono text-xs uppercase tracking-wider text-white mb-2 flex items-center gap-2">
-                  <HeartPulse className="w-4 h-4 text-emerald-400" />
+              <div className="p-4 rounded-xl bg-obsidian border border-gold/30">
+                <h3 className="font-sans font-medium text-xs uppercase tracking-wider text-white mb-2 flex items-center gap-2">
+                  <HeartPulse className="w-4 h-4 text-gold" />
                   B. Tratamiento Especial de Datos Sensibles de Salud y Aclimatación
                 </h3>
                 <p className="text-xs text-mist/75 mb-2">
@@ -175,9 +175,9 @@ export default function PrivacyPolicyPage() {
                   montaña severo (soroche), medicación actual y alergias alimentarias.
                 </p>
                 <p className="text-[11px] text-mist/70">
-                  <strong className="text-emerald-400">Régimen Jurídico Especial (Art. 13.1 Ley 29733 y Art. 9.2.c RGPD):</strong>{' '}
+                  <strong className="text-gold">Régimen Jurídico Especial (Art. 13.1 Ley 29733 y Art. 9.2.c RGPD):</strong>{' '}
                   Estos datos son considerados legalmente <em>sensibles</em>. Se tratan con base exclusiva en salvaguardar
-                  su vida, salud e integridad física en travesías de hasta 4,630 msnm. Son accesibles únicamente por los
+                  su vida, salud e integridad física en travesías de hasta 5,036 msnm. Son accesibles únicamente por los
                   médicos de apoyo y guías certificados <em>Wilderness Medical First Responder (WFR)</em> asignados a su
                   expedición, sujetos a secreto profesional estricto.
                 </p>
@@ -188,7 +188,7 @@ export default function PrivacyPolicyPage() {
           {/* Sección 4: Transferencias Internacionales */}
           <section className="space-y-3">
             <h2 className="text-xl font-serif text-white flex items-center gap-2">
-              <span className="text-gold font-mono text-sm">04.</span>
+              <span className="text-gold font-sans text-sm">04.</span>
               Flujo Transfronterizo de Datos (Transferencias Internacionales)
             </h2>
             <p>
@@ -206,7 +206,7 @@ export default function PrivacyPolicyPage() {
           {/* Sección 5: Conservación y Seguridad */}
           <section className="space-y-3">
             <h2 className="text-xl font-serif text-white flex items-center gap-2">
-              <span className="text-gold font-mono text-sm">05.</span>
+              <span className="text-gold font-sans text-sm">05.</span>
               Seguridad y Plazo de Conservación
             </h2>
             <p>
@@ -221,7 +221,7 @@ export default function PrivacyPolicyPage() {
           {/* Sección 6: Ejercicio de Derechos ARCO y RGPD */}
           <section className="space-y-3">
             <h2 className="text-xl font-serif text-white flex items-center gap-2">
-              <span className="text-gold font-mono text-sm">06.</span>
+              <span className="text-gold font-sans text-sm">06.</span>
               Ejercicio de Derechos ARCO (Perú) y Derechos RGPD (UE)
             </h2>
             <p>
@@ -254,9 +254,9 @@ export default function PrivacyPolicyPage() {
             <div className="p-4 rounded-xl bg-gold/10 border border-gold/30 flex items-center justify-between">
               <div className="flex items-center gap-3">
                 <Mail className="w-5 h-5 text-gold" />
-                <span className="font-mono text-xs text-white">{legal.privacyEmail}</span>
+                <span className="font-sans text-xs text-white">{legal.privacyEmail}</span>
               </div>
-              <span className="text-[11px] font-mono text-gold/80">Plazo máximo de respuesta: 10 días hábiles</span>
+              <span className="text-[11px] font-sans text-gold/80">Plazo máximo de respuesta: 10 días hábiles</span>
             </div>
             <p className="text-xs text-mist/60">
               En caso de considerar vulnerado su derecho, puede recurrir ante la <strong>Autoridad Nacional de Protección
@@ -269,13 +269,13 @@ export default function PrivacyPolicyPage() {
           <section className="pt-6 border-t border-white/10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 text-xs">
             <div>
               <p className="font-medium text-white">{legal.legalName}</p>
-              <p className="text-mist/60 font-mono">{legal.address}</p>
+              <p className="text-mist/60 font-sans">{legal.address}</p>
             </div>
             <div className="flex items-center gap-4">
-              <Link href="/cookies" className="text-gold hover:underline font-mono">
+              <Link href="/cookies" className="text-gold hover:underline font-sans">
                 Política de Cookies →
               </Link>
-              <Link href="/libro-de-reclamaciones" className="text-mist/70 hover:text-white font-mono">
+              <Link href="/libro-de-reclamaciones" className="text-mist/70 hover:text-white font-sans">
                 Libro de Reclamaciones →
               </Link>
             </div>

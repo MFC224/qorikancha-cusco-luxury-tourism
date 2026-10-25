@@ -40,20 +40,20 @@ export default function ExpeditionHUD({
     return (
       <aside
         aria-label="Telemetría de Cusco"
-        className={`glass-card rounded-2xl px-5 py-3 border border-gold/20 font-mono text-xs text-mist/80 shadow-obsidian-glow ${className}`}
+        className={`glass-card rounded-2xl px-5 py-3 border border-gold/20 font-sans text-xs text-mist/80 shadow-obsidian-glow ${className}`}
       >
         <div className="flex items-center space-x-3">
           <span className="flex h-2 w-2 relative">
-            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
-            <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500" />
+            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-gold/75 opacity-75" />
+            <span className="relative inline-flex rounded-full h-2 w-2 bg-gold" />
           </span>
-          <span className="text-gold font-semibold">{destination.elevation.display}</span>
+          <span className="text-gold font-semibold tracking-wider">{destination.elevation.display}</span>
           <span className="text-mist/30">|</span>
-          <span className="text-mist/70">{destination.coordinates.formatted}</span>
+          <span className="text-mist/70 tracking-wider uppercase font-medium">{destination.coordinates.formatted}</span>
           {localTime && (
             <>
               <span className="text-mist/30">|</span>
-              <span className="text-gold/90">{localTime} PET</span>
+              <span className="text-gold/90 font-medium tracking-wider">{localTime} PET</span>
             </>
           )}
         </div>
@@ -64,19 +64,19 @@ export default function ExpeditionHUD({
   return (
     <aside
       aria-label="Barra de Telemetría Andina"
-      className={`glass-card rounded-2xl px-6 py-3 border border-gold/25 font-mono text-xs text-mist shadow-obsidian-glow backdrop-blur-xl ${className}`}
+      className={`glass-card rounded-2xl px-6 py-3 border border-gold/25 font-sans text-xs text-mist shadow-obsidian-glow backdrop-blur-xl ${className}`}
     >
       <div className="flex flex-wrap items-center justify-between gap-4 sm:gap-6">
         {/* Estado Operativo & Altitud */}
         <div className="flex items-center space-x-2.5">
           <span className="flex h-2 w-2 relative">
-            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
-            <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500" />
+            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-gold/75 opacity-75" />
+            <span className="relative inline-flex rounded-full h-2 w-2 bg-gold" />
           </span>
           <Mountain className="w-3.5 h-3.5 text-gold shrink-0" />
           <div>
-            <span className="text-[10px] text-mist/50 block leading-none">ALTITUD CUSCO</span>
-            <span className="text-xs text-gold font-semibold">{destination.elevation.display}</span>
+            <span className="text-[10px] text-mist/50 block leading-none font-medium uppercase tracking-wider">ALTITUD CUSCO</span>
+            <span className="text-xs text-gold font-semibold tracking-wider">{destination.elevation.display}</span>
           </div>
         </div>
 
@@ -84,8 +84,8 @@ export default function ExpeditionHUD({
         <div className="hidden sm:flex items-center space-x-2.5">
           <Compass className="w-3.5 h-3.5 text-gold shrink-0" />
           <div>
-            <span className="text-[10px] text-mist/50 block leading-none">COORDENADAS</span>
-            <span className="text-xs text-mist/85 font-mono">{destination.coordinates.formatted}</span>
+            <span className="text-[10px] text-mist/50 block leading-none font-medium uppercase tracking-wider">COORDENADAS</span>
+            <span className="text-xs text-mist/85 font-medium tracking-wider">{destination.coordinates.formatted}</span>
           </div>
         </div>
 
@@ -93,17 +93,17 @@ export default function ExpeditionHUD({
         <div className="hidden md:flex items-center space-x-2.5">
           <Wind className="w-3.5 h-3.5 text-gold shrink-0" />
           <div>
-            <span className="text-[10px] text-mist/50 block leading-none">ATMÓSFERA</span>
-            <span className="text-xs text-mist/85">Seco Estelar · 14°C</span>
+            <span className="text-[10px] text-mist/50 block leading-none font-medium uppercase tracking-wider">ATMÓSFERA</span>
+            <span className="text-xs text-mist/85 font-medium tracking-wider">Seco Estelar · 14°C</span>
           </div>
         </div>
 
         {/* Oximetría Recomendada */}
         <div className="hidden lg:flex items-center space-x-2.5">
-          <Activity className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
+          <Activity className="w-3.5 h-3.5 text-gold shrink-0" />
           <div>
-            <span className="text-[10px] text-mist/50 block leading-none">SATURACIÓN O₂</span>
-            <span className="text-xs text-emerald-400 font-semibold">94% Óptimo</span>
+            <span className="text-[10px] text-mist/50 block leading-none font-medium uppercase tracking-wider">SATURACIÓN O₂</span>
+            <span className="text-xs text-gold font-semibold tracking-wider">94% Óptimo</span>
           </div>
         </div>
 
@@ -111,8 +111,8 @@ export default function ExpeditionHUD({
         {localTime && (
           <div className="flex items-center space-x-2 pl-2 sm:border-l sm:border-white/10">
             <div>
-              <span className="text-[10px] text-mist/50 block leading-none">HORA LOCAL</span>
-              <span className="text-xs text-gold font-mono">{localTime} PET</span>
+              <span className="text-[10px] text-mist/50 block leading-none font-medium uppercase tracking-wider">HORA LOCAL</span>
+              <span className="text-xs text-gold font-medium tracking-wider">{localTime} PET</span>
             </div>
           </div>
         )}

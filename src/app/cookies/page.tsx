@@ -24,7 +24,7 @@ export default function CookiePolicyPage() {
         <div className="mb-8">
           <Link
             href="/"
-            className="inline-flex items-center gap-2 text-xs font-mono text-gold hover:text-white transition-colors"
+            className="inline-flex items-center gap-2 text-xs font-sans text-gold hover:text-white transition-colors"
           >
             <ArrowLeft className="w-4 h-4" />
             <span>Retornar a la Colección de Expediciones</span>
@@ -33,7 +33,7 @@ export default function CookiePolicyPage() {
 
         {/* Encabezado Editorial */}
         <header className="border-b border-gold/20 pb-10 mb-12">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gold/10 border border-gold/25 text-gold text-xs font-mono tracking-widest uppercase mb-4">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gold/10 border border-gold/25 text-gold text-xs font-sans tracking-widest uppercase mb-4">
             <Cookie className="w-3.5 h-3.5" />
             Transparencia Tecnológica & Consentimiento
           </div>
@@ -42,7 +42,7 @@ export default function CookiePolicyPage() {
             Política de Cookies & Tecnologías de Almacenamiento
           </h1>
 
-          <div className="flex flex-wrap items-center gap-x-6 gap-y-2 text-xs font-mono text-mist/60">
+          <div className="flex flex-wrap items-center gap-x-6 gap-y-2 text-xs font-sans text-mist/60">
             <span>Directiva ePrivacy (2009/136/CE) · RGPD · Google Consent Mode v2</span>
             <span>·</span>
             <span>Última revisión: 2026</span>
@@ -64,7 +64,7 @@ export default function CookiePolicyPage() {
           <button
             type="button"
             onClick={handleOpenPreferences}
-            className="px-5 py-3 rounded-xl bg-gold/20 hover:bg-gold/30 border border-gold/50 text-gold hover:text-white text-xs font-mono font-semibold tracking-wider transition-all duration-200 cursor-pointer flex items-center gap-2 shrink-0 active:scale-95 shadow-md shadow-gold/10"
+            className="px-5 py-3 rounded-xl bg-gold/20 hover:bg-gold/30 border border-gold/50 text-gold hover:text-white text-xs font-sans font-semibold tracking-wider transition-all duration-200 cursor-pointer flex items-center gap-2 shrink-0 active:scale-95 shadow-md shadow-gold/10"
           >
             <Settings className="w-4 h-4" />
             <span>Abrir Preferencias</span>
@@ -76,7 +76,7 @@ export default function CookiePolicyPage() {
           {/* 01. Definición */}
           <section className="space-y-3">
             <h2 className="text-xl font-serif text-white flex items-center gap-2">
-              <span className="text-gold font-mono text-sm">01.</span>
+              <span className="text-gold font-sans text-sm">01.</span>
               ¿Qué son las Cookies y Tecnologías Similares?
             </h2>
             <p>
@@ -95,7 +95,7 @@ export default function CookiePolicyPage() {
           {/* 02. Inventario Detallado de Cookies */}
           <section className="space-y-4">
             <h2 className="text-xl font-serif text-white flex items-center gap-2">
-              <span className="text-gold font-mono text-sm">02.</span>
+              <span className="text-gold font-sans text-sm">02.</span>
               Inventario Exhaustivo de Cookies en Nuestra Plataforma
             </h2>
             <p>
@@ -104,7 +104,7 @@ export default function CookiePolicyPage() {
 
             <div className="overflow-x-auto rounded-xl border border-white/10 bg-obsidian">
               <table className="w-full text-left text-xs font-sans">
-                <thead className="bg-white/5 border-b border-white/10 text-gold font-mono text-[11px] uppercase tracking-wider">
+                <thead className="bg-white/5 border-b border-white/10 text-gold font-sans text-[11px] uppercase tracking-wider">
                   <tr>
                     <th className="p-3.5">Nombre / Clave</th>
                     <th className="p-3.5">Proveedor</th>
@@ -113,11 +113,11 @@ export default function CookiePolicyPage() {
                     <th className="p-3.5">Vigencia</th>
                   </tr>
                 </thead>
-                <tbody className="divide-y divide-white/5 font-mono text-[11px]">
+                <tbody className="divide-y divide-white/5 font-sans text-[11px]">
                   <tr className="hover:bg-white/[0.02]">
                     <td className="p-3.5 font-bold text-white">qorikancha_cookie_consent_v1</td>
                     <td className="p-3.5 text-mist/70">Propio (Local)</td>
-                    <td className="p-3.5 text-emerald-400">Esencial</td>
+                    <td className="p-3.5 text-gold font-medium">Esencial</td>
                     <td className="p-3.5 font-sans text-mist/80">
                       Guarda las preferencias de privacidad del usuario (analítica y marketing).
                     </td>
@@ -126,7 +126,7 @@ export default function CookiePolicyPage() {
                   <tr className="hover:bg-white/[0.02]">
                     <td className="p-3.5 font-bold text-white">qorikancha_consent_status</td>
                     <td className="p-3.5 text-mist/70">Propio (Cookie)</td>
-                    <td className="p-3.5 text-emerald-400">Esencial</td>
+                    <td className="p-3.5 text-gold font-medium">Esencial</td>
                     <td className="p-3.5 font-sans text-mist/80">
                       Cookie HTTP de primer origen (SameSite=Lax; Secure) para lectura pre-renderizado en servidor.
                     </td>
@@ -167,7 +167,7 @@ export default function CookiePolicyPage() {
           {/* 03. Google Consent Mode v2 */}
           <section className="space-y-3">
             <h2 className="text-xl font-serif text-white flex items-center gap-2">
-              <span className="text-gold font-mono text-sm">03.</span>
+              <span className="text-gold font-sans text-sm">03.</span>
               Implementación de Google Consent Mode v2
             </h2>
             <p>
@@ -179,28 +179,28 @@ export default function CookiePolicyPage() {
               <li className="p-3 rounded-lg bg-obsidian border border-white/10 flex items-start gap-2">
                 <ShieldCheck className="w-4 h-4 text-gold shrink-0 mt-0.5" />
                 <div>
-                  <strong className="text-white block font-mono">analytics_storage</strong>
+                  <strong className="text-white block font-sans">analytics_storage</strong>
                   <span className="text-mist/70">Controla el almacenamiento de métricas analíticas.</span>
                 </div>
               </li>
               <li className="p-3 rounded-lg bg-obsidian border border-white/10 flex items-start gap-2">
                 <ShieldCheck className="w-4 h-4 text-gold shrink-0 mt-0.5" />
                 <div>
-                  <strong className="text-white block font-mono">ad_storage</strong>
+                  <strong className="text-white block font-sans">ad_storage</strong>
                   <span className="text-mist/70">Controla el almacenamiento con fines publicitarios.</span>
                 </div>
               </li>
               <li className="p-3 rounded-lg bg-obsidian border border-white/10 flex items-start gap-2">
                 <ShieldCheck className="w-4 h-4 text-gold shrink-0 mt-0.5" />
                 <div>
-                  <strong className="text-white block font-mono">ad_user_data</strong>
+                  <strong className="text-white block font-sans">ad_user_data</strong>
                   <span className="text-mist/70">Autoriza el envío de datos de usuario con fines publicitarios.</span>
                 </div>
               </li>
               <li className="p-3 rounded-lg bg-obsidian border border-white/10 flex items-start gap-2">
                 <ShieldCheck className="w-4 h-4 text-gold shrink-0 mt-0.5" />
                 <div>
-                  <strong className="text-white block font-mono">ad_personalization</strong>
+                  <strong className="text-white block font-sans">ad_personalization</strong>
                   <span className="text-mist/70">Habilita anuncios personalizados y retargeting de expedición.</span>
                 </div>
               </li>
@@ -210,14 +210,14 @@ export default function CookiePolicyPage() {
           {/* 04. Desactivación desde el Navegador */}
           <section className="space-y-3">
             <h2 className="text-xl font-serif text-white flex items-center gap-2">
-              <span className="text-gold font-mono text-sm">04.</span>
+              <span className="text-gold font-sans text-sm">04.</span>
               Cómo Desactivar o Eliminar Cookies desde su Navegador
             </h2>
             <p>
               Además de nuestro panel de control, usted puede bloquear, permitir o suprimir cookies mediante la
               configuración nativa de su navegador:
             </p>
-            <div className="grid sm:grid-cols-2 gap-3 text-xs pt-1 font-mono">
+            <div className="grid sm:grid-cols-2 gap-3 text-xs pt-1 font-sans">
               <a
                 href="https://support.google.com/chrome/answer/95647"
                 target="_blank"
@@ -263,16 +263,16 @@ export default function CookiePolicyPage() {
           </section>
 
           {/* 05. Enlaces de referencia */}
-          <section className="pt-6 border-t border-white/10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 text-xs">
+          <section className="pt-6 border-t border-white/10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 text-xs font-sans">
             <div className="flex items-center gap-2 text-mist/70">
-              <CheckCircle2 className="w-4 h-4 text-emerald-400" />
+              <CheckCircle2 className="w-4 h-4 text-gold" />
               <span>Conforme con las Directrices EDPB 03/2022 sobre Patrones Engañosos</span>
             </div>
             <div className="flex items-center gap-4">
-              <Link href="/privacidad" className="text-gold hover:underline font-mono">
+              <Link href="/privacidad" className="text-gold hover:underline font-medium">
                 Política de Privacidad →
               </Link>
-              <Link href="/terminos" className="text-mist/70 hover:text-white font-mono">
+              <Link href="/terminos" className="text-mist/70 hover:text-white font-medium">
                 Términos y Condiciones →
               </Link>
             </div>

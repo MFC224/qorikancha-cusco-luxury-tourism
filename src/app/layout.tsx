@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { Cinzel, DM_Sans, JetBrains_Mono } from 'next/font/google';
+import { Cinzel, DM_Sans } from 'next/font/google';
 import './globals.css';
 import { cuscoConfig } from '@/data/cuscoConfig';
 import Header from '@/components/layout/Header';
@@ -20,13 +20,6 @@ const dmSans = DM_Sans({
   variable: '--font-dm-sans',
   display: 'swap',
   weight: ['300', '400', '500', '600', '700'],
-});
-
-const jetbrainsMono = JetBrains_Mono({
-  subsets: ['latin'],
-  variable: '--font-jetbrains-mono',
-  display: 'swap',
-  weight: ['400', '500', '600'],
 });
 
 export const metadata: Metadata = {
@@ -97,7 +90,7 @@ export default function RootLayout({
   return (
     <html
       lang="es"
-      className={`${cinzel.variable} ${dmSans.variable} ${jetbrainsMono.variable} dark scroll-smooth`}
+      className={`${cinzel.variable} ${dmSans.variable} dark scroll-smooth`}
     >
       <head>
         {/* Google Consent Mode v2: Inicialización síncrona obligatoria con bloqueo por defecto */}

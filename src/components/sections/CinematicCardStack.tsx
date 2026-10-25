@@ -96,6 +96,8 @@ export default function CinematicCardStack() {
         return 'CAMINO INCA';
       case 'valle-sagrado-ausangate':
         return 'VALLE SAGRADO';
+      case 'vinicunca-rainbow-mountain':
+        return 'VINICUNCA';
       default:
         return 'EXPLORAR';
     }
@@ -111,20 +113,20 @@ export default function CinematicCardStack() {
       <div className="max-w-7xl mx-auto mb-16 sm:mb-20">
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6">
           <div>
-            <span className="text-xs font-mono text-gold tracking-super-wide uppercase flex items-center gap-2">
+            <span className="text-xs font-sans font-medium text-gold tracking-super-wide uppercase flex items-center gap-2">
               <Sparkles className="w-3.5 h-3.5" />
-              {'// LAS 4 GRANDES EXPEDICIONES'}
+              {'// LAS 5 GRANDES EXPEDICIONES'}
             </span>
             <h2 className="text-3xl sm:text-5xl lg:text-6xl font-serif text-mist mt-3">
               Travesías Privadas de Autor
             </h2>
-            <p className="text-mist/70 text-sm sm:text-base mt-3 max-w-2xl leading-relaxed">
+            <p className="text-mist/70 text-sm sm:text-base mt-3 max-w-2xl leading-relaxed font-sans">
               Cada expedición es operada en rigurosa privacidad, con campamentos de diseño geodésico, chefs de terroir y acompañamiento médico continuo.
             </p>
           </div>
 
           <div className="hud-badge text-gold self-start sm:self-end">
-            SCROLL TRIGGER 3D · 4 ETAPAS
+            SCROLL TRIGGER 3D · 5 ETAPAS
           </div>
         </div>
       </div>
@@ -170,7 +172,7 @@ export default function CinematicCardStack() {
                 {/* Parte Superior: Índice de Expedición, Badge & Altitud */}
                 <div className="flex flex-wrap items-center justify-between gap-4">
                   <div className="flex items-center space-x-3">
-                    <span className="font-mono text-xs sm:text-sm text-gold font-bold tracking-widest bg-obsidian/80 backdrop-blur-md px-3 py-1.5 rounded-full border border-gold/30">
+                    <span className="font-sans text-xs sm:text-sm text-gold font-bold tracking-widest bg-obsidian/80 backdrop-blur-md px-3 py-1.5 rounded-full border border-gold/30">
                       0{index + 1} / 0{expeditions.length}
                     </span>
                     <span className="hud-badge bg-obsidian/80 backdrop-blur-md hidden sm:inline-flex">
@@ -179,11 +181,11 @@ export default function CinematicCardStack() {
                   </div>
 
                   <div className="flex items-center space-x-3">
-                    <span className="inline-flex items-center text-xs font-mono text-mist bg-obsidian/80 backdrop-blur-md px-3.5 py-1.5 rounded-full border border-white/15">
+                    <span className="inline-flex items-center text-xs font-sans font-medium text-mist bg-obsidian/80 backdrop-blur-md px-3.5 py-1.5 rounded-full border border-white/15">
                       <Mountain className="w-3.5 h-3.5 text-gold mr-1.5" />
                       {exp.maxAltitude}
                     </span>
-                    <span className="inline-flex items-center text-xs font-mono text-mist bg-obsidian/80 backdrop-blur-md px-3.5 py-1.5 rounded-full border border-white/15">
+                    <span className="inline-flex items-center text-xs font-sans font-medium text-mist bg-obsidian/80 backdrop-blur-md px-3.5 py-1.5 rounded-full border border-white/15">
                       <Clock className="w-3.5 h-3.5 text-gold mr-1.5" />
                       {exp.duration}
                     </span>
@@ -192,7 +194,7 @@ export default function CinematicCardStack() {
 
                 {/* Parte Central: Titular Monumental & Resumen Poético */}
                 <div className="max-w-3xl my-auto py-6">
-                  <span className="text-xs font-mono text-gold/90 tracking-widest uppercase block mb-2">
+                  <span className="text-xs font-sans font-medium text-gold/90 tracking-widest uppercase block mb-2">
                     {exp.subtitle}
                   </span>
                   <h3 className="text-3xl sm:text-5xl lg:text-6xl font-serif font-medium text-mist leading-[1.1] tracking-tight">
@@ -219,11 +221,11 @@ export default function CinematicCardStack() {
                 {/* Parte Inferior: Precio & Botón de Reserva con WhatsApp VIP */}
                 <div className="pt-6 border-t border-gold/20 flex flex-wrap items-center justify-between gap-4">
                   <div>
-                    <span className="block text-[11px] font-mono text-mist/50 tracking-wider">TARIFA PRIVADA BESPOKE</span>
+                    <span className="block text-[11px] font-sans font-medium text-mist/50 tracking-wider uppercase">TARIFA PRIVADA BESPOKE</span>
                     <span className="text-2xl sm:text-3xl font-serif text-gold font-semibold">
                       {exp.pricePerPerson}
                     </span>
-                    <span className="text-xs font-mono text-mist/50 ml-2">/ pasajero</span>
+                    <span className="text-xs font-sans font-medium text-mist/50 ml-2">/ pasajero</span>
                   </div>
 
                   <div className="flex items-center space-x-3">

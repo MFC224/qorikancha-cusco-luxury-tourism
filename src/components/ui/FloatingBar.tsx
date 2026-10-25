@@ -41,12 +41,12 @@ export default function FloatingBar({ onOpenModal }: FloatingBarProps) {
       <div className="glass-card rounded-full px-4 sm:px-6 py-2.5 sm:py-3 border border-gold/35 shadow-2xl backdrop-blur-xl flex items-center space-x-3 sm:space-x-5 bg-obsidian-card/90">
         {/* Monograma & Altitud */}
         <div className="flex items-center space-x-2.5 pr-2 sm:border-r sm:border-white/10">
-          <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse hidden sm:inline-block" />
+          <span className="w-2 h-2 rounded-full bg-gold animate-pulse hidden sm:inline-block" />
           <div>
             <span className="font-serif text-xs sm:text-sm font-semibold text-mist block leading-tight">
               {brand.name.split(' ')[0]}
             </span>
-            <span className="text-[9px] font-mono text-gold flex items-center gap-1">
+            <span className="text-[9px] font-sans font-medium text-gold flex items-center gap-1 tracking-wider">
               <Mountain className="w-2.5 h-2.5" />
               {destination.elevation.display}
             </span>
@@ -54,7 +54,7 @@ export default function FloatingBar({ onOpenModal }: FloatingBarProps) {
         </div>
 
         {/* Resumen de Expedición */}
-        <div className="hidden md:flex items-center space-x-2 text-xs font-mono text-mist/75">
+        <div className="hidden md:flex items-center space-x-2 text-xs font-sans font-medium text-mist/75 uppercase tracking-wider">
           <Sparkles className="w-3 h-3 text-gold" />
           <span>Colección Privada 2026/2027</span>
         </div>
@@ -64,7 +64,7 @@ export default function FloatingBar({ onOpenModal }: FloatingBarProps) {
           type="button"
           onClick={onOpenModal}
           data-cursor="COTIZAR"
-          className="inline-flex items-center px-4 sm:px-5 py-2 rounded-full bg-gold hover:bg-gold-light text-obsidian font-mono text-xs uppercase tracking-wider font-bold shadow-gold-glow transition-all active:scale-95"
+          className="inline-flex items-center px-4 sm:px-5 py-2 rounded-full bg-gold hover:bg-gold-light text-obsidian font-sans text-xs uppercase tracking-wider font-bold shadow-gold-glow transition-all active:scale-95"
         >
           <MessageSquare className="w-3.5 h-3.5 mr-1.5" />
           <span>Cotizar</span>

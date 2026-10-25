@@ -155,7 +155,7 @@ export default function CookieConsent() {
                 <h3 className="font-serif text-lg font-medium text-white tracking-tight flex items-center gap-2">
                   Privacidad & Soberanía de Datos
                 </h3>
-                <p className="text-[11px] font-mono text-gold tracking-widest uppercase mt-0.5">
+                <p className="text-[11px] font-sans font-medium text-gold tracking-wider uppercase mt-0.5">
                   Estándar Internacional RGPD · CCPA · Ley Nº 29733 (Perú)
                 </p>
               </div>
@@ -174,7 +174,7 @@ export default function CookieConsent() {
               <button
                 type="button"
                 onClick={() => setShowPreferencesModal(true)}
-                className="inline-flex items-center justify-center gap-1.5 px-3 py-2 text-xs font-mono text-mist/60 hover:text-mist transition-colors cursor-pointer"
+                className="inline-flex items-center justify-center gap-1.5 px-3 py-2 text-xs font-sans font-medium text-mist/60 hover:text-mist transition-colors cursor-pointer"
               >
                 <Settings className="w-3.5 h-3.5" />
                 <span>Configurar</span>
@@ -185,7 +185,7 @@ export default function CookieConsent() {
                 <button
                   type="button"
                   onClick={handleRejectNonEssential}
-                  className="flex-1 sm:flex-none px-4 py-2.5 rounded-lg border border-white/20 bg-white/5 hover:bg-white/10 active:scale-95 text-mist text-xs font-mono font-medium tracking-wide transition-all cursor-pointer"
+                  className="flex-1 sm:flex-none px-4 py-2.5 rounded-lg border border-white/20 bg-white/5 hover:bg-white/10 active:scale-95 text-mist text-xs font-sans font-medium tracking-wide transition-all cursor-pointer"
                 >
                   Rechazar No Esenciales
                 </button>
@@ -194,7 +194,7 @@ export default function CookieConsent() {
                 <button
                   type="button"
                   onClick={handleAcceptAll}
-                  className="flex-1 sm:flex-none px-4 py-2.5 rounded-lg border border-gold/50 bg-gold/20 hover:bg-gold/30 active:scale-95 text-gold hover:text-white text-xs font-mono font-semibold tracking-wide transition-all cursor-pointer shadow-sm shadow-gold/20"
+                  className="flex-1 sm:flex-none px-4 py-2.5 rounded-lg border border-gold/50 bg-gold/20 hover:bg-gold/30 active:scale-95 text-gold hover:text-white text-xs font-sans font-semibold tracking-wide transition-all cursor-pointer shadow-sm shadow-gold/20"
                 >
                   Aceptar Todas
                 </button>
@@ -202,7 +202,7 @@ export default function CookieConsent() {
             </div>
 
             {/* Enlaces a Políticas */}
-            <div className="mt-3 pt-2 text-[10px] font-mono text-mist/40 flex items-center justify-between">
+            <div className="mt-3 pt-2 text-[10px] font-sans font-medium text-mist/40 flex items-center justify-between">
               <span>Consent Mode v2 habilitado</span>
               <div className="flex items-center gap-3">
                 <Link href="/privacidad" className="hover:text-gold transition-colors underline">
@@ -239,7 +239,7 @@ export default function CookieConsent() {
                   <h2 id="modal-cookie-title" className="text-xl font-serif font-medium text-white">
                     Centro de Preferencias de Privacidad
                   </h2>
-                  <p className="text-xs font-mono text-gold tracking-wider">
+                  <p className="text-xs font-sans font-medium text-gold tracking-wider uppercase">
                     QORIKANCHA EXPEDITIONS · GESTIÓN GRANULAR DE COOKIES
                   </p>
                 </div>
@@ -267,10 +267,10 @@ export default function CookieConsent() {
               <div className="p-4 rounded-xl bg-obsidian/70 border border-white/10 space-y-2">
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-2">
-                    <Lock className="w-4 h-4 text-emerald-400" />
+                    <Lock className="w-4 h-4 text-gold" />
                     <h3 className="font-medium text-white text-sm">Cookies Estrictamente Necesarias</h3>
                   </div>
-                  <span className="px-2.5 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 font-mono text-[10px] uppercase tracking-wider font-semibold">
+                  <span className="px-2.5 py-1 rounded-full bg-gold/10 border border-gold/30 text-gold font-sans text-[10px] uppercase tracking-wider font-semibold">
                     Siempre Activas
                   </span>
                 </div>
@@ -279,7 +279,7 @@ export default function CookieConsent() {
                   CSRF, autenticación de sesiones cifradas y conservación de sus propias elecciones de privacidad. No
                   pueden ser desactivadas en nuestros servidores.
                 </p>
-                <div className="text-[10px] font-mono text-mist/40 pt-1">
+                <div className="text-[10px] font-sans text-mist/40 pt-1">
                   Ejemplos: <code>qorikancha_consent_status</code>, <code>__Host-next-auth</code>, balanceo de infraestructura.
                 </div>
               </div>
@@ -306,7 +306,7 @@ export default function CookieConsent() {
                   mapas interactivos y guías de altitud. La información se procesa de forma disociada o agregada bajo
                   Google Consent Mode v2 (IP anonimizada).
                 </p>
-                <div className="text-[10px] font-mono text-mist/40 pt-1">
+                <div className="text-[10px] font-sans text-mist/40 pt-1">
                   Señales vinculadas: <code>analytics_storage</code> (Google Analytics 4).
                 </div>
               </div>
@@ -315,7 +315,7 @@ export default function CookieConsent() {
               <div className="p-4 rounded-xl bg-obsidian/70 border border-white/10 space-y-2">
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-2">
-                    <Cookie className="w-4 h-4 text-purple-400" />
+                    <Cookie className="w-4 h-4 text-gold" />
                     <h3 className="font-medium text-white text-sm">Personalización & Conversiones VIP</h3>
                   </div>
                   <label className="relative inline-flex items-center cursor-pointer">
@@ -332,7 +332,7 @@ export default function CookieConsent() {
                   Se utilizan para registrar el interés en itinerarios de expedición específicos y presentar propuestas
                   personalizadas en plataformas de viajes internacionales, limitando la reiteración publicitaria.
                 </p>
-                <div className="text-[10px] font-mono text-mist/40 pt-1">
+                <div className="text-[10px] font-sans text-mist/40 pt-1">
                   Señales vinculadas: <code>ad_storage</code>, <code>ad_user_data</code>, <code>ad_personalization</code>.
                 </div>
               </div>
@@ -345,7 +345,7 @@ export default function CookieConsent() {
                 <Link
                   href="/cookies"
                   onClick={() => setShowPreferencesModal(false)}
-                  className="inline-flex items-center gap-1 text-gold hover:underline font-mono"
+                  className="inline-flex items-center gap-1 text-gold hover:underline font-sans font-medium"
                 >
                   <span>Ver inventario</span>
                   <ChevronRight className="w-3.5 h-3.5" />
@@ -358,7 +358,7 @@ export default function CookieConsent() {
               <button
                 type="button"
                 onClick={handleRejectNonEssential}
-                className="px-4 py-2.5 rounded-lg border border-white/20 bg-white/5 hover:bg-white/10 text-mist text-xs font-mono font-medium transition-colors cursor-pointer"
+                className="px-4 py-2.5 rounded-lg border border-white/20 bg-white/5 hover:bg-white/10 text-mist text-xs font-sans font-medium transition-colors cursor-pointer"
               >
                 Rechazar Todas
               </button>
@@ -367,7 +367,7 @@ export default function CookieConsent() {
                 <button
                   type="button"
                   onClick={handleSaveCustom}
-                  className="flex-1 sm:flex-none px-4 py-2.5 rounded-lg border border-gold/40 bg-gold/15 hover:bg-gold/25 text-gold text-xs font-mono font-semibold transition-colors cursor-pointer flex items-center justify-center gap-1.5"
+                  className="flex-1 sm:flex-none px-4 py-2.5 rounded-lg border border-gold/40 bg-gold/15 hover:bg-gold/25 text-gold text-xs font-sans font-semibold transition-colors cursor-pointer flex items-center justify-center gap-1.5"
                 >
                   <Check className="w-3.5 h-3.5" />
                   <span>Guardar Selección</span>
@@ -375,7 +375,7 @@ export default function CookieConsent() {
                 <button
                   type="button"
                   onClick={handleAcceptAll}
-                  className="flex-1 sm:flex-none px-4 py-2.5 rounded-lg border border-gold bg-gold hover:bg-gold-light text-obsidian text-xs font-mono font-bold transition-colors cursor-pointer"
+                  className="flex-1 sm:flex-none px-4 py-2.5 rounded-lg border border-gold bg-gold hover:bg-gold-light text-obsidian text-xs font-sans font-bold transition-colors cursor-pointer"
                 >
                   Aceptar Todas
                 </button>
