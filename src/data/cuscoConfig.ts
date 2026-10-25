@@ -40,6 +40,16 @@ export interface Waypoint {
   };
 }
 
+export interface BentoCollageItem {
+  id: string;
+  name: string;
+  badge: string;
+  image: string;
+  elevation: string;
+  subtitle: string;
+  description: string;
+}
+
 export interface BentoExperience {
   id: string;
   title: string;
@@ -50,6 +60,7 @@ export interface BentoExperience {
   fallbackImage: string;
   colSpanDesktop: 1 | 2;
   badgeText?: string;
+  collageItems?: BentoCollageItem[];
 }
 
 export interface AcclimatizationRule {
@@ -403,9 +414,47 @@ export const cuscoConfig: CuscoMasterConfig = {
       tagline: 'Cata botánica de maíces nativos, tubérculos milenarios y hierbas de puna.',
       description: 'Menú degustación privado curado por chefs discípulos de los mayores exponentes de la cocina peruana contemporánea.',
       image: '/images/bento-gastronomia.webp',
-      fallbackImage: 'https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=1200&auto=format&fit=crop',
+      fallbackImage: 'https://images.unsplash.com/photo-1555396273-367ea4eb4db5?q=80&w=1200&auto=format&fit=crop',
       colSpanDesktop: 2,
       badgeText: 'MENÚ MARIDAJE 8 TIEMPOS',
+      collageItems: [
+        {
+          id: 'tiradito-botanico',
+          name: 'Tiradito Nikkei & Flores de Sauco',
+          badge: 'PESCA SAGRADA & TERROIR',
+          image: '/images/gastro-tiradito.webp',
+          elevation: '2,870 msnm',
+          subtitle: 'Trucha del Vilcanota en emulsión de ají amarillo y brotes de quinua',
+          description: 'Corte fino de trucha rosada de río de altura, curada con cítricos andinos y aceite infusionado en muña silvestre.',
+        },
+        {
+          id: 'maiz-morado-urubamba',
+          name: 'Maíz Morado Ancestral',
+          badge: 'CATA BOTÁNICA DE MAÍCES',
+          image: '/images/gastro-maiz-morado.webp',
+          elevation: '2,870 msnm',
+          subtitle: 'Zea mays nativo del Valle Sagrado con reducción de chicha morada',
+          description: 'Mazorcas de antocianina pura cosechadas a mano en las riberas del Urubamba, base de la chicha ceremonial incaica.',
+        },
+        {
+          id: 'tuberculos-milenarios',
+          name: 'Tubérculos Milenarios',
+          badge: 'BIODIVERSIDAD ANDINA',
+          image: '/images/gastro-papas-nativas.webp',
+          elevation: '3,800 msnm',
+          subtitle: '14 variedades de papas nativas polícromas cocidas a la huatia',
+          description: 'Oca, mashua y papas nativas de pulpa morada, amarilla y carmín rescatadas por comunidades quechuas de Paucartambo.',
+        },
+        {
+          id: 'ceviche-origen-unesco',
+          name: 'Ceviche de Origen UNESCO',
+          badge: 'PATRIMONIO INMATERIAL',
+          image: '/images/gastro-ceviche-unesco.webp',
+          elevation: 'Valle de Vilcanota',
+          subtitle: 'Choclo gigante de grano tierno imperial, camote glaseado y leche de tigre',
+          description: 'La máxima expresión culinaria peruana reconocida por la UNESCO, elaborada con granos de choclo gigante imperial de Urubamba.',
+        },
+      ],
     },
     {
       id: 'astronomy-vilcanota',
@@ -425,7 +474,7 @@ export const cuscoConfig: CuscoMasterConfig = {
       tagline: 'Madera pulida, cristales envolventes y coctelería de autor.',
       description: 'El viaje hacia la ciudadela inca se transforma en un banquete sensorial deslizándose junto a las aguas del río sagrado.',
       image: '/images/bento-tren.webp',
-      fallbackImage: 'https://images.unsplash.com/photo-1541872703-74c5e44368f9?q=80&w=1200&auto=format&fit=crop',
+      fallbackImage: 'https://images.unsplash.com/photo-1761950143597-69cef2686bfa?q=80&w=1200&auto=format&fit=crop',
       colSpanDesktop: 1,
       badgeText: 'VAGÓN OBSERVATORIO',
     },

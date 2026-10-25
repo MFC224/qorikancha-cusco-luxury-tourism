@@ -128,4 +128,59 @@ html.lenis, html.lenis body {
     border: 1px solid rgba(200, 162, 97, 0.25);
     color: var(--gold-light);
   }
+
+  /* Animaciones Flotantes para Collage de Gastronomía Andina */
+  @keyframes floatGentle {
+    0%, 100% {
+      transform: translateY(0px) rotate(0deg);
+    }
+    50% {
+      transform: translateY(-8px) rotate(1deg);
+    }
+  }
+
+  @keyframes floatGentleAlt {
+    0%, 100% {
+      transform: translateY(0px) rotate(0deg);
+    }
+    50% {
+      transform: translateY(-6px) rotate(-1.5deg);
+    }
+  }
+
+  @keyframes floatGentleSlow {
+    0%, 100% {
+      transform: translateY(0px) rotate(0deg);
+    }
+    50% {
+      transform: translateY(-10px) rotate(0.8deg);
+    }
+  }
+
+  @keyframes pulseGoldGlow {
+    0%, 100% {
+      box-shadow: 0 0 15px rgba(200, 162, 97, 0.25);
+      border-color: rgba(200, 162, 97, 0.35);
+    }
+    50% {
+      box-shadow: 0 0 30px rgba(200, 162, 97, 0.55);
+      border-color: rgba(200, 162, 97, 0.8);
+    }
+  }
+
+  .animate-float-1 {
+    animation: floatGentle 5s ease-in-out infinite;
+  }
+
+  .animate-float-2 {
+    animation: floatGentleAlt 6.5s ease-in-out infinite 0.7s;
+  }
+
+  .animate-float-3 {
+    animation: floatGentleSlow 7.2s ease-in-out infinite 1.4s;
+  }
+
+  .animate-pulse-gold {
+    animation: pulseGoldGlow 3s ease-in-out infinite;
+  }
 }
