@@ -628,7 +628,7 @@ export const cuscoConfig: CuscoMasterConfig = {
     {
       id: 'chinchero-moray',
       name: 'Chinchero & Moray',
-      quechuaName: 'Chinchero & Muray',
+      quechuaName: 'Chinchero & Moray',
       elevationMeters: 3762,
       elevationDisplay: '3,762 msnm',
       estimatedTransitTime: '45 min desde Cusco',

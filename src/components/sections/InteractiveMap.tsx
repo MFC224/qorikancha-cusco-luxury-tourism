@@ -178,13 +178,6 @@ export default function InteractiveMap() {
                       <stop offset="100%" stopColor="#C8A261" stopOpacity="0.9" />
                     </linearGradient>
 
-                    {/* Gradiente para el Río Vilcanota */}
-                    <linearGradient id="riverGradient" x1="100%" y1="100%" x2="0%" y2="0%">
-                      <stop offset="0%" stopColor="#38bdf8" stopOpacity="0.5" />
-                      <stop offset="60%" stopColor="#0284c7" stopOpacity="0.7" />
-                      <stop offset="100%" stopColor="#0369a1" stopOpacity="0.8" />
-                    </linearGradient>
-
                     {/* Resplandor de waypoints activos */}
                     <filter id="goldGlow" x="-20%" y="-20%" width="140%" height="140%">
                       <feGaussianBlur stdDeviation="4" result="blur" />
@@ -259,24 +252,6 @@ export default function InteractiveMap() {
                       6,384m
                     </text>
                   </g>
-
-                  {/* Río Sagrado Vilcanota / Urubamba (Curso Hidrográfico Real) */}
-                  {/* Nace en glaciares del SE, fluye al NO por el Valle Sagrado y rodea Machu Picchu */}
-                  <path
-                    d="M 780 490 Q 680 430 570 350 T 465 270 Q 380 185 275 155 Q 220 135 175 118 Q 148 102 125 65 Q 110 35 100 15"
-                    fill="none"
-                    stroke="url(#riverGradient)"
-                    strokeWidth="4"
-                    strokeLinecap="round"
-                  />
-                  <path
-                    d="M 780 490 Q 680 430 570 350 T 465 270 Q 380 185 275 155 Q 220 135 175 118 Q 148 102 125 65 Q 110 35 100 15"
-                    fill="none"
-                    stroke="#e0f2fe"
-                    strokeWidth="1.2"
-                    strokeDasharray="8 6"
-                    opacity="0.7"
-                  />
 
                   {/* RED DE TRANSPORTE Y SENDEROS A ESCALA REAL */}
 
@@ -354,7 +329,7 @@ export default function InteractiveMap() {
                   </g>
 
                   {/* Escala Gráfica Real (Aprox. 1:500,000) */}
-                  <g transform="translate(45, 485)" opacity="0.9">
+                  <g transform="translate(45, 435)" opacity="0.9">
                     <line x1="0" y1="0" x2="100" y2="0" className="stroke-[#8C6527] dark:stroke-[#C8A261]" strokeWidth="2" />
                     <line x1="0" y1="-4" x2="0" y2="4" className="stroke-[#8C6527] dark:stroke-[#C8A261]" strokeWidth="2" />
                     <line x1="50" y1="-3" x2="50" y2="3" className="stroke-[#8C6527] dark:stroke-[#C8A261]" strokeWidth="1.5" />
@@ -458,15 +433,12 @@ export default function InteractiveMap() {
 
                 {/* Leyenda en el fondo del mapa */}
                 <div className="absolute bottom-2 left-4 right-4 flex flex-wrap items-center justify-between text-[11px] font-sans font-semibold text-[#1E2224] dark:text-mist/70 pt-2 border-t border-[#8C6527]/20 dark:border-white/5 uppercase tracking-wider">
-                  <div className="flex flex-wrap items-center gap-4">
+                  <div className="flex flex-wrap items-center gap-5">
                     <span className="flex items-center">
                       <span className="w-3 h-0.5 bg-[#8C6527] dark:bg-gold mr-1.5" /> Van Privada 4x4
                     </span>
                     <span className="flex items-center">
                       <span className="w-3 h-0.5 bg-[#8C6527] dark:bg-gold-light border-b border-t border-black mr-1.5" /> Vía Férrea Escénica
-                    </span>
-                    <span className="flex items-center">
-                      <span className="w-3 h-0.5 bg-sky-500 mr-1.5" /> Río Vilcanota
                     </span>
                     <span className="flex items-center">
                       <span className="w-3 h-0.5 border-t border-dashed border-[#8C6527] dark:border-gold mr-1.5" /> Salkantay Trek
@@ -611,14 +583,7 @@ export default function InteractiveMap() {
                     {/* Gradiente cinemático oscuro que mantiene los colores 100% vivos en blanco y negro */}
                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/25 to-transparent" />
 
-                    {/* Badges superiores sobre la imagen */}
-                    <div className="absolute top-3 left-3">
-                      <span className="hud-badge flex items-center gap-1.5 bg-black/75 backdrop-blur-md px-3 py-1 rounded-full text-xs font-sans border border-[#C8A261]/40 shadow-sm text-[#E0C28A]">
-                        {getTravelIcon(activeWaypoint.travelMode)}
-                        {activeWaypoint.travelMode}
-                      </span>
-                    </div>
-
+                    {/* Badge superior de altitud sobre la imagen */}
                     <div className="absolute top-3 right-3">
                       <span className="text-[11px] font-sans text-white font-bold tracking-wider bg-black/75 backdrop-blur-md px-2.5 py-1 rounded-full border border-white/20 shadow-sm">
                         {activeWaypoint.elevationDisplay}
