@@ -54,12 +54,12 @@ export default function Header() {
         }`}
       >
         <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
-          {/* Brand Logo & Editorial Monogram */}
+          {/* Brand Logo & Editorial Monogram con separación generosa a la derecha */}
           <a
             href="#"
             onClick={(e) => handleNavClick(e, '#')}
             data-cursor="CUSCO"
-            className="flex flex-col group select-none notranslate"
+            className="flex flex-col group select-none notranslate mr-8 lg:mr-10 xl:mr-14 flex-shrink-0"
           >
             <span
               className={`font-serif text-lg sm:text-xl tracking-wider font-medium transition-colors flex items-center notranslate ${
@@ -67,22 +67,22 @@ export default function Header() {
               }`}
             >
               {brand.name}
-              <span className="w-1.5 h-1.5 rounded-full bg-gold ml-1.5 animate-pulse" />
+              <span className="w-1.5 h-1.5 rounded-full bg-gold ml-2 animate-pulse" />
             </span>
             <span className="text-[10px] font-sans font-medium tracking-ultra-wide text-gold/90 uppercase notranslate">
               Cusco · Valle Sagrado
             </span>
           </a>
 
-          {/* Desktop Editorial Navigation Links */}
-          <nav className="hidden md:flex items-center space-x-7 lg:space-x-8">
+          {/* Desktop Editorial Navigation Links con separaciones idénticas y equidistantes */}
+          <nav className="hidden lg:flex items-center justify-center flex-1 gap-5 xl:gap-7 2xl:gap-8">
             {navLinks.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
                 onClick={(e) => handleNavClick(e, link.href)}
                 data-cursor={link.cursor}
-                className={`relative text-xs font-sans font-medium tracking-widest uppercase transition-colors py-1 group/nav ${
+                className={`relative text-xs font-sans font-medium tracking-widest uppercase transition-colors py-1 group/nav whitespace-nowrap ${
                   isScrolled ? 'text-mist/75 hover:text-gold' : 'text-white/90 hover:text-gold'
                 }`}
               >
@@ -92,8 +92,8 @@ export default function Header() {
             ))}
           </nav>
 
-          {/* Right Action: Theme Toggle + Language Selector */}
-          <div className="hidden sm:flex items-center space-x-3">
+          {/* Right Action: Theme Toggle + Language Selector con separación dedicada a la izquierda */}
+          <div className="hidden sm:flex items-center gap-3.5 ml-8 lg:ml-10 xl:ml-14 flex-shrink-0">
             {/* Selector de Tema Oscuro / Claro */}
             <ThemeToggle />
 
@@ -106,7 +106,7 @@ export default function Header() {
             type="button"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             aria-label={mobileMenuOpen ? 'Cerrar menú' : 'Abrir menú'}
-            className="md:hidden p-2 text-mist hover:text-gold transition-colors rounded-lg border border-white/10 bg-obsidian-card/60"
+            className="lg:hidden p-2 text-mist hover:text-gold transition-colors rounded-lg border border-white/10 bg-obsidian-card/60 ml-4"
           >
             {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
           </button>

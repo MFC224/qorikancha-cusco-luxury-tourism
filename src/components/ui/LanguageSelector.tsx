@@ -180,14 +180,14 @@ export default function LanguageSelector({
           aria-expanded={isOpen}
           aria-label="Seleccionar idioma de la página"
           data-cursor="IDIOMA"
-          className={`flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-sans font-medium tracking-wider transition-all duration-300 border ${
+          className={`flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-sans font-medium tracking-wider transition-all duration-300 border ${
             isScrolled || isMobile
               ? 'bg-obsidian-card/70 border-gold/30 text-mist hover:border-gold hover:text-gold'
               : 'bg-black/50 backdrop-blur-md border-white/20 text-white/90 hover:border-gold hover:text-gold'
           }`}
         >
-          <span className="text-sm leading-none">{currentOption.flag}</span>
-          <span className="font-bold text-[11px]">{currentOption.label}</span>
+          <Globe className="w-3.5 h-3.5 text-gold shrink-0" />
+          <span className="font-bold text-[11px] uppercase tracking-wider">{currentOption.label}</span>
           <ChevronDown
             className={`w-3 h-3 text-gold transition-transform duration-200 ${
               isOpen ? 'rotate-180' : ''
