@@ -616,11 +616,12 @@ export default function InteractiveMap() {
                   {activeWaypoint.description}
                 </p>
 
-                <div className="p-4 rounded-2xl bg-obsidian-light/60 border border-gold/15 mb-5">
-                  <span className="text-[10px] font-sans font-medium text-gold tracking-widest uppercase block mb-1">
-                    HITO CLAVE DE LA EXPEDICIÓN
+                <div className="p-4 rounded-2xl bg-obsidian-light/60 border border-gold/20 mb-5 shadow-sm">
+                  <span className="text-[10px] font-sans font-semibold text-gold tracking-widest uppercase flex items-center gap-1.5 mb-1.5">
+                    <Sparkles className="w-3 h-3 text-gold" />
+                    Curiosidad & Secreto del Destino
                   </span>
-                  <p className="text-xs text-mist/90 font-medium">
+                  <p className="text-xs text-mist/90 font-medium leading-relaxed font-sans">
                     {activeWaypoint.highlight}
                   </p>
                 </div>
