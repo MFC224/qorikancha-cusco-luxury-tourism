@@ -233,6 +233,52 @@ export default function RootLayout({
             `,
           }}
         />
+        {/* Google Translate Top Banner & Space Purger */}
+        <script
+          id="google-translate-banner-purger"
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function() {
+                function purgeBanner() {
+                  if (document.body) {
+                    if (document.body.style.top && document.body.style.top !== '0px') {
+                      document.body.style.setProperty('top', '0px', 'important');
+                    }
+                    if (document.body.style.position === 'relative') {
+                      document.body.style.position = 'static';
+                    }
+                  }
+                  if (document.documentElement && document.documentElement.style.top) {
+                    document.documentElement.style.setProperty('top', '0px', 'important');
+                  }
+                  var frames = document.querySelectorAll(
+                    'body > iframe, iframe.skiptranslate, iframe[id^=":"], [class*="VIpgJd"], .goog-te-banner-frame'
+                  );
+                  for (var i = 0; i < frames.length; i++) {
+                    var el = frames[i];
+                    el.style.setProperty('display', 'none', 'important');
+                    el.style.setProperty('visibility', 'hidden', 'important');
+                    el.style.setProperty('height', '0px', 'important');
+                    el.style.setProperty('top', '-9999px', 'important');
+                  }
+                }
+                try {
+                  var observer = new MutationObserver(purgeBanner);
+                  if (document.documentElement) {
+                    observer.observe(document.documentElement, {
+                      attributes: true,
+                      attributeFilter: ['style', 'class'],
+                      childList: true,
+                      subtree: true
+                    });
+                  }
+                  window.addEventListener('load', purgeBanner);
+                  setInterval(purgeBanner, 200);
+                } catch (e) {}
+              })();
+            `,
+          }}
+        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

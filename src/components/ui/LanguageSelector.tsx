@@ -134,19 +134,34 @@ export default function LanguageSelector({
       localStorage.setItem('qorikancha_language', langCode);
       sessionStorage.setItem('qorikancha_auto_notice_seen', 'true');
 
-      const cookieVal = `/auto/${langCode}`;
-      document.cookie = `googtrans=${cookieVal}; path=/;`;
-      document.cookie = `googtrans=${cookieVal}; path=/; domain=${window.location.hostname};`;
+      const hostname = window.location.hostname;
+      const domainParts = hostname.split('.');
+      const rootDomain = domainParts.length > 1 ? `.${domainParts.slice(-2).join('.')}` : hostname;
 
-      // Intentar disparar cambio en el selector interno de Google Translate sin recargar
+      if (langCode === 'es') {
+        // Restaurar español original: limpiar cookies de traducción
+        document.cookie = 'googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
+        document.cookie = `googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=${hostname};`;
+        document.cookie = `googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=${rootDomain};`;
+        localStorage.removeItem('qorikancha_auto_detected');
+      } else {
+        const cookieVal = `/auto/${langCode}`;
+        document.cookie = `googtrans=${cookieVal}; path=/;`;
+        document.cookie = `googtrans=${cookieVal}; path=/; domain=${hostname};`;
+        document.cookie = `googtrans=${cookieVal}; path=/; domain=${rootDomain};`;
+      }
+
+      // Disparar combo si existe y forzar recarga limpia para evitar el banner de Google Translate
       const select = document.querySelector<HTMLSelectElement>('.goog-te-combo');
       if (select) {
         select.value = langCode;
         select.dispatchEvent(new Event('change'));
-      } else {
-        // Recargar para aplicar con precisión a todo el DOM
-        window.location.reload();
       }
+
+      // Recarga inmediata para aplicar la traducción nativa sin banner de confirmación
+      setTimeout(() => {
+        window.location.reload();
+      }, 50);
     } catch {
       window.location.reload();
     }

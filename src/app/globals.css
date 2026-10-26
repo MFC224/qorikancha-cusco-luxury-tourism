@@ -264,28 +264,59 @@ html:not(.dark) .shadow-obsidian-glow {
 }
 
 /* ========================================================
-   GOOGLE TRANSLATE LUXURY RESET
-   Elimina banners intrusivos, tooltips y desfase de altura del body
-   manteniendo una experiencia 100% nativa y de ultralujo
+   GOOGLE TRANSLATE COMPLETE PURGE & LUXURY RESET
+   Elimina totalmente el banner superior, tooltips, iframes y desfase
+   de altura (body top: 40px) manteniendo cero espacio arriba
    ======================================================== */
-.goog-te-banner-frame.skiptranslate,
-.goog-te-banner-frame,
-iframe.goog-te-banner-frame,
-#goog-gt-tt,
-.goog-te-balloon-frame,
-.VIpgJd-ZVi9od-aZ2wEe-wOHMyf,
-.VIpgJd-ZVi9od-aZ2wEe-OiiCO,
-.VIpgJd-ZVi9od-ORHb-OEVmcb,
-.VIpgJd-y6eaKe-pRLVh {
-  display: none !important;
-  visibility: hidden !important;
-  opacity: 0 !important;
-  pointer-events: none !important;
+html,
+body {
+  top: 0px !important;
+  position: static !important;
+  margin-top: 0px !important;
+  padding-top: 0px !important;
 }
 
 body {
   top: 0px !important;
-  position: static !important;
+  min-height: 100vh;
+}
+
+/* Asegurar que el encabezado esté anclado en la cima absoluta sin desfase */
+header {
+  top: 0px !important;
+}
+
+/* Ocultar CUALQUIER iframe y contenedor de banner inyectado por Google Translate */
+body > iframe,
+body > .skiptranslate,
+iframe.skiptranslate,
+iframe.goog-te-banner-frame,
+iframe[id^=":"],
+iframe[id*="container"],
+iframe[src*="translate.google"],
+iframe[src*="about:blank"],
+.goog-te-banner-frame,
+.goog-te-banner,
+#goog-gt-tt,
+.goog-te-balloon-frame,
+.goog-tooltip,
+.goog-tooltip-skin,
+[class*="VIpgJd"],
+[class*="goog-te-banner"] {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  height: 0px !important;
+  max-height: 0px !important;
+  width: 0px !important;
+  max-width: 0px !important;
+  pointer-events: none !important;
+  position: absolute !important;
+  top: -9999px !important;
+  left: -9999px !important;
+  z-index: -999999 !important;
+  clip: rect(0 0 0 0) !important;
+  clip-path: inset(50%) !important;
 }
 
 /* Evitar resaltado o subrayado por defecto de Google Translate */
@@ -295,7 +326,8 @@ body {
 }
 
 /* Ocultar selector nativo de Google Translate */
-#google_translate_element {
+#google_translate_element,
+.goog-te-gadget {
   display: none !important;
 }
 
