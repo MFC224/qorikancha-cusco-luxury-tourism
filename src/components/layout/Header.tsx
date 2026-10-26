@@ -2,10 +2,9 @@
 
 import React, { useState, useEffect } from 'react';
 import { cuscoConfig } from '@/data/cuscoConfig';
-import MagneticRollButton from '@/components/ui/MagneticRollButton';
 import ThemeToggle from '@/components/ui/ThemeToggle';
 import LanguageSelector from '@/components/ui/LanguageSelector';
-import { MessageSquare, Menu, X, Compass, Mountain, ShieldCheck } from 'lucide-react';
+import { Menu, X, Mountain, ShieldCheck, MessageSquare } from 'lucide-react';
 import { useSmoothScroll } from '@/components/layout/SmoothScroll';
 
 export default function Header() {
@@ -50,8 +49,8 @@ export default function Header() {
       <header
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
           isScrolled
-            ? 'bg-obsidian/90 backdrop-blur-md border-b border-gold/20 py-3 shadow-obsidian-glow'
-            : 'bg-gradient-to-b from-[#08090A]/70 via-[#08090A]/20 to-transparent border-b border-transparent py-5'
+            ? 'bg-obsidian/85 backdrop-blur-md border-b border-gold/15 py-2.5 sm:py-3 shadow-obsidian-glow'
+            : 'bg-gradient-to-b from-[#08090A]/70 via-[#08090A]/20 to-transparent border-b border-transparent py-3.5 sm:py-4'
         }`}
       >
         <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
@@ -76,7 +75,7 @@ export default function Header() {
           </a>
 
           {/* Desktop Editorial Navigation Links */}
-          <nav className="hidden md:flex items-center space-x-8">
+          <nav className="hidden md:flex items-center space-x-7 lg:space-x-8">
             {navLinks.map((link) => (
               <a
                 key={link.href}
@@ -93,35 +92,13 @@ export default function Header() {
             ))}
           </nav>
 
-          {/* Right Action: Theme Toggle + Language Selector + Telemetry + VIP WhatsApp Roll Button */}
-          <div className="hidden sm:flex items-center space-x-2.5">
+          {/* Right Action: Theme Toggle + Language Selector */}
+          <div className="hidden sm:flex items-center space-x-3">
             {/* Selector de Tema Oscuro / Claro */}
             <ThemeToggle />
 
             {/* Selector Multilingüe con Traductor Automático */}
             <LanguageSelector isScrolled={isScrolled} />
-
-            <div
-              className={`hidden lg:flex items-center text-[11px] font-sans font-medium tracking-wider border px-3 py-1.5 rounded-full ${
-                isScrolled
-                  ? 'text-mist/70 border-white/10 bg-obsidian-card/40'
-                  : 'text-white/85 border-white/20 bg-black/45 backdrop-blur-md'
-              }`}
-            >
-              <Compass className="w-3.5 h-3.5 text-gold mr-1.5" />
-              <span>{destination.coordinates.formatted}</span>
-            </div>
-
-            <MagneticRollButton
-              href={concierge.generateWhatsAppUrl()}
-              target="_blank"
-              rel="noopener noreferrer"
-              variant="primary"
-              dataCursor="CONCIERGE"
-              icon={<MessageSquare className="w-3.5 h-3.5" />}
-            >
-              WhatsApp VIP
-            </MagneticRollButton>
           </div>
 
           {/* Mobile Hamburger Toggle */}

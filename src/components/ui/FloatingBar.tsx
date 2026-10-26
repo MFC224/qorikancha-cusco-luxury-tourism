@@ -10,7 +10,7 @@ interface FloatingBarProps {
 }
 
 export default function FloatingBar({ onOpenModal }: FloatingBarProps) {
-  const { brand, destination, concierge } = cuscoConfig;
+  const { brand, destination } = cuscoConfig;
   const { scrollTo } = useSmoothScroll();
   const [isVisible, setIsVisible] = useState(false);
 
@@ -69,18 +69,6 @@ export default function FloatingBar({ onOpenModal }: FloatingBarProps) {
           <MessageSquare className="w-3.5 h-3.5 mr-1.5" />
           <span>Cotizar</span>
         </button>
-
-        {/* Enlace Directo WhatsApp */}
-        <a
-          href={concierge.generateWhatsAppUrl()}
-          target="_blank"
-          rel="noopener noreferrer"
-          data-cursor="WHATSAPP"
-          aria-label="Abrir WhatsApp directo"
-          className="p-2 rounded-full border border-gold/30 text-gold hover:bg-gold/15 transition-colors hidden sm:inline-flex"
-        >
-          <MessageSquare className="w-3.5 h-3.5" />
-        </a>
 
         {/* Botón de Volver Arriba */}
         <button

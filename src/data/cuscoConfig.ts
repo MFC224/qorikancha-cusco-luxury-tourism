@@ -150,6 +150,13 @@ export interface CuscoMasterConfig {
     dataBankRegistration: string;
     applicableLaw: string;
   };
+  social: {
+    whatsapp: string;
+    instagram: string;
+    facebook: string;
+    instagramHandle: string;
+    facebookPage: string;
+  };
   concierge: {
     whatsappNumber: string; // Formato internacional sin símbolos para la API
     displayPhone: string;
@@ -223,6 +230,13 @@ export const cuscoConfig: CuscoMasterConfig = {
     dpoContact: 'dpo@qorikancha.pe',
     dataBankRegistration: 'RNPDP-PJP-00892',
     applicableLaw: 'Leyes de la República del Perú y Estándares Internacionales (GDPR, CCPA)',
+  },
+  social: {
+    whatsapp: 'https://wa.me/51921195037',
+    instagram: 'https://instagram.com/qorikancha.expeditions',
+    facebook: 'https://facebook.com/qorikancha.expeditions',
+    instagramHandle: '@qorikancha.expeditions',
+    facebookPage: 'Qorikancha Expeditions Cusco',
   },
   concierge: {
     whatsappNumber: '51921195037',

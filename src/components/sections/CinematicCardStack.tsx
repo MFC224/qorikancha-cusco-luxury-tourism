@@ -51,10 +51,10 @@ export default function CinematicCardStack() {
         const content = card.querySelector('.card-content-inner');
 
         gsap.to(card, {
-          scale: 0.9,
+          scale: 0.94,
           rotate: targetRotation,
           borderRadius: 36,
-          yPercent: -3,
+          yPercent: 0,
           ease: 'power1.out',
           scrollTrigger: {
             trigger: nextCard,
@@ -155,9 +155,9 @@ export default function CinematicCardStack() {
                 cardRefs.current[index] = el;
               }}
               data-cursor={cursorText}
-              className="sticky top-20 sm:top-24 h-[84vh] sm:h-[88vh] w-full rounded-2xl sm:rounded-3xl overflow-hidden shadow-obsidian-glow border border-gold/30 bg-[#08090A] group transition-shadow duration-500"
+              className="sticky top-20 sm:top-24 h-[80vh] sm:h-[84vh] w-full rounded-2xl sm:rounded-3xl overflow-hidden shadow-obsidian-glow border border-gold/30 bg-[#08090A] group transition-shadow duration-500"
               style={{
-                transformOrigin: 'center top',
+                transformOrigin: 'center 15%',
                 willChange: 'transform, border-radius, opacity',
               }}
             >

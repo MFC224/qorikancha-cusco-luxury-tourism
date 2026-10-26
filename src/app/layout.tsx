@@ -8,6 +8,7 @@ import Footer from '@/components/layout/Footer';
 import CustomCursor from '@/components/ui/CustomCursor';
 import SmoothScroll from '@/components/layout/SmoothScroll';
 import CookieConsent from '@/components/ui/CookieConsent';
+import FloatingSocialHub from '@/components/ui/FloatingSocialHub';
 
 const cinzel = Cinzel({
   subsets: ['latin'],
@@ -266,6 +267,7 @@ export default function RootLayout({
           {children}
           <Footer />
           <CookieConsent />
+          <FloatingSocialHub />
         </SmoothScroll>
       </body>
     </html>
