@@ -11,6 +11,8 @@ import {
   Train,
   Car,
   Footprints,
+  ChevronLeft,
+  ChevronRight,
 } from 'lucide-react';
 
 export default function InteractiveMap() {
@@ -20,6 +22,16 @@ export default function InteractiveMap() {
 
   const activeWaypoint =
     waypoints.find((wp) => wp.id === activeWaypointId) || waypoints[0];
+
+  const currentIndex = waypoints.findIndex((wp) => wp.id === activeWaypoint.id);
+  const handlePrevWaypoint = () => {
+    const prevIndex = (currentIndex - 1 + waypoints.length) % waypoints.length;
+    setActiveWaypointId(waypoints[prevIndex].id);
+  };
+  const handleNextWaypoint = () => {
+    const nextIndex = (currentIndex + 1) % waypoints.length;
+    setActiveWaypointId(waypoints[nextIndex].id);
+  };
 
   // Coordenadas proyectadas a escala geográfica real (ViewBox 0 0 860 520)
   // Orientación cartográfica: Norte ARRIBA, Sur ABAJO, Oeste IZQUIERDA, Este DERECHA.
@@ -567,7 +579,7 @@ export default function InteractiveMap() {
           </div>
 
           {/* Panel Derecho: Ficha Dinámica del Waypoint Seleccionado */}
-          <div className="lg:col-span-4 space-y-4">
+          <div className="lg:col-span-4">
             <div className="glass-card rounded-3xl p-6 sm:p-7 border border-gold/30 shadow-obsidian-glow flex flex-col justify-between overflow-hidden">
               <div>
                 {/* Imagen Referencial Icónica del Destino Seleccionado */}
@@ -600,16 +612,30 @@ export default function InteractiveMap() {
                   </div>
                 )}
 
-                <div className="flex items-center justify-between mb-3">
+                <div className="flex items-center justify-between mb-3 gap-2">
                   <h3 className="text-2xl sm:text-3xl font-serif font-medium text-mist">
                     {activeWaypoint.name}
                   </h3>
-                  {!activeWaypoint.image && (
-                    <span className="hud-badge flex items-center gap-1.5">
-                      {getTravelIcon(activeWaypoint.travelMode)}
-                      {activeWaypoint.travelMode}
-                    </span>
-                  )}
+                  <div className="flex items-center gap-1.5 shrink-0">
+                    <button
+                      type="button"
+                      onClick={handlePrevWaypoint}
+                      aria-label="Punto anterior"
+                      data-cursor="ANTERIOR"
+                      className="p-1.5 rounded-full border border-gold/30 hover:border-gold hover:bg-gold/15 text-mist hover:text-gold transition-colors cursor-pointer"
+                    >
+                      <ChevronLeft className="w-4 h-4" />
+                    </button>
+                    <button
+                      type="button"
+                      onClick={handleNextWaypoint}
+                      aria-label="Punto siguiente"
+                      data-cursor="SIGUIENTE"
+                      className="p-1.5 rounded-full border border-gold/30 hover:border-gold hover:bg-gold/15 text-mist hover:text-gold transition-colors cursor-pointer"
+                    >
+                      <ChevronRight className="w-4 h-4" />
+                    </button>
+                  </div>
                 </div>
 
                 <p className="text-sm text-mist/80 font-sans leading-relaxed mb-5">
@@ -637,6 +663,13 @@ export default function InteractiveMap() {
 
                 <div className="flex items-center justify-between text-mist/70">
                   <span className="flex items-center gap-1.5">
+                    {getTravelIcon(activeWaypoint.travelMode)} Transporte
+                  </span>
+                  <span className="text-mist font-semibold">{activeWaypoint.travelMode}</span>
+                </div>
+
+                <div className="flex items-center justify-between text-mist/70">
+                  <span className="flex items-center gap-1.5">
                     <Mountain className="w-3.5 h-3.5 text-gold" /> Altitud Absoluta
                   </span>
                   <span className="text-gold font-semibold">{activeWaypoint.elevationMeters} msnm</span>
@@ -649,29 +682,6 @@ export default function InteractiveMap() {
                   <span className="text-mist/90 font-mono text-[11px]">{activeWaypoint.coordinates.lat.toFixed(4)}°, {activeWaypoint.coordinates.lng.toFixed(4)}°</span>
                 </div>
               </div>
-            </div>
-
-            {/* Selector Rápido de Todos los Waypoints */}
-            <div className="grid grid-cols-2 gap-2">
-              {waypoints.map((wp) => (
-                <button
-                  key={wp.id}
-                  type="button"
-                  onClick={() => setActiveWaypointId(wp.id)}
-                  data-cursor={wp.name.split(' ')[0].toUpperCase()}
-                  className={`p-3 rounded-2xl text-left text-xs font-sans transition-all border cursor-pointer ${
-                    wp.id === activeWaypointId
-                      ? 'bg-gold/20 border-gold text-mist font-semibold shadow-gold-glow ring-1 ring-gold/40'
-                      : 'bg-obsidian-card/70 border-white/5 text-mist/60 hover:border-gold/30 hover:text-mist hover:bg-gold/5'
-                  }`}
-                >
-                  <div className="flex items-center justify-between mb-1">
-                    <span className={`w-2 h-2 rounded-full ${wp.id === activeWaypointId ? 'bg-gold animate-pulse' : 'bg-mist/30'}`} />
-                    <span className="text-[10px] text-gold/80 font-mono tracking-wider">{wp.elevationDisplay}</span>
-                  </div>
-                  <span className="block truncate font-medium text-mist">{wp.name}</span>
-                </button>
-              ))}
             </div>
           </div>
         </div>
