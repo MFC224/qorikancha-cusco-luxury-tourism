@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React from 'react';
 import dynamic from 'next/dynamic';
 import HeroSection from '@/components/sections/HeroSection';
 import CinematicCardStack from '@/components/sections/CinematicCardStack';
@@ -34,19 +34,7 @@ const BespokeInquirySection = dynamic(() => import('@/components/sections/Bespok
   loading: () => <div className="min-h-[400px] bg-obsidian animate-pulse" />,
 });
 
-// Modales y barras flotantes bajo demanda (cero sobrecarga en el bundle inicial)
-const WhatsAppModal = dynamic(() => import('@/components/ui/WhatsAppModal'), { ssr: false });
-const FloatingBar = dynamic(() => import('@/components/ui/FloatingBar'), { ssr: false });
-
 export default function Page() {
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const [modalTourId, setModalTourId] = useState<string | undefined>(undefined);
-
-  const handleOpenModal = (tourId?: string) => {
-    setModalTourId(tourId);
-    setIsModalOpen(true);
-  };
-
   return (
     <main className="min-h-screen bg-obsidian text-mist selection:bg-gold selection:text-obsidian">
       {/* 1. HERO CINEMÁTICO CON MÁSCARA TIPOGRÁFICA & TELEMETRÍA ANDINA */}
@@ -75,16 +63,6 @@ export default function Page() {
 
       {/* 9. FORMULARIO FORMAL DE CONSULTA & DISEÑO DE EXPEDICIÓN BESPOKE */}
       <BespokeInquirySection />
-
-      {/* 10. MODAL DE ASESORÍA CONCIERGE WHATSAPP & EMAIL */}
-      <WhatsAppModal
-        isOpen={isModalOpen}
-        onClose={() => setIsModalOpen(false)}
-        defaultTourId={modalTourId}
-      />
-
-      {/* 11. BARRA FLOTANTE CON RESUMEN DE NAVEGACIÓN & ACCESO DIRECTO */}
-      <FloatingBar onOpenModal={handleOpenModal} />
     </main>
   );
 }
