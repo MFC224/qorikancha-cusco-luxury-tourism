@@ -262,3 +262,44 @@ html:not(.dark) .bg-white\/10 {
 html:not(.dark) .shadow-obsidian-glow {
   box-shadow: 0 15px 35px -5px rgba(28, 25, 23, 0.06), 0 0 1px rgba(28, 25, 23, 0.12) !important;
 }
+
+/* ========================================================
+   GOOGLE TRANSLATE LUXURY RESET
+   Elimina banners intrusivos, tooltips y desfase de altura del body
+   manteniendo una experiencia 100% nativa y de ultralujo
+   ======================================================== */
+.goog-te-banner-frame.skiptranslate,
+.goog-te-banner-frame,
+iframe.goog-te-banner-frame,
+#goog-gt-tt,
+.goog-te-balloon-frame,
+.VIpgJd-ZVi9od-aZ2wEe-wOHMyf,
+.VIpgJd-ZVi9od-aZ2wEe-OiiCO,
+.VIpgJd-ZVi9od-ORHb-OEVmcb,
+.VIpgJd-y6eaKe-pRLVh {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+
+body {
+  top: 0px !important;
+  position: static !important;
+}
+
+/* Evitar resaltado o subrayado por defecto de Google Translate */
+.goog-text-highlight {
+  background: none !important;
+  box-shadow: none !important;
+}
+
+/* Ocultar selector nativo de Google Translate */
+#google_translate_element {
+  display: none !important;
+}
+
+/* Respetar elementos que tienen la clase notranslate */
+.notranslate {
+  translate: no;
+}

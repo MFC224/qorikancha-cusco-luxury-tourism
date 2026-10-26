@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { Cinzel, DM_Sans } from 'next/font/google';
+import Script from 'next/script';
 import './globals.css';
 import { cuscoConfig } from '@/data/cuscoConfig';
 import Header from '@/components/layout/Header';
@@ -197,12 +198,68 @@ export default function RootLayout({
             `,
           }}
         />
+        {/* Zero-FOUC Automatic Language Detector (Browser Language -> googtrans cookie) */}
+        <script
+          id="language-auto-detector"
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function() {
+                try {
+                  var hasCookie = document.cookie.indexOf('googtrans=') !== -1;
+                  if (!hasCookie) {
+                    var saved = localStorage.getItem('qorikancha_language');
+                    var targetLang = saved;
+                    if (!targetLang) {
+                      var browserLang = (navigator.language || navigator.userLanguage || 'es').toLowerCase();
+                      var primary = browserLang.split('-')[0];
+                      var supported = ['en', 'pt', 'fr', 'de', 'it'];
+                      if (supported.indexOf(primary) !== -1) {
+                        targetLang = primary;
+                      } else if (browserLang.indexOf('es') !== 0) {
+                        targetLang = 'en';
+                      }
+                    }
+                    if (targetLang && targetLang !== 'es') {
+                      var cookieVal = '/auto/' + targetLang;
+                      document.cookie = 'googtrans=' + cookieVal + '; path=/;';
+                      document.cookie = 'googtrans=' + cookieVal + '; path=/; domain=' + window.location.hostname + ';';
+                      localStorage.setItem('qorikancha_language', targetLang);
+                      localStorage.setItem('qorikancha_auto_detected', targetLang);
+                    }
+                  }
+                } catch (e) {}
+              })();
+            `,
+          }}
+        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
       <body className="min-h-screen bg-obsidian text-mist antialiased selection:bg-gold selection:text-obsidian font-sans">
+        {/* Google Translate Hidden Element & Callbacks */}
+        <div id="google_translate_element" className="hidden" aria-hidden="true" style={{ display: 'none' }} />
+        <Script id="google-translate-init" strategy="afterInteractive">
+          {`
+            window.googleTranslateElementInit = function() {
+              if (window.google && window.google.translate) {
+                new window.google.translate.TranslateElement({
+                  pageLanguage: 'es',
+                  includedLanguages: 'es,en,pt,fr,de,it',
+                  autoDisplay: false,
+                  layout: window.google.translate.TranslateElement.InlineLayout.SIMPLE
+                }, 'google_translate_element');
+              }
+            };
+          `}
+        </Script>
+        <Script
+          id="google-translate-script"
+          src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
+          strategy="afterInteractive"
+        />
+
         <SmoothScroll>
           <CustomCursor />
           <Header />

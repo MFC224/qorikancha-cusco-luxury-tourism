@@ -4,6 +4,7 @@ import React, { useState, useEffect } from 'react';
 import { cuscoConfig } from '@/data/cuscoConfig';
 import MagneticRollButton from '@/components/ui/MagneticRollButton';
 import ThemeToggle from '@/components/ui/ThemeToggle';
+import LanguageSelector from '@/components/ui/LanguageSelector';
 import { MessageSquare, Menu, X, Compass, Mountain, ShieldCheck } from 'lucide-react';
 import { useSmoothScroll } from '@/components/layout/SmoothScroll';
 
@@ -27,17 +28,15 @@ export default function Header() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const [lang, setLang] = useState<'es' | 'en'>('es');
-
   const navLinks = [
-    { label: lang === 'es' ? 'Expediciones' : 'Expeditions', href: '#expediciones', cursor: 'EXPLORAR' },
-    { label: lang === 'es' ? 'Ruta' : 'Route', href: '#mapa', cursor: 'VER MAPA' },
-    { label: lang === 'es' ? 'Aclimatación' : 'Altitude', href: '#aclimatacion', cursor: 'MÉDICA' },
-    { label: lang === 'es' ? 'Terroir' : 'Terroir', href: '#bento', cursor: 'VIVENCIAL' },
-    { label: lang === 'es' ? 'Bitácora' : 'Stories', href: '#testimonios', cursor: 'HUESPEDES' },
-    { label: lang === 'es' ? 'Nosotros' : 'About Us', href: '#nosotros', cursor: 'EQUIPO' },
-    { label: lang === 'es' ? 'FAQ' : 'FAQ', href: '#faq', cursor: 'CERTEZA' },
-    { label: lang === 'es' ? 'Planificar' : 'Inquire', href: '#contacto', cursor: 'BESPOKE' },
+    { label: 'Expediciones', href: '#expediciones', cursor: 'EXPLORAR' },
+    { label: 'Ruta', href: '#mapa', cursor: 'VER MAPA' },
+    { label: 'Aclimatación', href: '#aclimatacion', cursor: 'MÉDICA' },
+    { label: 'Terroir', href: '#bento', cursor: 'VIVENCIAL' },
+    { label: 'Bitácora', href: '#testimonios', cursor: 'HUESPEDES' },
+    { label: 'Nosotros', href: '#nosotros', cursor: 'EQUIPO' },
+    { label: 'FAQ', href: '#faq', cursor: 'CERTEZA' },
+    { label: 'Planificar', href: '#contacto', cursor: 'BESPOKE' },
   ];
 
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
@@ -61,17 +60,17 @@ export default function Header() {
             href="#"
             onClick={(e) => handleNavClick(e, '#')}
             data-cursor="CUSCO"
-            className="flex flex-col group select-none"
+            className="flex flex-col group select-none notranslate"
           >
             <span
-              className={`font-serif text-lg sm:text-xl tracking-wider font-medium transition-colors flex items-center ${
+              className={`font-serif text-lg sm:text-xl tracking-wider font-medium transition-colors flex items-center notranslate ${
                 isScrolled ? 'text-mist group-hover:text-gold' : 'text-white group-hover:text-[#E0C28A]'
               }`}
             >
               {brand.name}
               <span className="w-1.5 h-1.5 rounded-full bg-gold ml-1.5 animate-pulse" />
             </span>
-            <span className="text-[10px] font-sans font-medium tracking-ultra-wide text-gold/90 uppercase">
+            <span className="text-[10px] font-sans font-medium tracking-ultra-wide text-gold/90 uppercase notranslate">
               Cusco · Valle Sagrado
             </span>
           </a>
@@ -94,44 +93,13 @@ export default function Header() {
             ))}
           </nav>
 
-          {/* Right Action: Theme Toggle + Language Switcher + Telemetry + VIP WhatsApp Roll Button */}
+          {/* Right Action: Theme Toggle + Language Selector + Telemetry + VIP WhatsApp Roll Button */}
           <div className="hidden sm:flex items-center space-x-2.5">
             {/* Selector de Tema Oscuro / Claro */}
             <ThemeToggle />
 
-            {/* Selector Bilingüe ES / EN */}
-            <div
-              className={`flex items-center rounded-full border border-gold/30 p-0.5 text-[10px] font-sans font-bold tracking-wider ${
-                isScrolled ? 'bg-obsidian-card/60' : 'bg-black/50 backdrop-blur-md'
-              }`}
-            >
-              <button
-                type="button"
-                onClick={() => setLang('es')}
-                className={`px-2 py-0.5 rounded-full transition-colors ${
-                  lang === 'es'
-                    ? 'bg-gold text-obsidian'
-                    : isScrolled
-                    ? 'text-mist/60 hover:text-gold'
-                    : 'text-white/70 hover:text-gold'
-                }`}
-              >
-                ES
-              </button>
-              <button
-                type="button"
-                onClick={() => setLang('en')}
-                className={`px-2 py-0.5 rounded-full transition-colors ${
-                  lang === 'en'
-                    ? 'bg-gold text-obsidian'
-                    : isScrolled
-                    ? 'text-mist/60 hover:text-gold'
-                    : 'text-white/70 hover:text-gold'
-                }`}
-              >
-                EN
-              </button>
-            </div>
+            {/* Selector Multilingüe con Traductor Automático */}
+            <LanguageSelector isScrolled={isScrolled} />
 
             <div
               className={`hidden lg:flex items-center text-[11px] font-sans font-medium tracking-wider border px-3 py-1.5 rounded-full ${
@@ -182,26 +150,7 @@ export default function Header() {
               </span>
               <div className="flex items-center space-x-2">
                 <ThemeToggle />
-                <div className="flex items-center rounded-full border border-gold/30 bg-obsidian-card/60 p-0.5 text-[10px] font-sans font-bold tracking-wider">
-                  <button
-                    type="button"
-                    onClick={() => setLang('es')}
-                    className={`px-2 py-0.5 rounded-full transition-colors ${
-                      lang === 'es' ? 'bg-gold text-obsidian' : 'text-mist/60 hover:text-gold'
-                    }`}
-                  >
-                    ES
-                  </button>
-                  <button
-                    type="button"
-                    onClick={() => setLang('en')}
-                    className={`px-2 py-0.5 rounded-full transition-colors ${
-                      lang === 'en' ? 'bg-gold text-obsidian' : 'text-mist/60 hover:text-gold'
-                    }`}
-                  >
-                    EN
-                  </button>
-                </div>
+                <LanguageSelector isScrolled={true} isMobile={true} />
               </div>
             </div>
 
