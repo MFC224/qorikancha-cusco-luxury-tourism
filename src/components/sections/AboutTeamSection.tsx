@@ -18,21 +18,21 @@ export default function AboutTeamSection() {
       role: 'Director de Expedición & Arqueólogo Principal',
       credentials: 'UNSAAC · Colegiatura Arqueológica Nº 0418',
       bio: 'Cusqueño con más de 16 años liderando investigaciones sobre arqueoastronomía incaica en el Valle Sagrado, Moray y Qorikancha. Diseña cada travesía con rigor científico y reverencia cultural.',
-      image: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=600&auto=format&fit=crop',
+      image: '/images/team-mateo-huaman.webp',
     },
     {
       name: 'Dra. Sofía Valdivia Mendoza',
       role: 'Directora de Medicina de Altura & Seguridad WFR',
       credentials: 'Wilderness Medical Society · Especialista en Hipoxia',
       bio: 'Médica cusqueña encargada de la telemetría biológica, oxigenoterapia de respaldo y protocolos de aclimatación escalonada que garantizan bienestar pleno sin síntomas de soroche.',
-      image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=600&auto=format&fit=crop',
+      image: '/images/team-sofia-valdivia.webp',
     },
     {
       name: 'Comunidades de Huilloc & Chillca',
       role: 'Alianza de Porteadores de Honor & Arrieros',
       credentials: 'Convenio Comunitario de Trato Digno · Ley Nº 31614',
       bio: 'Maestros quechuas de alta montaña de Ollantaytambo y Ausangate. Reciben contratos formales, carpas térmicas propias, seguro de accidentes y remuneración 40% superior al estándar legal.',
-      image: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=600&auto=format&fit=crop',
+      image: '/images/team-comunidades-huilloc.webp',
     },
   ];
 
@@ -91,13 +91,13 @@ export default function AboutTeamSection() {
               className="glass-card rounded-3xl p-6 sm:p-8 border border-gold/25 shadow-obsidian-glow flex flex-col justify-between glass-card-hover group"
             >
               <div>
-                <div className="relative h-64 w-full rounded-2xl overflow-hidden mb-6 border border-gold/20">
+                <div className="relative h-72 w-full rounded-2xl overflow-hidden mb-6 border border-gold/20">
                   <Image
                     src={member.image}
                     alt={member.name}
                     fill
                     sizes="(max-width: 768px) 100vw, 33vw"
-                    className="object-cover object-center group-hover:scale-105 transition-transform duration-700 saturate-[1.05]"
+                    className="object-cover object-top group-hover:scale-105 transition-transform duration-700 saturate-[1.05]"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/65 via-transparent to-transparent" />
                   <div className="absolute bottom-3 left-3 right-3">
