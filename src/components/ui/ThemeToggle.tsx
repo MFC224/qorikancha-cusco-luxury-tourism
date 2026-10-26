@@ -36,46 +36,44 @@ export default function ThemeToggle() {
 
   if (!mounted) {
     return (
-      <div className="w-[68px] h-[26px] rounded-full border border-gold/30 bg-obsidian-card/60 animate-pulse" />
+      <div className="w-[58px] h-[28px] rounded-full border border-gold/30 bg-obsidian-card/60 animate-pulse" />
     );
   }
 
   return (
     <div
       role="group"
-      aria-label="Selector de tema visual"
-      className="flex items-center rounded-full border border-gold/30 bg-obsidian-card/70 p-0.5 text-[10px] font-sans font-bold tracking-wider select-none shadow-sm"
+      aria-label="Selector de tema visual (Luna / Sol)"
+      className="flex items-center rounded-full border border-gold/30 bg-obsidian-card/70 p-0.5 select-none shadow-sm backdrop-blur-md notranslate"
     >
       <button
         type="button"
         onClick={() => toggleTheme('dark')}
-        aria-label="Activar Modo Oscuro (Obsidian)"
-        title="Modo Oscuro (Obsidian)"
-        data-cursor="OSCURO"
-        className={`flex items-center gap-1 px-2 py-0.5 rounded-full transition-all duration-300 ${
+        aria-label="Activar Modo Oscuro (Luna)"
+        title="Modo Oscuro"
+        data-cursor="NOCHE"
+        className={`p-1.5 rounded-full transition-all duration-300 flex items-center justify-center ${
           theme === 'dark'
-            ? 'bg-gold text-obsidian font-extrabold shadow-gold-glow'
+            ? 'bg-gold text-obsidian shadow-gold-glow'
             : 'text-mist/60 hover:text-gold'
         }`}
       >
-        <Moon className="w-3 h-3 shrink-0" />
-        <span className="hidden xl:inline text-[9px] uppercase tracking-widest">Noche</span>
+        <Moon className="w-3.5 h-3.5" />
       </button>
 
       <button
         type="button"
         onClick={() => toggleTheme('light')}
-        aria-label="Activar Modo Claro (Travertino)"
-        title="Modo Claro (Travertino)"
-        data-cursor="CLARO"
-        className={`flex items-center gap-1 px-2 py-0.5 rounded-full transition-all duration-300 ${
+        aria-label="Activar Modo Claro (Sol)"
+        title="Modo Claro"
+        data-cursor="DÍA"
+        className={`p-1.5 rounded-full transition-all duration-300 flex items-center justify-center ${
           theme === 'light'
-            ? 'bg-gold text-obsidian font-extrabold shadow-gold-glow'
+            ? 'bg-gold text-obsidian shadow-gold-glow'
             : 'text-mist/60 hover:text-gold'
         }`}
       >
-        <Sun className="w-3 h-3 shrink-0" />
-        <span className="hidden xl:inline text-[9px] uppercase tracking-widest">Día</span>
+        <Sun className="w-3.5 h-3.5" />
       </button>
     </div>
   );
